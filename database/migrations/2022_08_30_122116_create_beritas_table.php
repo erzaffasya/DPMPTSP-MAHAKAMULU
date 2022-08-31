@@ -14,7 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('beritas', function (Blueprint $table) {
-            $table->id();
+            $table->id();            
+            $table->string("judul")->nullable();
+            $table->string("deskripsi_singkat")->nullable();
+            $table->string("isi")->nullable();
+            $table->string("gambar")->nullable();
+            $table->string("file")->nullable();
+            $table->string("link")->nullable();
+            $table->foreignId("users_id")->nullable()->constrained("users")->onDelete("cascade")->onUpdate("cascade");
+            $table->foreignId("kategori_berita_id")->nullable()->constrained("kategori_berita")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
     }
