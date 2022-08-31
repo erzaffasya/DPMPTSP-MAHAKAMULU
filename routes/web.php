@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriBeritaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,13 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware' => 'auth'], function () {
+    // Route::get('/dashboard', function () {
+    //     return view('admin.index');
+    // });
+    Route::resource('KategoriBerita', KategoriBeritaController::class);
+});
+// Route::get('admin/cara-pemesanan', [GeneralController::class, 'pemesanan'])->name('pemesanan');
 
 require __DIR__.'/auth.php';

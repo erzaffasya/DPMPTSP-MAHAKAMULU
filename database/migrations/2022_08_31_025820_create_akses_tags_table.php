@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('akses_tags', function (Blueprint $table) {
+        Schema::create('akses_tag', function (Blueprint $table) {
             $table->id();
             $table->foreignId("berita_id")->constrained("berita")->onUpdate("cascade");
             $table->foreignId("tag_berita_id")->constrained("tag_berita")->onUpdate("cascade");
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('akses_tags');
+        Schema::dropIfExists('akses_tag');
     }
 };
