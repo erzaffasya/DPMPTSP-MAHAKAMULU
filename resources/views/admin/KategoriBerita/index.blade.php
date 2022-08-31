@@ -1,39 +1,77 @@
 <x-app-layout>
-    <div class="card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Basic Layout</h5>
-            <small class="text-muted float-end">Default label</small>
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-default-fullname">Full Name</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-default-company">Company</label>
-                    <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc.">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-default-email">Email</label>
-                    <div class="input-group input-group-merge">
-                        <input type="text" id="basic-default-email" class="form-control" placeholder="john.doe"
-                            aria-label="john.doe" aria-describedby="basic-default-email2">
-                        <span class="input-group-text" id="basic-default-email2">@example.com</span>
-                    </div>
-                    <div class="form-text">You can use letters, numbers &amp; periods</div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-default-phone">Phone No</label>
-                    <input type="text" id="basic-default-phone" class="form-control phone-mask"
-                        placeholder="658 799 8941">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="basic-default-message">Message</label>
-                    <textarea id="basic-default-message" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
+    <div class="card">
+        <h5 class="card-header">Data Kategori Berita</h5>
+        <div class=" ">
+            <table id="myTable" class="table">
+                <thead>
+                    <tr class="">
+                        <th>No</th>
+                        <th>Nama Kategori</th>
+                        <th>Deskripsi</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($KategoriBerita as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $item->nama_kategori }}</td>
+                            <td>{{ $item->deskripsi }}</td>
+                            <td>
+                                <div class="btn-group mb-1">
+                                    <button type="button" class="btn btn-outline-success">Info</button>
+                                    <button type="button"
+                                        class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        data-display="static">
+                                        <span class="sr-only">Info</span>
+                                    </button>
+
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ route('KategoriBerita.edit', $item->id) }}">
+                                            <box-icon name='trash' type='solid'></box-icon>
+                                        </a>
+                                        <a class="dropdown-item">
+                                            <form action="{{ route('KategoriBerita.destroy', $item->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn show_confirm">Hapus</button>
+                                            </form>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable();
+            });
+        </script>
+        <script>
+            $('.show_confirm').click(function(event) {
+                var form = $(this).closest("form");
+                var name = $(this).data("name");
+                event.preventDefault();
+                swal({
+                        title: `Hapus Data?`,
+                        text: "Jika data terhapus, data akan hilang selamanya!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            form.submit();
+                        }
+                    });
+            });
+        </script>
+    @endpush
 </x-app-layout>

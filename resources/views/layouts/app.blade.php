@@ -17,11 +17,11 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="{{ asset('tadmin/assets/') }}"
+  data-assets-path="{{ asset('admin/assets/') }}"
   data-template="vertical-menu-template-free"
 >
   <head>
-   @include('tadmin.partials.head')
+   @include('admin.partials.head')
   </head>
 
   <body>
@@ -31,7 +31,7 @@
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-          @include('tadmin.partials.sidebar')
+          @include('admin.partials.sidebar')
         </aside>
         <!-- / Menu -->
 
@@ -43,7 +43,7 @@
             class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
           >
-           @include('tadmin.partials.navbar')
+           @include('admin.partials.navbar')
           </nav>
 
           <!-- / Navbar -->
@@ -59,7 +59,7 @@
 
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
-              @include('tadmin.partials.footer')
+              @include('admin.partials.footer')
             </footer>
             <!-- / Footer -->
 
@@ -75,6 +75,6 @@
     </div>
     <!-- / Layout wrapper -->
 
-   @include('tadmin.partials.scripts')
+   @include('admin.partials.scripts')
   </body>
 </html>
