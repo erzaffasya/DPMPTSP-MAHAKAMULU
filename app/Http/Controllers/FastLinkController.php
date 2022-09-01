@@ -42,7 +42,7 @@ class FastLinkController extends Controller
         // dd($request->all());
         $request->validate([
             'judul' => 'required',
-            'isi' => 'required',
+            'link' => 'required',
             'logo' => 'required',
         ]);
 
