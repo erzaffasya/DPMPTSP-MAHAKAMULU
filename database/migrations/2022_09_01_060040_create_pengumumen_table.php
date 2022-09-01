@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('berita', function (Blueprint $table) {
-            $table->id();            
+        Schema::create('pengumumuman', function (Blueprint $table) {
+            $table->id();       
             $table->string("judul")->nullable();
-            $table->text("deskripsi_singkat")->nullable();
             $table->text("isi")->nullable();
             $table->string("gambar")->nullable();
             $table->string("file")->nullable();
             $table->string("link")->nullable();
             $table->foreignId("users_id")->nullable()->constrained("users")->onDelete("cascade")->onUpdate("cascade");
-            $table->foreignId("kategori_berita_id")->nullable()->constrained("kategori_berita")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('berita');
+        Schema::dropIfExists('pengumumuman');
     }
 };
