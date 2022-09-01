@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProfileWebsite extends Model
 {
     use HasFactory;
-    protected $table = 'profile_website';
+    protected $table = 'profil_website';
     protected $guarded = [];
 
     protected $primaryKey = 'id';

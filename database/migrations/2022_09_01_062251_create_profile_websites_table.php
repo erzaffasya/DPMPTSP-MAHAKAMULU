@@ -13,8 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('profile_website', function (Blueprint $table) {
+        Schema::create('profil_website', function (Blueprint $table) {
             $table->id();
+            $table->string("nama_website")->nullable();
+            $table->text("email")->nullable();
+            $table->text("domain")->nullable();
+            $table->string("no_rekening")->nullable();
+            $table->string("no_telp")->nullable();
+            $table->string("meta_deskripsi")->nullable();
+            $table->text("meta_keyword")->nullable();
+            $table->text("google_maps")->nullable();
+            $table->string("favicon")->nullable();
+            $table->string("background_website")->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile_website');
+        Schema::dropIfExists('profil_website');
     }
 };
