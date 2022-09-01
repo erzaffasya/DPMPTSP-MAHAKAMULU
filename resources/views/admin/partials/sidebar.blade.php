@@ -166,47 +166,24 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
+                <a href="{{route('SurveyKepuasan.create')}}" class="menu-link">
+                    <div data-i18n="Account">Tambah Pertanyaan</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
+                <a href="{{route('SurveyKepuasan.index')}}" class="menu-link">
+                    <div data-i18n="Notifications">Lihat Pertanyaan</div>
                 </a>
-            </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                </a>
-            </li>
+            </li>           
         </ul>
+        <li class="menu-item">
+            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Support">Hasil Survey</div>
+            </a>
+        </li>
     </li>
-    {{-- Lihat Data --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Lihat Data</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
+    
     <!-- Misc -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
     {{-- Pengumuman --}}

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriBeritaController;
+use App\Http\Controllers\SurveyKepuasanController;
 use App\Http\Controllers\TagBeritaController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('KategoriBerita', KategoriBeritaController::class);
     Route::resource('TagBerita', TagBeritaController::class);
     Route::resource('Berita', BeritaController::class);
+    Route::resource('SurveyKepuasan', SurveyKepuasanController::class);
 });
 // Route::get('admin/cara-pemesanan', [GeneralController::class, 'pemesanan'])->name('pemesanan');
 
