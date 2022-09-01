@@ -62,11 +62,11 @@ class BeritaController extends Controller
 
         if (isset($request->file)) {
             $extention = $request->file->extension();
-            $file_name = time() . '.' . $extention;
-            $txt1 = "storage/Berita/File/" . $file_name;
-            $request->file->storeAs('public/Berita/File', $file_name);
+            $file_name1 = time() . '.' . $extention;
+            $txt1 = "storage/Berita/File/" . $file_name1;
+            $request->file->storeAs('public/Berita/File', $file_name1);
         } else {
-            $file_name = null;
+            $file_name1 = null;
         }
 
         $Berita = Berita::create([
@@ -139,9 +139,9 @@ class BeritaController extends Controller
 
         if (isset($request->file)) {
             $extention = $request->file->extension();
-            $file_name = time() . '.' . $extention;
-            $txt1 = "storage/Berita/File/" . $file_name;
-            $request->file->storeAs('public/Berita/File', $file_name);
+            $file_name1 = time() . '.' . $extention;
+            $txt1 = "storage/Berita/File/" . $file_name1;
+            $request->file->storeAs('public/Berita/File', $file_name1);
             Storage::delete("public/Berita/File/$Berita->file");
         } else {
             $txt1 = $Berita->file;

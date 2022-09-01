@@ -57,11 +57,11 @@ class PengumumanController extends Controller
 
         if (isset($request->file)) {
             $extention = $request->file->extension();
-            $file_name = time() . '.' . $extention;
-            $txt1 = "storage/Pengumuman/File/" . $file_name;
-            $request->file->storeAs('public/Pengumuman/File', $file_name);
+            $file_name1 = time() . '.' . $extention;
+            $txt1 = "storage/Pengumuman/File/" . $file_name1;
+            $request->file->storeAs('public/Pengumuman/File', $file_name1);
         } else {
-            $file_name = null;
+            $file_name1 = null;
         }
 
         $Pengumuman = Pengumuman::create([
@@ -124,9 +124,9 @@ class PengumumanController extends Controller
 
         if (isset($request->file)) {
             $extention = $request->file->extension();
-            $file_name = time() . '.' . $extention;
-            $txt1 = "storage/Pengumuman/File/" . $file_name;
-            $request->file->storeAs('public/Pengumuman/File', $file_name);
+            $file_name1 = time() . '.' . $extention;
+            $txt1 = "storage/Pengumuman/File/" . $file_name1;
+            $request->file->storeAs('public/Pengumuman/File', $file_name1);
             Storage::delete("public/Pengumuman/File/$Pengumuman->file");
         } else {
             $txt1 = $Pengumuman->file;
