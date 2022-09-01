@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AksesTag;
 use App\Models\Berita;
+use App\Models\KategoriBerita;
+use App\Models\TagBerita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +31,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('admin.Berita.tambah');
+        $KategoriBerita = KategoriBerita::all();
+        $TagBerita = TagBerita::all();
+        return view('admin.Berita.tambah', compact('KategoriBerita', 'TagBerita'));
     }
 
     /**
@@ -39,6 +44,7 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'judul' => 'required',
             'isi' => 'required',
@@ -63,7 +69,7 @@ class BeritaController extends Controller
             $file_name = null;
         }
 
-        Berita::create([
+        $Berita = Berita::create([
             'judul' => $request->judul,
             'deskripsi_singkat' => $request->deskripsi_singkat,
             'isi' => $request->isi,
@@ -73,6 +79,16 @@ class BeritaController extends Controller
             'users_id' => Auth::user()->id,
             'kategori_berita_id' => $request->kategori_berita_id,
         ]);
+
+        foreach($request->tag_berita_id as $item){
+            $SP = AksesTag::create([
+                'berita_id' => $Berita->id,
+                'tag_berita_id' => $item
+            ]);
+            // dd($item);
+        }
+        
+
         return redirect()->route('Berita.index')
             ->with('success', 'Berita Berhasil Ditambahkan');
     }

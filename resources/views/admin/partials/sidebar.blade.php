@@ -75,18 +75,13 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
+                <a href="{{ route('TagBerita.create') }}" class="menu-link">
+                    <div data-i18n="Notifications">Tambah Data</div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
+                    <div data-i18n="Connections">Lihat Data</div>
                 </a>
             </li>
         </ul>
@@ -99,12 +94,12 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{route('KategoriBerita.create')}}" class="menu-link" >
+                <a href="{{ route('KategoriBerita.create') }}" class="menu-link">
                     <div data-i18n="Basic">Tambah Data</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{route('KategoriBerita.index')}}" class="menu-link" >
+                <a href="{{ route('KategoriBerita.index') }}" class="menu-link">
                     <div data-i18n="Basic">Lihat Data</div>
                 </a>
             </li>
@@ -118,13 +113,13 @@
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="pages-misc-error.html" class="menu-link">
-                    <div data-i18n="Error">Error</div>
+                <a href="{{ route('Berita.create') }}" class="menu-link">
+                    <div data-i18n="Error">Tambah Data</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="pages-misc-under-maintenance.html" class="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
+                <a href="{{ route('Berita.index') }}" class="menu-link">
+                    <div data-i18n="Under Maintenance">Lihat Data</div>
                 </a>
             </li>
         </ul>
@@ -158,22 +153,55 @@
             </li>
         </ul>
     </li>
-   
-    {{-- Halaman Baru --}}
+
+    {{-- Survey Kepuasan --}}
+    <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Setting Survey</span>
+    </li>
+    {{-- Tambah Survey --}}
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-            <div data-i18n="Misc">Halaman Baru</div>
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Survey</div>
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="pages-misc-error.html" class="menu-link">
-                    <div data-i18n="Error">Error</div>
+                <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="pages-misc-under-maintenance.html" class="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
+                <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="pages-account-settings-connections.html" class="menu-link">
+                    <div data-i18n="Connections">Connections</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    {{-- Lihat Data --}}
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Lihat Data</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="pages-account-settings-connections.html" class="menu-link">
+                    <div data-i18n="Connections">Connections</div>
                 </a>
             </li>
         </ul>
@@ -181,18 +209,73 @@
 
     <!-- Misc -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+    {{-- Pengumuman --}}
     <li class="menu-item">
-        <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" 
-            class="menu-link">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Pengumuman</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    {{-- Fast Link --}}
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Fast Link</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    {{-- Banner Website --}}
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Banner Website</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    {{-- Profile Website --}}
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Profile Website</div>
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+    {{-- <li class="menu-item">
+        <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
             <i class="menu-icon tf-icons bx bx-support"></i>
             <div data-i18n="Support">Support</div>
         </a>
     </li>
     <li class="menu-item">
-        <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" 
+        <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
             class="menu-link">
             <i class="menu-icon tf-icons bx bx-file"></i>
             <div data-i18n="Documentation">Documentation</div>
         </a>
-    </li>
+    </li> --}}
 </ul>

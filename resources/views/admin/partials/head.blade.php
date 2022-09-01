@@ -36,3 +36,6 @@
 <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
 <script src="{{ asset('tadmin/assets/js/config.js') }}"></script>
+
+{{-- Tinymce --}}
+<script src="https://cdn.tiny.cloud/1/pbt8hv1pilzu9hy3yh33hvz7bnbdtjda34vxywwge56tcjou/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
