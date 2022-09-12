@@ -27,15 +27,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('tlandingpage.index');
 });
-Route::get('/test', function () {
-    return Helper::test();
+
+Route::get('/detail-berita', function () {
+    return view('tlandingpage.detailBerita');
 });
-// Route::get('/categories', function () {
-//     $category = Menu::tree()->get()->toTree();
-//     return view('categories', [
-//         'categories' => $category
-//     ]);
-// });
+
+Route::get('/halBerita', function () {
+    return view('tlandingpage.berita');
+});
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
