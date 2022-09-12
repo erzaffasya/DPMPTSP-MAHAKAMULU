@@ -13,8 +13,9 @@ class ProfileWebsiteController extends Controller
         return view('admin.ProfileWebsite.index', compact('ProfileWebsite'));
     }
 
-    public function update(Request $request)
+    public function store(Request $request)
     {
+        // dd($request->all());
         if (isset($request->favicon)) {
             $extention = $request->favicon->extension();
             $file_name = time() . '.' . $extention;
@@ -34,12 +35,13 @@ class ProfileWebsiteController extends Controller
         }
 
         $ProfileWebsite = ProfileWebsite::find(1);
+        // dd($ProfileWebsite);
         $ProfileWebsite->nama_website = $request->nama_website;
         $ProfileWebsite->email = $request->email;
         $ProfileWebsite->domain = $request->domain;
         $ProfileWebsite->no_rekening = $request->no_rekening;
         $ProfileWebsite->no_telp = $request->no_telp;
-        $ProfileWebsite->meta_Deskripsi = $request->meta_Deskripsi;
+        $ProfileWebsite->meta_deskripsi = $request->meta_deskripsi;
         $ProfileWebsite->meta_keyword = $request->meta_keyword;
         $ProfileWebsite->google_maps = $request->google_maps;
 

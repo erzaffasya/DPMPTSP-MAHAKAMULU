@@ -57,7 +57,7 @@
 <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item">
-        <a href="index.html" class="menu-link">
+        <a href="{{route("dashboard")}}" class="menu-link {{  request()->routeIs('dashboard.*') ? 'active open' : '' }}">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Dashboard</div>
         </a>
@@ -235,20 +235,10 @@
 </li>
 {{-- Profile Website --}}
 <li class="menu-item {{  request()->routeIs('ProfileWebsite.*') ? 'active open' : '' }}">
-    <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <a href="{{route('ProfileWebsite.index')}}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
-        <div data-i18n="Account Settings">Profile Website</div>
+        <div data-i18n="Analytics">Profile Website</div>
     </a>
-    <ul class="menu-sub">
-        <li class="menu-item">
-            <a href="{{route('ProfileWebsite.create')}}" class="menu-link {{  request()->routeIs('ProfileWebsite.create') ? 'active' : '' }}">
-                <div data-i18n="Account">Tambah Data</div>
-            </a>
-            <a href="{{route('ProfileWebsite.index')}}" class="menu-link {{  request()->routeIs('ProfileWebsite.index') ? 'active' : '' }}">
-                <div data-i18n="Account">Lihat Data</div>
-            </a>
-        </li>
-    </ul>
 </li>
 {{-- <li class="menu-item">
         <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">

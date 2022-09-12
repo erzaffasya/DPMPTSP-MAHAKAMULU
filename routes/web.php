@@ -1,6 +1,7 @@
 <?php
 
 use App\Helpers\Helper;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FastLinkController;
 use App\Http\Controllers\HalamanMenuController;
@@ -10,8 +11,6 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ProfileWebsiteController;
 use App\Http\Controllers\SurveyKepuasanController;
 use App\Http\Controllers\TagBeritaController;
-use App\Models\Banner;
-use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,7 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Blom
     Route::resource('Pengumuman', PengumumanController::class);
     Route::resource('FastLink', FastLinkController::class);
-    Route::resource('Banner', Banner::class);
+    Route::resource('Banner', BannerController::class);
     Route::resource('ProfileWebsite', ProfileWebsiteController::class);
     Route::resource('HalamanMenu', HalamanMenuController::class);
 });
