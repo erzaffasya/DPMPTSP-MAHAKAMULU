@@ -28,6 +28,10 @@ Route::get('/detail-berita', function () {
     return view('tlandingpage.detailBerita');
 });
 
+Route::get('/halBerita', function () {
+    return view('tlandingpage.berita');
+});
+
 
 
 
