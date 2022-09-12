@@ -26,7 +26,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('admin.Menu.tambah');
+        $Menu = Menu::all();
+        return view('admin.Menu.tambah',compact('Menu'));
     }
 
     /**
@@ -39,7 +40,6 @@ class MenuController extends Controller
     {
         $request->validate([
             'nama_menu' => 'required',
-            'link' => 'required',
             'isActive' => 'required',
             'parent_id' => 'required',
             'urutan' => 'required',
@@ -53,8 +53,9 @@ class MenuController extends Controller
             'urutan' => $request->urutan,
         ]);
 
-        return redirect()->route('Menu.index')
-            ->with('success', 'Menu Berhasil Ditambahkan');
+        return back();
+        // return redirect()->route('Menu.index')
+            // ->with('success', 'Menu Berhasil Ditambahkan');
     }
 
     /**

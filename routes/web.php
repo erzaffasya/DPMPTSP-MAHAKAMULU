@@ -1,7 +1,9 @@
 <?php
 
+use App\Helpers\Helper;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\KategoriBeritaController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SurveyKepuasanController;
 use App\Http\Controllers\TagBeritaController;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +20,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tlandingpage.index');
 });
-
+Route::get('/test', function () {
+    return Helper::test();
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -33,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('TagBerita', TagBeritaController::class);
     Route::resource('Berita', BeritaController::class);
     Route::resource('SurveyKepuasan', SurveyKepuasanController::class);
+    Route::resource('Menu', MenuController::class);
 });
 // Route::get('admin/cara-pemesanan', [GeneralController::class, 'pemesanan'])->name('pemesanan');
 

@@ -68,56 +68,56 @@
         <span class="menu-header-text">Setting Berita</span>
     </li>
     {{-- Tag Berita --}}
-    <li class="menu-item">
+    <li class="menu-item {{ request()->routeIs('TagBerita.*') ? 'active' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-dock-top"></i>
             <div data-i18n="Account Settings">Tag Berita</div>
         </a>
         <ul class="menu-sub">
-            <li class="menu-item">
+            <li class="menu-item {{ request()->is('TagBerita/create') ? 'active' : '' }}">
                 <a href="{{ route('TagBerita.create') }}" class="menu-link">
                     <div data-i18n="Notifications">Tambah Data</div>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-connections.html" class="menu-link">
+            <li class="menu-item {{ request()->is('TagBerita') ? 'active' : '' }}">
+                <a href="{{ route('TagBerita.index') }}" class="menu-link">
                     <div data-i18n="Connections">Lihat Data</div>
                 </a>
             </li>
         </ul>
     </li>
     {{-- Kategori Berita --}}
-    <li class="menu-item">
+    <li class="menu-item {{ request()->routeIs('KategoriBerita.*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
             <div data-i18n="Authentications">Kategori Berita</div>
         </a>
         <ul class="menu-sub">
-            <li class="menu-item">
+            <li class="menu-item {{ request()->is('KategoriBerita/create') ? 'active' : '' }}">
                 <a href="{{ route('KategoriBerita.create') }}" class="menu-link">
                     <div data-i18n="Basic">Tambah Data</div>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="{{ route('KategoriBerita.index') }}" class="menu-link">
+            <li class="menu-item {{ request()->routeIs('KategoriBerita.index') ? 'active' : '' }}">
+                <a href="{{ route('KategoriBerita.index') }}" class="menu-link ">
                     <div data-i18n="Basic">Lihat Data</div>
                 </a>
             </li>
         </ul>
     </li>
     {{-- Berita --}}
-    <li class="menu-item">
+    <li class="menu-item {{ request()->routeIs('Berita.*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-cube-alt"></i>
             <div data-i18n="Misc">Berita</div>
         </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
+        <ul class="menu-sub ">
+            <li class="menu-item {{ request()->routeIs('Berita.create') ? 'active' : '' }}">
                 <a href="{{ route('Berita.create') }}" class="menu-link">
                     <div data-i18n="Error">Tambah Data</div>
                 </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ request()->routeIs('Berita.index') ? 'active' : '' }}">
                 <a href="{{ route('Berita.index') }}" class="menu-link">
                     <div data-i18n="Under Maintenance">Lihat Data</div>
                 </a>
@@ -130,119 +130,115 @@
         <span class="menu-header-text">Setting Menu</span>
     </li>
     {{-- Menu --}}
-    <li class="menu-item">
+    <li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-dock-top"></i>
             <div data-i18n="Account Settings">Menu</div>
         </a>
         <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
+            <li class="menu-item {{  request()->routeIs('Menu.create') ? 'active' : '' }}">
+                <a href="{{ route('Menu.create') }}" class="menu-link">
+                    <div data-i18n="Account">Tambah Data</div>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
+            <li class="menu-item {{  request()->routeIs('Menu.index') ? 'active' : '' }}">
+                <a href="{{ route('Menu.index') }}" class="menu-link">
+                    <div data-i18n="Notifications">Lihat Data</div>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                </a>
-            </li>
-        </ul>
     </li>
+</ul>
+</li>
 
-    {{-- Survey Kepuasan --}}
-    <li class="menu-header small text-uppercase">
-        <span class="menu-header-text">Setting Survey</span>
-    </li>
-    {{-- Tambah Survey --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Survey</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="{{route('SurveyKepuasan.create')}}" class="menu-link">
-                    <div data-i18n="Account">Tambah Pertanyaan</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="{{route('SurveyKepuasan.index')}}" class="menu-link">
-                    <div data-i18n="Notifications">Lihat Pertanyaan</div>
-                </a>
-            </li>           
-        </ul>
+{{-- Survey Kepuasan --}}
+<li class="menu-header small text-uppercase">
+    <span class="menu-header-text">Setting Survey</span>
+</li>
+{{-- Tambah Survey --}}
+<li class="menu-item {{  request()->routeIs('SurveyKepuasan.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Survey</div>
+    </a>
+    <ul class="menu-sub">
         <li class="menu-item">
-            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-file"></i>
-                <div data-i18n="Support">Hasil Survey</div>
+            <a href="{{ route('SurveyKepuasan.create') }}" class="menu-link {{  request()->routeIs('SurveyKepuasan.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Pertanyaan</div>
             </a>
         </li>
-    </li>
-    
-    <!-- Misc -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-    {{-- Pengumuman --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Pengumuman</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-    {{-- Fast Link --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Fast Link</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-    {{-- Banner Website --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Banner Website</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-    {{-- Profile Website --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Profile Website</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-    {{-- <li class="menu-item">
+        <li class="menu-item">
+            <a href="{{ route('SurveyKepuasan.index') }}" class="menu-link {{  request()->routeIs('SurveyKepuasan.index') ? 'active' : '' }}">
+                <div data-i18n="Notifications">Lihat Pertanyaan</div>
+            </a>
+        </li>
+    </ul>
+<li class="menu-item">
+    <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-file"></i>
+        <div data-i18n="Support">Hasil Survey</div>
+    </a>
+</li>
+</li>
+
+<!-- Misc -->
+<li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+{{-- Pengumuman --}}
+<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Pengumuman</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="pages-account-settings-account.html" class="menu-link">
+                <div data-i18n="Account">Account</div>
+            </a>
+        </li>
+    </ul>
+</li>
+{{-- Fast Link --}}
+<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Fast Link</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="pages-account-settings-account.html" class="menu-link">
+                <div data-i18n="Account">Account</div>
+            </a>
+        </li>
+    </ul>
+</li>
+{{-- Banner Website --}}
+<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Banner Website</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="pages-account-settings-account.html" class="menu-link">
+                <div data-i18n="Account">Account</div>
+            </a>
+        </li>
+    </ul>
+</li>
+{{-- Profile Website --}}
+<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Profile Website</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="pages-account-settings-account.html" class="menu-link">
+                <div data-i18n="Account">Account</div>
+            </a>
+        </li>
+    </ul>
+</li>
+{{-- <li class="menu-item">
         <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
             <i class="menu-icon tf-icons bx bx-support"></i>
             <div data-i18n="Support">Support</div>

@@ -1,21 +1,64 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+@include('tlandingpage.partials.head')l
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+<body>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="angular-shape">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
         </div>
-    </body>
+        <!-- end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header">
+            <!-- <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-7 col-md-9 col-sm-12 col-12">
+                            <div class="contact-intro">
+                                <ul>
+                                    <li class="update"><span>New Update</span></li>
+                                    <li>Betting against meme stocks could get you seriously burned</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col  col-lg-5 col-md-3 col-sm-12 col-12">
+                            <div class="contact-info">
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    <li><a href="#"><i class="ti-google"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- end topbar -->
+            @include('tlandingpage.partials.navbar')
+        </header>
+       
+        {{$slot}}
+        @include('tlandingpage.partials.footer')
+        <!-- end of wpo-site-footer-section -->
+    </div>
+    <!-- end of page-wrapper -->
+
+    <!-- All JavaScript files
+    ================================================== -->
+    @include('tlandingpage.partials.scripts')
+</body>
+
 </html>
