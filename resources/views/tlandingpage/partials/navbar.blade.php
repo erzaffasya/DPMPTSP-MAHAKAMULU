@@ -116,31 +116,7 @@
                         <li><a href="travels.html">Home</a></li>
 
                         @foreach ($Menu as $item)
-                            <li class="menu-item-has-children">
-                                <a class="" href="#">Profil DPMPTSP</a>
-                                <ul class="sub-menu">
-                                    <li><a class="" href="index.html">Tugas dan Fungsi</a></li>
-                                    <li><a href="index-2.html">Visi Misi dan Maklumat</a></li>
-                                    <li><a href="index-3.html">Struktur Organisasi</a></li>
-                                    <li><a href="index-3.html">Dasar Hukum</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Pejabat Struktural</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-single.html">Kepala Dinas</a></li>
-                                            <li><a href="blog-single-left-sidebar.html">Sekretariat</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Data Pegawai</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-single.html">Post details right sidebar</a></li>
-                                            <li><a href="blog-single-left-sidebar.html">Front Office</a></li>
-                                            <li><a href="blog-single-fullwidth.html">Bidang satu</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+                            <x-menu-item :menu="$item" />                            
                         @endforeach
                         {{-- <li class="menu-item-has-children">
                             <a class="active" href="#">Profil DPMPTSP</a>

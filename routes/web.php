@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SurveyKepuasanController;
 use App\Http\Controllers\TagBeritaController;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,13 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return Helper::test();
 });
+// Route::get('/categories', function () {
+//     $category = Menu::tree()->get()->toTree();
+//     return view('categories', [
+//         'categories' => $category
+//     ]);
+// });
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

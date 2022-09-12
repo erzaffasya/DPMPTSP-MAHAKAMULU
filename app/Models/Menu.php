@@ -1,20 +1,15 @@
 <?php
 
 namespace App\Models;
-
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
     use HasFactory;
-    protected $table = 'menu';
-    protected $guarded = [];
-
-    protected $primaryKey = 'id';
+    use HasRecursiveRelationships;
     
-    public function User()
-    {
-        return $this->belongsTo(User::class, 'users_id', 'id');
-    }
+    protected $table = 'menu';
+
 }

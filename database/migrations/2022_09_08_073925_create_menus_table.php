@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("nama_menu")->nullable();
             $table->string("link")->nullable();
             $table->boolean("isActive")->nullable();
-            $table->integer("parent_id")->nullable();
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->integer("urutan")->nullable();
             $table->timestamps();
         });
