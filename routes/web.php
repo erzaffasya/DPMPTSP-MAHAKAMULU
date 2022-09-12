@@ -2,10 +2,15 @@
 
 use App\Helpers\Helper;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\FastLinkController;
+use App\Http\Controllers\HalamanMenuController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\ProfileWebsiteController;
 use App\Http\Controllers\SurveyKepuasanController;
 use App\Http\Controllers\TagBeritaController;
+use App\Models\Banner;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +51,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('Berita', BeritaController::class);
     Route::resource('SurveyKepuasan', SurveyKepuasanController::class);
     Route::resource('Menu', MenuController::class);
+    
+    //Blom
+    Route::resource('Pengumuman', PengumumanController::class);
+    Route::resource('FastLink', FastLinkController::class);
+    Route::resource('Banner', Banner::class);
+    Route::resource('ProfileWebsite', ProfileWebsiteController::class);
+    Route::resource('HalamanMenu', HalamanMenuController::class);
 });
 // Route::get('admin/cara-pemesanan', [GeneralController::class, 'pemesanan'])->name('pemesanan');
 

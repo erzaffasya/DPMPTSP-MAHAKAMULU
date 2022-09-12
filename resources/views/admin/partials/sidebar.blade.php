@@ -183,57 +183,69 @@
 <!-- Misc -->
 <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
 {{-- Pengumuman --}}
-<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+<li class="menu-item {{  request()->routeIs('Pengumuman.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Pengumuman</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="pages-account-settings-account.html" class="menu-link">
-                <div data-i18n="Account">Account</div>
+            <a href="{{route('Pengumuman.create')}}" class="menu-link {{  request()->routeIs('Pengumuman.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Data</div>
+            </a>
+            <a href="{{route('Pengumuman.index')}}" class="menu-link {{  request()->routeIs('Pengumuman.index') ? 'active' : '' }}">
+                <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
 </li>
 {{-- Fast Link --}}
-<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+<li class="menu-item {{  request()->routeIs('FastLink.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Fast Link</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="pages-account-settings-account.html" class="menu-link">
-                <div data-i18n="Account">Account</div>
+            <a href="{{route('FastLink.create')}}" class="menu-link {{  request()->routeIs('FastLink.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Data</div>
+            </a>
+            <a href="{{route('FastLink.index')}}" class="menu-link {{  request()->routeIs('FastLink.index') ? 'active' : '' }}">
+                <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
 </li>
 {{-- Banner Website --}}
-<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+<li class="menu-item {{  request()->routeIs('Banner.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Banner Website</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="pages-account-settings-account.html" class="menu-link">
-                <div data-i18n="Account">Account</div>
+            <a href="{{route('Banner.create')}}" class="menu-link {{  request()->routeIs('Banner.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Data</div>
+            </a>
+            <a href="{{route('Banner.index')}}" class="menu-link {{  request()->routeIs('Banner.index') ? 'active' : '' }}">
+                <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
 </li>
 {{-- Profile Website --}}
-<li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+<li class="menu-item {{  request()->routeIs('ProfileWebsite.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Profile Website</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="pages-account-settings-account.html" class="menu-link">
-                <div data-i18n="Account">Account</div>
+            <a href="{{route('ProfileWebsite.create')}}" class="menu-link {{  request()->routeIs('ProfileWebsite.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Data</div>
+            </a>
+            <a href="{{route('ProfileWebsite.index')}}" class="menu-link {{  request()->routeIs('ProfileWebsite.index') ? 'active' : '' }}">
+                <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
