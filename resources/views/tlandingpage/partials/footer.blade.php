@@ -5,63 +5,54 @@
                 <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="widget about-widget">
                         <div class="logo widget-title">
-                            <img src="assets/images/logo2.png" alt="blog" height="85">
+                            <img src="{{asset("tlandingpage/assets/images/logo2.png")}}" alt="blog" height="85">
                         </div>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected humour, or randomised words which
-                            don't look even slightly believable.</p>
+                        <h3 class="text-white fw-bold">Terpercaya, Optimal dan Profesional</h3 class="text-white fw-bold">
 
                     </div>
                 </div>
                 <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="widget link-widget">
                         <div class="widget-title">
-                            <h3>Important Link</h3>
+                            <h3>Link Terkait</h3>
                         </div>
                         <ul>
-                            <li><a href="blog.html">News</a></li>
-                            <li><a href="blog.html">Career </a></li>
-                            <li><a href="blog.html">Technology</a></li>
-                            <li><a href="blog.html">Startups</a></li>
-                            <li><a href="blog.html">Gadgets</a></li>
+                            <li><a href="blog.html">BKPM</a></li>
+                            <li><a href="blog.html">BPS</a></li>
+                            <li><a href="blog.html">LAPOR</a></li>
+                            <li><a href="blog.html">OSS RBA</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col col-lg-2 col-md-6 col-sm-12 col-12">
+                    <div class="widget social-widget">
+                        <div class="widget-title">
+                            <h3>Media Sosial</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/1.png')}}"
+                                            alt=""></i> Facebook</a>
+                            </li>
+                            <li><a href="#"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/3.png')}}"
+                                            alt=""></i> Instagram</a>
+                            </li>
+                            <li><a href="#"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/4.png')}}"
+                                            alt=""></i> Youtube</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col col-lg-4 col-md-6 col-sm-12 col-12">
                     <div class="widget tag-widget">
                         <div class="widget-title">
-                            <h3>Browse by Tag </h3>
+                            <h3>Alamat</h3>
                         </div>
                         <ul>
-                            <li><a href="travels.html">Travel</a></li>
-                            <li><a href="business.html">Business</a></li>
-                            <li><a href="lifestyle.html">Lifestyle</a></li>
-                            <li><a href="blog.html">Marketing</a></li>
-                            <li><a href="blog.html">Medical</a></li>
-                            <li><a href="blog.html">Sports</a></li>
-                            <li><a href="blog.html">Career</a></li>
-                            <li><a href="foods.html">Foods</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col col-lg-2 col-md-6 col-sm-12 col-12">
-                    <div class="widget social-widget">
-                        <div class="widget-title">
-                            <h3>Social Media</h3>
-                        </div>
-                        <ul>
-                            <li><a href="#"><i><img src="assets/images//ft-icon/1.png"
-                                            alt=""></i> Facebook</a>
-                            </li>
-                            <li><a href="#"><i><img src="assets/images//ft-icon/2.png"
-                                            alt=""></i> Twitter</a>
-                            </li>
-                            <li><a href="#"><i><img src="assets/images//ft-icon/3.png"
-                                            alt=""></i> Instagram</a>
-                            </li>
-                            <li><a href="#"><i><img src="assets/images//ft-icon/4.png"
-                                            alt=""></i> Youtube</a>
+                            <li>
+                                <a href="/kontak">
+                                    <p>Jl. Poros Kampung Ujoh Bilang - Long Melaham, Kecamatan Long Bagun, Ujoh Bilang</p>
+                                    <span class="post-control-link">Kontak Kami</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -73,9 +64,7 @@
         <div class="container">
             <div class="row">
                 <div class="col col-xs-12">
-                    <p class="copyright"> Copyright &copy; 2022 Bloggar by <a href="index.html">wpOceans</a>.
-                        All
-                        Rights Reserved.</p>
+                    <p class="copyright"> Copyright &copy; 2022 DPMPTSP Mahakam Ulu</p>
                 </div>
             </div>
         </div>

@@ -10,42 +10,15 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="slide-inner slide-bg-image"
-                                            data-background="tlandingpage/assets/images/slider/slide-1.jpg">
-                                            <!-- <div class="slide-content">
-                                                <div data-swiper-parallax="300" class="slide-title">
-                                                    <h2>Full Body Dumbbell Workout – Results Achieved Only in 3
-                                                        Days</h2>
-                                                </div>
-                                                <div data-swiper-parallax="400" class="slide-text">
-                                                    <p>Law is commonly understood as a system of rules that are
-                                                        created and enforced
-                                                        through social or government.</p>
-                                                </div>
-                                            </div> -->
-                                        </div> <!-- end slide-inner -->
-                                        <!-- <div class="thumb">Fitness</div> -->
-                                    </div> <!-- end swiper-slide -->
+                                            data-background="{{asset('tlandingpage/assets/images/slider/slide-1.jpg')}}">
+                                        </div>
+                                    </div> 
 
                                     <div class="swiper-slide">
                                         <div class="slide-inner slide-bg-image"
-                                            data-background="tlandingpage/assets/images/slider/slide-2.jpg">
-                                            <!-- <div class="gradient-overlay"></div> -->
-                                            <!-- <div class="container-fluid">
-                                                <div class="slide-content">
-                                                    <div data-swiper-parallax="300" class="slide-title">
-                                                        <h2>Full Body Dumbbell Workout – Results Achieved Only in 3
-                                                            Days</h2>
-                                                    </div>
-                                                    <div data-swiper-parallax="400" class="slide-text">
-                                                        <p>Law is commonly understood as a system of rules that are
-                                                            created and enforced
-                                                            through social or government.</p>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                        </div> <!-- end slide-inner -->
-                                        <!-- <div class="thumb">Fitness</div> -->
-                                    </div> <!-- end swiper-slide -->
+                                            data-background="{{asset('tlandingpage/assets/images/slider/slide-2.jpg')}}">
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- end swiper-wrapper -->
 
@@ -59,7 +32,6 @@
                                     <img src="tlandingpage/assets/images/hero/img-1.jpg" alt
                                         class="img img-responsive">
                                     <div class="wpo-blog-content">
-                                        <div class="thumb">Fasion</div>
                                         <h2><a href="blog-single.html">What’s In Trend In Women's Fashion
                                                 Summer?</a></h2>
                                         <p>You can customize the view Blog posts with a simple mouse click and
@@ -78,7 +50,6 @@
                                     <img src="tlandingpage/assets/images/hero/img-2.jpg" alt
                                         class="img img-responsive">
                                     <div class="wpo-blog-content">
-                                        <div class="thumb">Travel</div>
                                         <h2><a href="blog-single.html">Traveling Makes You More Interesting</a>
                                         </h2>
                                         <ul>
@@ -93,7 +64,6 @@
                                     <img src="tlandingpage/assets/images/hero/img-3.jpg" alt
                                         class="img img-responsive">
                                     <div class="wpo-blog-content">
-                                        <div class="thumb">Food</div>
                                         <h2><a href="blog-single.html">Top 10 Healthy Food</a></h2>
                                         <ul>
                                             <li>By <a href="blog-single.html">Robert</a></li>
@@ -105,7 +75,6 @@
                                     <img src="tlandingpage/assets/images/hero/img-4.jpg" alt
                                         class="img img-responsive">
                                     <div class="wpo-blog-content">
-                                        <div class="thumb">Business</div>
                                         <h2><a href="blog-single.html">What Makes a Leader?</a></h2>
                                         <ul>
                                             <li>By <a href="blog-single.html">Robert</a></li>
@@ -118,209 +87,255 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <!-- end of wpo-blog-hero -->
 
-    <!-- start of wpo-breacking-news -->
+    <section class="wpo-blog-pg-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-12">
+                    <div class="wpo-blog-content">
+                        <div class="post format-video">
+                            <div class="entry-media video-holder">
+                                <img src="{{asset('tlandingpage/assets/images/lifestyle/img-3.jpg')}}" alt>
+                                <a href="https://www.youtube.com/embed/JttPYJF6SdI" class="video-btn"
+                                    data-type="iframe">
+                                    <i class="fi flaticon-play"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-12">
+                    <h5 class="fs-5 text-secondary">Selamat Datang di</h5>
+                    <h2 class="fw-bolder">DPMPTSP Mahakam Ulu</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sunt laborum alias atque. Necessitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat distinctio, rem alias temporibus, id consectetur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                </div>
+            </div>
+        </div> 
+    </section>
+
     <div class="wpo-breacking-news section-padding">
         <div class="container">
             <div class="row">
-                <div class="b-title"><span>Breaking News</span></div>
+                <div class="b-title"><span>Pelayanan Kami</span></div>
                 <div class="wpo-breacking-wrap owl-carousel">
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
                             <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
                         </div>
                         <div class="wpo-breacking-text">
-                            <span>22 Sep 2022</span>
-                            <h3><a href="blog-single.html">5 unbelievable secret about choosing right
-                                    fuirniture</a>
-                            </h3>
+                            <h3 class="fw-bolder">IMB</h3>
+                            <p>Pelayanan dalam Izin Membuat Usaha (IMB)</a>
+                            </p>
                         </div>
                     </div>
-                    <div class="wpo-breacking-item">
+                    <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-2.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
                         </div>
                         <div class="wpo-breacking-text">
-                            <span>22 Sep 2022</span>
-                            <h3><a href="blog-single.html">Healthy rutine for your healthy lifestyle.</a></h3>
+                            <h3 class="fw-bolder">Izin Usaha</h3>
+                            <p>Pelayanan dalam pembuatan Izin Usaha</a>
+                            </p>
                         </div>
                     </div>
-                    <div class="wpo-breacking-item">
+                    <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-3.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
                         </div>
                         <div class="wpo-breacking-text">
-                            <span>22 Sep 2022</span>
-                            <h3><a href="blog-single.html">Best tourism site all over the world.</a></h3>
+                            <h3 class="fw-bolder">Izin Jasa Konstruksi</h3>
+                            <p>Pelayanan dalam pembuatan Izin Jasa Konstruksi</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wpo-breacking-item s1">
+                        <div class="wpo-breacking-img">
+                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                        </div>
+                        <div class="wpo-breacking-text">
+                            <h3 class="fw-bolder">Izin Reklame</h3>
+                            <p>Pelayanan dalam pembuatan Izin Reklame</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wpo-breacking-item s1">
+                        <div class="wpo-breacking-img">
+                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                        </div>
+                        <div class="wpo-breacking-text">
+                            <h3 class="fw-bolder">Praktik Kesehatan</h3>
+                            <p>Pelayanan dalam pembuatan Izin Praktik Kesehatan</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wpo-breacking-item s1">
+                        <div class="wpo-breacking-img">
+                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                        </div>
+                        <div class="wpo-breacking-text">
+                            <h3 class="fw-bolder">Izin Gangguan</h3>
+                            <p>Pelayanan dalam pembuatan Izin Gangguan</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end of wpo-breacking-news -->
-    <!-- start wpo-blog-highlights-section -->
-    <section class="wpo-blog-highlights-section">
+
+    <section class="wpo-blog-highlights-section section-padding">
         <div class="container">
-            <div class="wpo-section-title">
-                <h2>Today's Top Highlights</h2>
-            </div>
+            
             <div class="row">
-                <div class="col col-lg-8 col-12">
-                    <!-- start wpo-blog-section -->
-                    <div class="wpo-blog-highlights-wrap">
-                        <div class="wpo-blog-items">
-                            <div class="row">
-                                <div class="col col-lg-6 col-md-6 col-12">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="tlandingpage/assets/images/blog/img-1.jpg" alt="">
-                                            <div class="thumb">Travel</div>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">Traveling Makes You More Inteligent
-                                                    and More Energetic</a></h2>
-                                            <ul>
-                                                <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                        alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author simple mouse click
-                                                and immediately see the result of your changes. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-6 col-md-6 col-12">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="">
-                                            <div class="thumb">Travel</div>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">12 Things to See and Find Out in Bergen,
-                                                    Norway</a></h2>
-                                            <ul>
-                                                <li><img src="tlandingpage/assets/images/blog/blog-avater/img-2.jpg "
-                                                        alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author simple mouse click
-                                                and immediately see the result of your changes. </p>
+                <div class="col col-lg-9 col-12">
+                    <div class="mb-5">
+                        <div class="wpo-section-title">
+                            <h2>Berita Terkini</h2>
+                        </div>
+                        <!-- start wpo-blog-section -->
+                        <div class="wpo-blog-highlights-wrap">
+                            <div class="wpo-blog-items">
+                                <div class="row">
+                                    <div class="col col-lg-6 col-md-6 col-12">
+                                        <div class="wpo-blog-item">
+                                            <div class="wpo-blog-img">
+                                                <img src="tlandingpage/assets/images/blog/img-1.jpg" alt="">
+                                            </div>
+                                            <div class="wpo-blog-content">
+                                                <h2><a href="blog-single.html">Traveling Makes You More Inteligent
+                                                        and More Energetic</a></h2>
+                                                <ul>
+                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
+                                                            alt="">
+                                                    </li>
+                                                    <li>By <a href="blog-single.html">Admin</a></li>
+                                                    <li>25 Sep 2022</li>
+                                                </ul>
+                                                <p>You can customize the view Blog post with author simple mouse click
+                                                    and immediately see the result of your changes. </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col col-lg-6 col-md-6 col-12">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="tlandingpage/assets/images/blog/img-3.jpg" alt="">
-                                            <div class="thumb">Travel</div>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">Healthy Daily Rutine For Your Healthy
-                                                    Lifestyle</a></h2>
-                                            <ul>
-                                                <li><img src="tlandingpage/assets/images/blog/blog-avater/img-3.jpg "
-                                                        alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author simple mouse click
-                                                and immediately see the result of your changes. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-lg-6 col-md-6 col-12">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="tlandingpage/assets/images/blog/img-4.jpg" alt="">
-                                            <div class="thumb">Travel</div>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">Perfect Photo Clicking Idea You Must
-                                                    Khow About.</a></h2>
-                                            <ul>
-                                                <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                        alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author simple mouse click
-                                                and immediately see the result of your changes. </p>
+                                    <div class="col col-lg-6 col-md-6 col-12">
+                                        <div class="wpo-blog-item">
+                                            <div class="wpo-blog-img">
+                                                <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="">
+                                            </div>
+                                            <div class="wpo-blog-content">
+                                                <h2><a href="blog-single.html">12 Things to See and Find Out in Bergen,
+                                                        Norway</a></h2>
+                                                <ul>
+                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-2.jpg "
+                                                            alt="">
+                                                    </li>
+                                                    <li>By <a href="blog-single.html">Admin</a></li>
+                                                    <li>25 Sep 2022</li>
+                                                </ul>
+                                                <p>You can customize the view Blog post with author simple mouse click
+                                                    and immediately see the result of your changes. </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col col-lg-6 col-md-6 col-12">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="tlandingpage/assets/images/blog/img-5.jpg" alt="">
-                                            <div class="thumb">Travel</div>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">Traveling Makes You More Inteligent
-                                                    and More Energetic</a></h2>
-                                            <ul>
-                                                <li><img src="tlandingpage/assets/images/blog/blog-avater/img-2.jpg "
-                                                        alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author simple mouse click
-                                                and immediately see the result of your changes. </p>
+                                    <div class="col col-lg-6 col-md-6 col-12">
+                                        <div class="wpo-blog-item">
+                                            <div class="wpo-blog-img">
+                                                <img src="tlandingpage/assets/images/blog/img-1.jpg" alt="">
+                                            </div>
+                                            <div class="wpo-blog-content">
+                                                <h2><a href="blog-single.html">Traveling Makes You More Inteligent
+                                                        and More Energetic</a></h2>
+                                                <ul>
+                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
+                                                            alt="">
+                                                    </li>
+                                                    <li>By <a href="blog-single.html">Admin</a></li>
+                                                    <li>25 Sep 2022</li>
+                                                </ul>
+                                                <p>You can customize the view Blog post with author simple mouse click
+                                                    and immediately see the result of your changes. </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col col-lg-6 col-md-6 col-12">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="tlandingpage/assets/images/blog/img-6.jpg" alt="">
-                                            <div class="thumb">Travel</div>
+                                    <div class="col col-lg-6 col-md-6 col-12">
+                                        <div class="wpo-blog-item">
+                                            <div class="wpo-blog-img">
+                                                <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="">
+                                            </div>
+                                            <div class="wpo-blog-content">
+                                                <h2><a href="blog-single.html">12 Things to See and Find Out in Bergen,
+                                                        Norway</a></h2>
+                                                <ul>
+                                                    <li><img src="{{asset('tlandingpage/assets/images/blog/blog-avater/img-2.jpg')}} "
+                                                            alt="">
+                                                    </li>
+                                                    <li>By <a href="blog-single.html">Admin</a></li>
+                                                    <li>25 Sep 2022</li>
+                                                </ul>
+                                                <p>You can customize the view Blog post with author simple mouse click
+                                                    and immediately see the result of your changes. </p>
+                                            </div>
                                         </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">12 Things to See and Find Out in Bergen,
-                                                    Norway</a></h2>
-                                            <ul>
-                                                <li><img src="tlandingpage/assets/images/blog/blog-avater/img-3.jpg "
-                                                        alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author simple mouse click
-                                                and immediately see the result of your changes. </p>
-                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="/halBerita" class="theme-btn">Berita Lainnya</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="mb-5">
+                        <div class="wpo-section-title">
+                            <h2>Jadwal Pelayanan</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="" width="100%">
+                            </div>
+                            <div class="col-lg-5 col-12">
+                                {{-- <h5 class="fs-5 text-secondary">DPMPTSP Mahakam Ulu</h5>
+                                <h2 class="fw-bolder">DPMPTSP Mahakam Ulu</h2> --}}
+                                <h3 class="fw-bolder mb-3">Mudah, Cepat, dan Ramah</h3>
+                                <p>DPMPTSP Kabupaten Mahakam Ulu siap dalam memberi pelayanan terbaik kepada masyarakat pada jadwal dan waktu kerja sebagai berikut.</p>
+                                <ul class="jadwal-pelayanan">
+                                    <li>
+                                        <h5 class="fw-bolder text-secondary">Senin - Kamis</h5>
+                                        <p>07.30 - 16.00 WITA</p>
+                                    </li>
+                                    <li>
+                                        <h5 class="fw-bolder text-secondary">Jum'at</h5>
+                                        <p>07.30 - 11.30 WITA</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <!-- end wpo-blog-section -->
                 </div>
-                <div class="col col-lg-4 col-12">
+                <div class="col col-lg-3 col-12">
                     <div class="blog-sidebar">
-                        <div class="widget category-widget">
-                            <h3>Trending Topics</h3>
-                            <ul>
-                                <li><a href="blog-single.html">Lifestyle<span>(05)</span></a></li>
-                                <li><a href="blog-single.html">Inspiration <span>(07)</span></a></li>
-                                <li><a href="blog-single.html">Fashion <span>(03)</span></a></li>
-                                <li><a href="blog-single.html">Photography <span>(06)</span></a></li>
-                                <li><a href="blog-single.html">Travel <span>(12)</span></a></li>
-                                <li><a href="blog-single.html">Business <span>(08)</span></a></li>
-                            </ul>
+                        <div class="widget about-widget">
+                            <div class="img-holder">
+                                <img src="{{asset('tlandingpage/assets/images/blog/about-widget.jpg')}}" alt>
+                            </div>
+                            <h4>Jenny Watson</h4>
+                            <p>Kepala Dinas DPMPTSP Mahakam Ulu</p>
+                            <div class="social">
+                                <ul class="clearfix">
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="aw-shape">
+                                <img src="assets/images/blog/ab.png" alt="">
+                            </div>
                         </div>
                         <div class="widget recent-post-widget">
-                            <h3>Popular Post</h3>
+                            <h3>Berita Populer</h3>
                             <div class="posts">
                                 <div class="post">
                                     <div class="img-holder">
@@ -352,132 +367,20 @@
                                         </h4>
                                     </div>
                                 </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="tlandingpage/assets/images/recent-posts/img-4.jpg" alt>
-                                    </div>
-                                    <div class="details">
-                                        <span class="date">12 Apr 2022 </span>
-                                        <h4><a href="blog-single.html">Top 10 Healthy Food of Your Menu.</a></h4>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <div class="wpo-add-widget">
+                        <div class="wpo-add-widget mb-4">
                             <a href="#"><img src="tlandingpage/assets/images/add.jpg" alt=""></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end container -->
-    </section>
-    <!-- end wpo-blog-highlights-section -->
-    <!-- start wpo-blog-sponsored-section -->
-    <section class="wpo-blog-sponsored-section section-padding">
-        <div class="container">
-            <div class="wpo-section-title">
-                <h2>sponsored news</h2>
-            </div>
-            <div class="row">
-                <div class="wpo-blog-sponsored-wrap">
-                    <div class="wpo-blog-items">
-                        <div class="row">
-                            <div class="col col-xl-3 col-lg-6 col-md-6 col-12">
-                                <div class="wpo-blog-item">
-                                    <div class="wpo-blog-img">
-                                        <img src="tlandingpage/assets/images/sponsord/img-1.jpg" alt="">
-                                        <div class="thumb">Travel</div>
-                                    </div>
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">Top Most Beautiful Scenery in The World.</a>
-                                        </h2>
-                                        <ul>
-                                            <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                    alt=""></li>
-                                            <li>By <a href="blog-single.html">Admin</a></li>
-                                            <li>25 Sep 2022</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-xl-3 col-lg-6 col-md-6 col-12">
-                                <div class="wpo-blog-item">
-                                    <div class="wpo-blog-img">
-                                        <img src="tlandingpage/assets/images/sponsord/img-2.jpg" alt="">
-                                        <div class="thumb">Travel</div>
-                                    </div>
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">Perfect Photo Clicking Idea You Must Khow
-                                                About.</a></h2>
-                                        <ul>
-                                            <li><img src="tlandingpage/assets/images/blog/blog-avater/img-2.jpg "
-                                                    alt=""></li>
-                                            <li>By <a href="blog-single.html">Admin</a></li>
-                                            <li>25 Sep 2022</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-xl-3 col-lg-6 col-md-6 col-12">
-                                <div class="wpo-blog-item">
-                                    <div class="wpo-blog-img">
-                                        <img src="tlandingpage/assets/images/sponsord/img-3.jpg" alt="">
-                                        <div class="thumb">Travel</div>
-                                    </div>
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">Top Most Beautiful Scenery in The World.</a>
-                                        </h2>
-                                        <ul>
-                                            <li><img src="tlandingpage/assets/images/blog/blog-avater/img-3.jpg "
-                                                    alt=""></li>
-                                            <li>By <a href="blog-single.html">Admin</a></li>
-                                            <li>25 Sep 2022</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-xl-3 col-lg-6 col-md-6 col-12">
-                                <div class="wpo-blog-item">
-                                    <div class="wpo-blog-img">
-                                        <img src="tlandingpage/assets/images/sponsord/img-4.jpg" alt="">
-                                        <div class="thumb">Travel</div>
-                                    </div>
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">Top Most Beautiful Scenery in The World.</a>
-                                        </h2>
-                                        <ul>
-                                            <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                    alt=""></li>
-                                            <li>By <a href="blog-single.html">Admin</a></li>
-                                            <li>25 Sep 2022</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="wpo-contact-widget widget">
+                            <h2>Survey Kepuasan Masyarakat</h2>
+                            <p>Yuk bantu kami dalam meningkatkan kualitas pelayanan</p>
+                            <a href="contact.html">Survey</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div> <!-- end container -->
     </section>
-    <!-- end wpo-blog-sponsored-section -->
-    <!-- start wpo-subscribe-section -->
-    <section class="wpo-subscribe-section section-padding">
-        <div class="container">
-            <div class="wpo-subscribe-wrap">
-                <div class="subscribe-text">
-                    <h3>Never miss any Update!</h3>
-                    <p>Get the freshest headlines and updates sent uninterrupted to your inbox.</p>
-                </div>
-                <div class="subscribe-form">
-                    <form action="#">
-                        <div class="input-field">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> <!-- end container -->
-    </section>
+    <br>
 </x-guest-layout>

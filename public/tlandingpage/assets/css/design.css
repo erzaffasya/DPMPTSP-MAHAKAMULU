@@ -1,3 +1,41 @@
+html,
+body{
+	/*background: red;*/
+}
+/*.page-wrapper > .container{
+	background: #fff;
+	padding: auto 1rem;
+}*/
+                                        
+.jadwal-pelayanan{
+	list-style: none;
+}
+.jadwal-pelayanan li {
+  padding-left: 20px;
+  position: relative;
+  /*margin-bottom: 10px;*/
+}
+.jadwal-pelayanan li::before {
+	position: absolute;
+	left: 0;
+	top: 6px;
+	width: 8px;
+	height: 8px;
+	background: #4fc12f;
+	content: "";
+	border-radius: 50%;
+}
+.wpo-breacking-news .wpo-breacking-wrap {
+  padding: 1.5rem 0;
+}
+.blog-sidebar .wpo-contact-widget {
+  border: 0;
+  background: #4fc12f;
+  padding: 20px;
+}
+.wpo-blog-pg-section .wpo-blog-content .post {
+  margin-bottom: 0;
+}
 .wpo-hero-slider{
 	border-radius: 1.5rem;
 	overflow: hidden;
@@ -16,4 +54,18 @@
 	.wpo-site-header #navbar > ul > li > a {
 	  padding: 20px 16px;
 	}
+}
+.post-control-link {
+	position: relative;
+}
+.post-control-link::before {
+  font-family: "themify";
+  content: "\e628";
+  position: absolute;
+  right: -2rem;
+  top: 0;
+}
+.wpo-accountInfo {
+  width: 50%;
+  background: #4fc12f;
 }

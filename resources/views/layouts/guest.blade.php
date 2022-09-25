@@ -7,29 +7,15 @@
 
     <!-- start page-wrapper -->
     <div class="page-wrapper">
-        <!-- start preloader -->
-        <div class="preloader">
-            <div class="angular-shape">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>
-        <!-- end preloader -->
-        <!-- Start header -->
         <header id="header" class="wpo-site-header">
-            <!-- <div class="topbar">
+            <div class="topbar">
                 <div class="container">
                     <div class="row">
                         <div class="col col-lg-7 col-md-9 col-sm-12 col-12">
                             <div class="contact-intro">
                                 <ul>
-                                    <li class="update"><span>New Update</span></li>
-                                    <li>Betting against meme stocks could get you seriously burned</li>
+                                    <li class="update"><span>Pengumuman</span></li>
+                                    <li>Kegiatan Apel Mingguan pada tanggal 30 November 2022</li>
                                 </ul>
                             </div>
                         </div>
@@ -45,11 +31,10 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!-- end topbar -->
             @include('tlandingpage.partials.navbar')
         </header>
-       
         {{$slot}}
         @include('tlandingpage.partials.footer')
         <!-- end of wpo-site-footer-section -->
