@@ -28,12 +28,23 @@ Route::get('/', function () {
     return view('tlandingpage.index');
 });
 
-Route::get('/detail-berita', function () {
+Route::get('/regular', function () {
+    return view('tlandingpage.regular');
+});
+
+Route::get('/detailBerita', function () {
     return view('tlandingpage.detailBerita');
 });
 
 Route::get('/halBerita', function () {
     return view('tlandingpage.berita');
+});
+
+Route::get('/kontak', function () {
+    return view('tlandingpage.kontak');
+});
+Route::get('/login2', function () {
+    return view('tlandingpage.login');
 });
 
 

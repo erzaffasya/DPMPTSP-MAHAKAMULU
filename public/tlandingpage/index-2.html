@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-lg-2 col-md-6 col-6">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="" height="50px"></a>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-1 col-1">
@@ -234,13 +234,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
-                        <section class="wpo-hero-slider">
+                        <div class="wpo-blog-hero-area">
+        <div class="container">
+            <div class="sortable-gallery">
+                <div class="gallery-filters"></div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="wpo-hero-slider mb-3">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="slide-inner slide-bg-image"
-                                            data-background="assets/images/slider/slide-1.jpg">
-                                            <div class="slide-content">
+                                            data-background="tlandingpage/assets/images/slider/slide-1.jpg">
+                                            <!-- <div class="slide-content">
                                                 <div data-swiper-parallax="300" class="slide-title">
                                                     <h2>Full Body Dumbbell Workout – Results Achieved Only in 3
                                                         Days</h2>
@@ -250,30 +256,17 @@
                                                         created and enforced
                                                         through social or government.</p>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div> <!-- end slide-inner -->
-                                        <div class="thumb">Fitness</div>
+                                        <!-- <div class="thumb">Fitness</div> -->
                                     </div> <!-- end swiper-slide -->
 
                                     <div class="swiper-slide">
                                         <div class="slide-inner slide-bg-image"
-                                            data-background="assets/images/slider/slide-2.jpg">
-                                            <!-- <div class="gradient-overlay"></div> -->
-                                            <div class="container-fluid">
-                                                <div class="slide-content">
-                                                    <div data-swiper-parallax="300" class="slide-title">
-                                                        <h2>Full Body Dumbbell Workout – Results Achieved Only in 3
-                                                            Days</h2>
-                                                    </div>
-                                                    <div data-swiper-parallax="400" class="slide-text">
-                                                        <p>Law is commonly understood as a system of rules that are
-                                                            created and enforced
-                                                            through social or government.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            data-background="{{asset('tlandingpage/assets/images/slider/slide-2.jpg')}}">
+                                            
                                         </div> <!-- end slide-inner -->
-                                        <div class="thumb">Fitness</div>
+                                        <!-- <div class="thumb">Fitness</div> -->
                                     </div> <!-- end swiper-slide -->
                                 </div>
                                 <!-- end swiper-wrapper -->
@@ -282,347 +275,69 @@
                                 <div class="swiper-pagination"></div>
                             </div>
                         </section>
-                        <!-- start wpo-blog-hero-section -->
-
-                        <!-- start wpo-blog-features-section -->
-
-                        <div class="wpo-blog-features-section section-padding">
-                            <div class="wpo-section-title">
-                                <h2>Features News</h2>
+                        <div class="wpo-blog-grids gallery-container clearfix">
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <img src="tlandingpage/assets/images/hero/img-1.jpg" alt
+                                        class="img img-responsive">
+                                    <div class="wpo-blog-content">
+                                        <h2><a href="blog-single.html">What’s In Trend In Women's Fashion
+                                                Summer?</a></h2>
+                                        <p>You can customize the view Blog posts with a simple mouse click and
+                                            immediately see the result of your changes. </p>
+                                        <ul>
+                                            <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
+                                                    alt=""></li>
+                                            <li>By <a href="blog-single.html">Robert</a></li>
+                                            <li>20 Nov 2022</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="wpo-blog-features-item">
-                                        <div class="wpo-blog-features-img">
-                                            <img src="assets/images/features/img-1.jpg" alt="">
-                                            <div class="thumb">Fitness</div>
-                                        </div>
-                                        <div class="wpo-blog-features-text">
-                                            <h2><a href="blog-single.html">Full Body Dumbbell Workout Results Achieved
-                                                </a></h2>
-                                        </div>
+                            <div class="grid">
+                                <div class="img-holder">
+                                    <img src="tlandingpage/assets/images/hero/img-2.jpg" alt
+                                        class="img img-responsive">
+                                    <div class="wpo-blog-content">
+                                        <h2><a href="blog-single.html">Traveling Makes You More Interesting</a>
+                                        </h2>
+                                        <ul>
+                                            <li>By <a href="blog-single.html">Robert</a></li>
+                                            <li>20 Nov 2022</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="wpo-blog-features-item">
-                                        <div class="wpo-blog-features-img">
-                                            <img src="assets/images/features/img-2.jpg" alt="">
-                                            <div class="thumb">Technology</div>
-                                        </div>
-                                        <div class="wpo-blog-features-text">
-                                            <h2><a href="blog-single.html">Positioning your company as an authority </a>
-                                            </h2>
-                                        </div>
+                            </div>
+                            <div class="grid s2">
+                                <div class="img-holder">
+                                    <img src="tlandingpage/assets/images/hero/img-3.jpg" alt
+                                        class="img img-responsive">
+                                    <div class="wpo-blog-content">
+                                        <h2><a href="blog-single.html">Top 10 Healthy Food</a></h2>
+                                        <ul>
+                                            <li>By <a href="blog-single.html">Robert</a></li>
+                                            <li>20 Nov 2022</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="wpo-blog-features-item">
-                                        <div class="wpo-blog-features-img">
-                                            <img src="assets/images/features/img-3.jpg" alt="">
-                                            <div class="thumb">Food</div>
-                                        </div>
-                                        <div class="wpo-blog-features-text">
-                                            <h2><a href="blog-single.html">Restaurant-related events locally or
-                                                    internationally </a></h2>
-                                        </div>
+                                <div class="img-holder">
+                                    <img src="tlandingpage/assets/images/hero/img-4.jpg" alt
+                                        class="img img-responsive">
+                                    <div class="wpo-blog-content">
+                                        <h2><a href="blog-single.html">What Makes a Leader?</a></h2>
+                                        <ul>
+                                            <li>By <a href="blog-single.html">Robert</a></li>
+                                            <li>20 Nov 2022</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- start wpo-blog-features-section -->
-
-                        <!-- start wpo-blog-video-section -->
-                        <section class="wpo-blog-highlights-section video-blog">
-                            <div class="wpo-section-title">
-                                <h2>Video News</h2>
-                            </div>
-                            <!-- start wpo-blog-section -->
-                            <div class="wpo-blog-highlights-wrap">
-                                <div class="wpo-blog-items">
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="assets/images/blog/img-7.jpg" alt="">
-                                            <a href="https://www.youtube.com/embed/7Jv48RQ_2gk" class="video-btn" data-type="iframe">
-                                                <i class="fi flaticon-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">We provide advanced solution growin your online</a></h2>
-                                            <ul>
-                                                <li><img src="assets/images/blog/blog-avater/img-1.jpg " alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author
-                                                simple mouse click
-                                                and immediately see the result of your changes. </p>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="assets/images/blog/img-8.jpg" alt="">
-                                            <a href="https://www.youtube.com/embed/7Jv48RQ_2gk" class="video-btn" data-type="iframe">
-                                                <i class="fi flaticon-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">We provide advanced solutions growin your online business</a></h2>
-                                            <ul>
-                                                <li><img src="assets/images/blog/blog-avater/img-2.jpg " alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author
-                                                simple mouse click
-                                                and immediately see the result of your changes. </p>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-blog-item">
-                                        <div class="wpo-blog-img">
-                                            <img src="assets/images/blog/img-9.jpg" alt="">
-                                            <a href="https://www.youtube.com/embed/7Jv48RQ_2gk" class="video-btn" data-type="iframe">
-                                                <i class="fi flaticon-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="wpo-blog-content">
-                                            <h2><a href="blog-single.html">Many desktop publishing packag and web page editors use.</a></h2>
-                                            <ul>
-                                                <li><img src="assets/images/blog/blog-avater/img-3.jpg " alt="">
-                                                </li>
-                                                <li>By <a href="blog-single.html">Admin</a></li>
-                                                <li>25 Sep 2022</li>
-                                            </ul>
-                                            <p>You can customize the view Blog post with author
-                                                simple mouse click
-                                                and immediately see the result of your changes. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end wpo-blog-section -->
-                            </div>
-                        </section>
-                        <!-- end wpo-blog-video-section -->
-
-                        <!-- start wpo-blog-highlights-section -->
-                        <section class="wpo-blog-highlights-section">
-                            <div class="wpo-section-title">
-                                <h2>Today's Top Highlights</h2>
-                            </div>
-                            <!-- start wpo-blog-section -->
-                            <div class="wpo-blog-highlights-wrap">
-                                <div class="wpo-blog-items">
-                                    <div class="row">
-                                        <div class="col col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/blog/img-1.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Traveling Makes You More
-                                                            Inteligent
-                                                            and More Energetic</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-1.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                    <p>You can customize the view Blog post with author
-                                                        simple mouse click
-                                                        and immediately see the result of your changes. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/blog/img-2.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">12 Things to See and Find
-                                                            Out in Bergen,
-                                                            Norway</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-2.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                    <p>You can customize the view Blog post with author
-                                                        simple mouse click
-                                                        and immediately see the result of your changes. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/blog/img-3.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Healthy Daily Rutine For
-                                                            Your Healthy
-                                                            Lifestyle</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-3.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                    <p>You can customize the view Blog post with author
-                                                        simple mouse click
-                                                        and immediately see the result of your changes. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/blog/img-4.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Perfect Photo Clicking
-                                                            Idea You Must
-                                                            Khow About.</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-1.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                    <p>You can customize the view Blog post with author
-                                                        simple mouse click
-                                                        and immediately see the result of your changes. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/blog/img-5.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Traveling Makes You More
-                                                            Inteligent
-                                                            and More Energetic</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-2.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                    <p>You can customize the view Blog post with author
-                                                        simple mouse click
-                                                        and immediately see the result of your changes. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/blog/img-6.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">12 Things to See and Find
-                                                            Out in Bergen,
-                                                            Norway</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-3.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                    <p>You can customize the view Blog post with author
-                                                        simple mouse click
-                                                        and immediately see the result of your changes. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end wpo-blog-section -->
-                            </div>
-                        </section>
-                        <!-- end wpo-blog-highlights-section -->
-                        <!-- start wpo-blog-sponsored-section -->
-                        <section class="wpo-blog-sponsored-section s2 section-padding">
-
-                            <div class="wpo-section-title">
-                                <h2>sponsored news</h2>
-                            </div>
-                            <div class="wpo-blog-sponsored-wrap">
-                                <div class="wpo-blog-items">
-                                    <div class="row">
-                                        <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/sponsord/img-1.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Top Most Beautiful Scenery in
-                                                            The World.</a>
-                                                    </h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-1.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/sponsord/img-2.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Perfect Photo Clicking Idea
-                                                            You Must Khow
-                                                            About.</a></h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-2.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
-                                            <div class="wpo-blog-item">
-                                                <div class="wpo-blog-img">
-                                                    <img src="assets/images/sponsord/img-3.jpg" alt="">
-                                                    <div class="thumb">Travel</div>
-                                                </div>
-                                                <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">Top Most Beautiful Scenery in
-                                                            The World.</a>
-                                                    </h2>
-                                                    <ul>
-                                                        <li><img src="assets/images/blog/blog-avater/img-3.jpg " alt="">
-                                                        </li>
-                                                        <li>By <a href="blog-single.html">Admin</a></li>
-                                                        <li>25 Sep 2022</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- end wpo-blog-sponsored-section -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                     </div>
 
                     <div class="col col-lg-3 col-12 sticky-wrap">
