@@ -6,6 +6,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\FastLinkController;
 use App\Http\Controllers\HalamanMenuController;
 use App\Http\Controllers\KategoriBeritaController;
+use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ProfileWebsiteController;
@@ -24,31 +25,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('tlandingpage.index');
-});
+// Route::get('/', function () {
+//     return view('tlandingpage.index');
+// })->name('home');
 
-Route::get('/regular', function () {
-    return view('tlandingpage.regular');
-});
+// Route::get('/regular', function () {
+//     return view('tlandingpage.regular');
+// });
 
 Route::get('/detailBerita', function () {
     return view('tlandingpage.detailBerita');
 });
 
-Route::get('/halBerita', function () {
-    return view('tlandingpage.berita');
-});
+// Route::get('/berita', function () {
+//     return view('tlandingpage.berita');
+// })->name('landingpage-berita');
 
 Route::get('/kontak', function () {
     return view('tlandingpage.kontak');
-});
+})->name('kontak');
+
 Route::get('/login2', function () {
     return view('tlandingpage.login');
 });
 
-
-
+//HalamanMenu
+Route::get('detail/{id}', [LandingpageController::class, 'HalamanMenu'])->name('HalamanMenu');
+Route::get('sub-menu/{id}', [MenuController::class, 'subMenu'])->name('sub-menu');
+Route::get('berita', [LandingpageController::class, 'Berita'])->name('landingpage-berita');
+Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
 
 

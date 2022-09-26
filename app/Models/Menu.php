@@ -13,4 +13,12 @@ class Menu extends Model
     protected $table = 'menu';
     protected $guarded = [];
 
+    public function HalamanMenu()
+    {
+        return $this->belongsTo(HalamanMenu::class, 'id', 'menu_id');
+    }
+    public function subMenu()
+    {
+        return $this->hasMany(Menu::class, 'parent_id');
+    }
 }

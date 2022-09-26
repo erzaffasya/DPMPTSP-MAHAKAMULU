@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('halaman_menu', function (Blueprint $table) {
             $table->id();
             $table->string("judul")->nullable();
-            $table->string("isi")->nullable();
-            $table->boolean("file")->nullable();
-            $table->integer("link")->nullable();
-            $table->integer("gambar")->nullable();
+            $table->text("isi")->nullable();
+            $table->string("file")->nullable();
+            $table->text("link")->nullable();
+            $table->string("gambar")->nullable();
             $table->foreignId("menu_id")->nullable()->constrained("menu")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });

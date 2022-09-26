@@ -30,7 +30,7 @@ class HalamanMenuController extends Controller
     public function create()
     {
         $Menu = Menu::all();
-        return view('admin.HalamanMenu.tambah', compact('Menu'));
+        return view('admin.Menu.HalamanMenu.tambah', compact('Menu'));
     }
 
     /**
@@ -54,7 +54,7 @@ class HalamanMenuController extends Controller
             $txt = "storage/HalamanMenu/Gambar/" . $file_name;
             $request->gambar->storeAs('public/HalamanMenu/Gambar', $file_name);
         } else {
-            $file_name = null;
+            $txt = null;
         }
 
         if (isset($request->file)) {
@@ -63,7 +63,7 @@ class HalamanMenuController extends Controller
             $txt1 = "storage/HalamanMenu/File/" . $file_name1;
             $request->file->storeAs('public/HalamanMenu/File', $file_name1);
         } else {
-            $file_name1 = null;
+            $txt1 = null;
         }
 
         $HalamanMenu = HalamanMenu::create([
@@ -86,9 +86,10 @@ class HalamanMenuController extends Controller
      * @param  \App\Models\HalamanMenu  $HalamanMenu
      * @return \Illuminate\Http\Response
      */
-    public function show(HalamanMenu $HalamanMenu)
+    public function show($id)
     {
-        //
+        $Menu = HalamanMenu::where('menu_id',$id)->first();
+        return view('admin.Menu.HalamanMenu.tambah', compact('Menu', 'id'));
     }
 
     /**
@@ -112,38 +113,68 @@ class HalamanMenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $HalamanMenu = HalamanMenu::find($id);
 
-        if (isset($request->gambar)) {
-            $extention = $request->gambar->extension();
-            $file_name = time() . '.' . $extention;
-            $txt = "storage/HalamanMenu/Gambar/" . $file_name;
-            $request->gambar->storeAs('public/HalamanMenu/Gambar', $file_name);
-            Storage::delete("public/HalamanMenu/Gambar/$HalamanMenu->gambar");
+        $HalamanMenu = HalamanMenu::where('menu_id',$id)->first();
+        if ($HalamanMenu != null) {
+            if (isset($request->gambar)) {
+                $extention = $request->gambar->extension();
+                $file_name = time() . '.' . $extention;
+                $txt = "storage/HalamanMenu/Gambar/" . $file_name;
+                $request->gambar->storeAs('public/HalamanMenu/Gambar', $file_name);
+                Storage::delete("public/HalamanMenu/Gambar/$HalamanMenu->gambar");
+            } else {
+                $txt = $HalamanMenu->gambar;
+            }
+
+            if (isset($request->file)) {
+                $extention = $request->file->extension();
+                $file_name1 = time() . '.' . $extention;
+                $txt1 = "storage/HalamanMenu/File/" . $file_name1;
+                $request->file->storeAs('public/HalamanMenu/File', $file_name1);
+                Storage::delete("public/HalamanMenu/File/$HalamanMenu->file");
+            } else {
+                $txt1 = $HalamanMenu->file;
+            }
+            // dd($request->judul, $request->isi);
+
+            $HalamanMenu->judul = $request->judul;
+            $HalamanMenu->isi = $request->isi;
+            $HalamanMenu->gambar = $txt;
+            $HalamanMenu->file = $txt1;
+            $HalamanMenu->link = $request->link;
+            $HalamanMenu->menu_id = $request->menu_id;
+            $HalamanMenu->save();
         } else {
-            $txt = $HalamanMenu->gambar;
+            if (isset($request->gambar)) {
+                $extention = $request->gambar->extension();
+                $file_name = time() . '.' . $extention;
+                $txt = "storage/HalamanMenu/Gambar/" . $file_name;
+                $request->gambar->storeAs('public/HalamanMenu/Gambar', $file_name);
+            } else {
+                $txt = null;
+            }
+
+            if (isset($request->file)) {
+                $extention = $request->file->extension();
+                $file_name1 = time() . '.' . $extention;
+                $txt1 = "storage/HalamanMenu/File/" . $file_name1;
+                $request->file->storeAs('public/HalamanMenu/File', $file_name1);
+            } else {
+                $txt1 = null;
+            }
+
+            $HalamanMenu = HalamanMenu::create([
+                'judul' => $request->judul,
+                'isi' => $request->isi,
+                'gambar' => $txt,
+                'file' => $txt1,
+                'link' => $request->link,
+                'menu_id' => $request->menu_id,
+            ]);
         }
 
-        if (isset($request->file)) {
-            $extention = $request->file->extension();
-            $file_name1 = time() . '.' . $extention;
-            $txt1 = "storage/HalamanMenu/File/" . $file_name1;
-            $request->file->storeAs('public/HalamanMenu/File', $file_name1);
-            Storage::delete("public/HalamanMenu/File/$HalamanMenu->file");
-        } else {
-            $txt1 = $HalamanMenu->file;
-        }
-        // dd($request->judul, $request->isi);
 
-        $HalamanMenu->judul = $request->judul;
-        $HalamanMenu->isi = $request->isi;
-        $HalamanMenu->gambar = $txt;
-        $HalamanMenu->file = $txt1;
-        $HalamanMenu->link = $request->link;
-        $HalamanMenu->menu_id = $request->menu_id;
-        $HalamanMenu->save();
-
-        return redirect()->route('HalamanMenu.index')
+        return back()
             ->with('edit', 'HalamanMenu Berhasil Diedit');
     }
 

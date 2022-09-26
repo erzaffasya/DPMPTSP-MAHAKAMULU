@@ -113,12 +113,12 @@
                         <div id="navbar" class="collapse navbar-collapse navigation-holder">
                             <button class="menu-close"><i class="ti-close"></i></button>
                             <ul class="nav navbar-nav mb-2 mb-lg-0">
-                                <li><a href="travels.html">Home</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
 
-                                @foreach ($Menu as $item)
+                                @foreach ($Menu->sortBy('urutan') as $item)
                                     <x-menu-item :menu="$item" />                            
                                 @endforeach
-                                <li class="menu-item-has-children">
+                                {{-- <li class="menu-item-has-children">
                                     <a class="active" href="#">Profil DPMPTSP</a>
                                     <ul class="sub-menu">
                                         <li><a class="active" href="index.html">Tugas dan Fungsi</a></li>
@@ -231,8 +231,9 @@
                                         <li><a href="register.html">Neraca</a></li>
                                         <li><a href="register.html">Realisasi</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="travels.html">Kontak</a></li>
+                                </li> --}}
+                                <li><a href="{{route('landingpage-berita')}}">Berita</a></li>
+                                <li><a href="{{route('kontak')}}">Kontak</a></li>
                             </ul>
                         </div>
                     </div>

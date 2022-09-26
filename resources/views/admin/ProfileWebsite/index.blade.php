@@ -9,35 +9,35 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">nama website</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->nama_website}}" name="nama_website">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->nama_website??null}}" name="nama_website">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">email</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->email}}" name="email">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->email??null}}" name="email">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">domain</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->domain}}" name="domain">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->domain??null}}" name="domain">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">nomor rekening</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->no_rekening}}" name="no_rekening">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->no_rekening??null}}" name="no_rekening">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">nomor telp</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->no_telp}}" name="no_telp">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->no_telp??null}}" name="no_telp">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">meta deskripsi</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->meta_deskripsi}}" name="meta_deskripsi">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->meta_deskripsi??null}}" name="meta_deskripsi">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">meta keyword</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->meta_keyword}}" name="meta_keyword">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->meta_keyword??null}}" name="meta_keyword">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">google maps</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->google_maps}}" name="google_maps">
+                    <input type="text" class="form-control" id="basic-default-fullname" value="{{$ProfileWebsite->google_maps??null}}" name="google_maps">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">favicon</label>

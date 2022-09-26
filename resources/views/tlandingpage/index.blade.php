@@ -280,7 +280,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="/halBerita" class="theme-btn">Berita Lainnya</a>
+                                        <a href="{{route('landingpage-berita')}}" class="theme-btn">Berita Lainnya</a>
                                     </div>
                                 </div>
                             </div>

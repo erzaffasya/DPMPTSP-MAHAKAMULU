@@ -38,16 +38,16 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_menu' => 'required',
-            'isActive' => 'required',
-            'parent_id' => 'required',
-            'urutan' => 'required',
-        ]);
+        // $request->validate([
+        //     'nama_menu' => 'required',
+        //     'isActive' => 'required',
+        //     'parent_id' => 'required',
+        //     'urutan' => 'required',
+        // ]);
 
         Menu::create([
             'nama_menu' => $request->nama_menu,
-            'link' => $request->link,
+            // 'link' => $request->link,
             'isActive' => $request->isActive,
             'parent_id' => $request->parent_id,
             'urutan' => $request->urutan,
@@ -92,7 +92,7 @@ class MenuController extends Controller
     {
         $Menu = Menu::find($id);
         $Menu->nama_menu = $request->nama_menu;
-        $Menu->link = $request->link;
+        // $Menu->link = $request->link;
         $Menu->isActive = $request->isActive;
         $Menu->parent_id = $request->parent_id;
         $Menu->urutan = $request->urutan;
@@ -114,5 +114,10 @@ class MenuController extends Controller
         $Menu->delete();
         return redirect()->route('Menu.index')
             ->with('delete', 'Menu Berhasil Dihapus');
+    }
+
+    public function subMenu($id){
+        $Menu = Menu::where('parent_id',$id)->get();
+        return view('admin.Menu.submenu',compact('Menu'));
     }
 }
