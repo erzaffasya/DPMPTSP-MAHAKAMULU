@@ -11,5 +11,6 @@ class Menu extends Model
     use HasRecursiveRelationships;
     
     protected $table = 'menu';
+    protected $guarded = [];
 
 }
