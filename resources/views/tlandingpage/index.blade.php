@@ -89,8 +89,8 @@
                     <div class="wpo-blog-content">
                         <div class="post format-video">
                             <div class="entry-media video-holder">
-                                <img src="{{ asset('tlandingpage/assets/images/lifestyle/img-3.jpg') }}" alt>
-                                <a href="https://www.youtube.com/embed/JttPYJF6SdI" class="video-btn"
+                                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fkorankaltim.com%2Fread%2Fpemkab-mahulu%2F47391%2Fpemkab-sampaikan-jawaban-atas-pandangan-umum-fraksi-raperda-susunan-opd&psig=AOvVaw1VimKsz8mqnzp2IIPd9uPE&ust=1664326401310000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjx7bfhs_oCFQAAAAAdAAAAABAW" alt>
+                                <a href="https://www.youtube.com/watch?v=SUAOOlDQUd4" class="video-btn"
                                     data-type="iframe">
                                     <i class="fi flaticon-play"></i>
                                 </a>
