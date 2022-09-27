@@ -203,17 +203,17 @@
                                                     <img src="{{ asset($Beritas->gambar) }}" alt="">
                                                 </div>
                                                 <div class="wpo-blog-content">
-                                                    <h2><a href="blog-single.html">{{ $Beritas->judul }}</a></h2>
+                                                    <h2><a href="{{route('detail-berita',$Beritas->id)}}">{{ $Beritas->judul }}</a></h2>
                                                     <ul>
                                                         <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
                                                                 alt="">
                                                         </li>
                                                         <li>By <a
-                                                                href="blog-single.html">{{ $Beritas->User->name }}</a>
+                                                                href="#">{{ $Beritas->User->name }}</a>
                                                         </li>
                                                         <li>{{ $Beritas->created_at->Format('D, M Y') }}</li>
                                                     </ul>
-                                                    <p>{!! $Beritas->deskripsi_singkat !!} </p>
+                                                    <p>{!! $Beritas->isi !!} </p>
                                                 </div>
                                             </div>
                                         </div>

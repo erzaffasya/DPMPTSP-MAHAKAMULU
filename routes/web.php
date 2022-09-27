@@ -33,9 +33,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('tlandingpage.regular');
 // });
 
-Route::get('/detailBerita', function () {
-    return view('tlandingpage.detailBerita');
-});
+// Route::get('/detailBerita', function () {
+//     return view('tlandingpage.detailBerita');
+// });
 
 // Route::get('/berita', function () {
 //     return view('tlandingpage.berita');
@@ -53,6 +53,7 @@ Route::get('/login2', function () {
 Route::get('detail/{id}', [LandingpageController::class, 'HalamanMenu'])->name('HalamanMenu');
 Route::get('sub-menu/{id}', [MenuController::class, 'subMenu'])->name('sub-menu');
 Route::get('berita', [LandingpageController::class, 'Berita'])->name('landingpage-berita');
+Route::get('detail-berita/{id}', [LandingpageController::class, 'DetailBerita'])->name('detail-berita');
 Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
 

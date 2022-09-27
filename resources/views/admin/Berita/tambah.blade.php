@@ -11,10 +11,10 @@
                     <label class="form-label" for="basic-default-fullname">judul</label>
                     <input type="text" class="form-control" id="basic-default-fullname" name="judul">
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">deskripsi singkat</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="deskripsi_singkat" rows="3"></textarea>
-                </div>
+                </div> --}}
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">isi</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="isi" rows="3"></textarea>

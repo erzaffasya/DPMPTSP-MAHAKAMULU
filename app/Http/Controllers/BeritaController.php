@@ -71,7 +71,7 @@ class BeritaController extends Controller
 
         $Berita = Berita::create([
             'judul' => $request->judul,
-            'deskripsi_singkat' => $request->deskripsi_singkat,
+            // 'deskripsi_singkat' => $request->deskripsi_singkat,
             'isi' => $request->isi,
             'gambar' => $txt,
             'file' => $txt1,
@@ -152,7 +152,7 @@ class BeritaController extends Controller
         // dd($request->judul, $request->isi);
 
         $Berita->judul = $request->judul;
-        $Berita->deskripsi_singkat = $request->deskripsi_singkat;
+        // $Berita->deskripsi_singkat = $request->deskripsi_singkat;
         $Berita->isi = $request->isi;
         $Berita->gambar = $txt;
         $Berita->file = $txt1;

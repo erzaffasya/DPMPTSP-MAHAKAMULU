@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-6 my-4">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="index.html"><img src="{{asset("tlandingpage/assets/images/logo2.png")}}" alt="" width="100%"></a>
+                            <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset("tlandingpage/assets/images/logo2.png")}}" alt="" width="100%"></a>
                                     {{-- {{asset("tlandingpage/assets/css/owl.carousel.css")}} --}}
                         </div>
                     </div>

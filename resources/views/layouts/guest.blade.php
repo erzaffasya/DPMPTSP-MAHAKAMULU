@@ -11,15 +11,24 @@
             <div class="topbar">
                 <div class="container">
                     <div class="row">
-                        <div class="col col-lg-7 col-md-9 col-sm-12 col-12">
+                        <div class="col col-lg-10 col-md-9 col-sm-12 col-12">
                             <div class="contact-intro">
                                 <ul>
                                     <li class="update"><span>Pengumuman</span></li>
-                                    <li>Kegiatan Apel Mingguan pada tanggal 30 November 2022</li>
+                                    <li width="900">
+
+                                        <marquee>
+                                            @foreach ($Pengumuman as $item)
+                                                {{-- <a href="{{ $item->link }}"> </a>  --}}
+                                                {{ $item->judul }} |
+                                            @endforeach
+                                        </marquee>
+
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col  col-lg-5 col-md-3 col-sm-12 col-12">
+                        <div class="col  col-lg-2 col-md-3 col-sm-12 col-12">
                             <div class="contact-info">
                                 <ul>
                                     <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -35,7 +44,7 @@
             <!-- end topbar -->
             @include('tlandingpage.partials.navbar')
         </header>
-        {{$slot}}
+        {{ $slot }}
         @include('tlandingpage.partials.footer')
         <!-- end of wpo-site-footer-section -->
     </div>
