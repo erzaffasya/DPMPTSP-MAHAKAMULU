@@ -33,12 +33,15 @@ class LandingpageController extends Controller
     public function Berita()
     {
         $Berita = Berita::latest()->paginate(5);
-        return view('tlandingpage.berita', compact('Berita'));
+        $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
+
+        return view('tlandingpage.berita', compact('Berita','RelatedPost'));
     }
 
     public function DetailBerita($id)
     {
         $Berita = Berita::find($id);
-        return view('tlandingpage.detailBerita', compact('Berita'));
+        $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
+        return view('tlandingpage.detailBerita', compact('Berita','RelatedPost'));
     }
 }

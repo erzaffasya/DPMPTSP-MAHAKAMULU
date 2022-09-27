@@ -79,44 +79,20 @@
                         <div class="widget recent-post-widget">
                             <h3>Related Posts</h3>
                             <div class="posts">
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="{{ asset('tlandingpage/assets/images/recent-posts/img-1.jpg') }}" alt>
+
+                                @foreach ($RelatedPost as $item)
+                                    <div class="post">
+                                        <div class="img-holder">
+                                            <img src="{{ asset($item->gambar) }}" alt>
+                                        </div>
+                                        <div class="details">
+                                            <span class="date">{{ $item->created_at->Format('D, d M Y') }} </span>
+                                            <h4><a href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a>
+                                            </h4>
+                                        </div>
                                     </div>
-                                    <div class="details">
-                                        <span class="date">19 Jun 2022 </span>
-                                        <h4><a href="blog-single.html">Perfect Photo Clicking Idea You Must
-                                                Know.</a></h4>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="{{ asset('tlandingpage/assets/images/recent-posts/img-2.jpg') }}" alt>
-                                    </div>
-                                    <div class="details">
-                                        <span class="date">22 May 2022 </span>
-                                        <h4><a href="blog-single.html">Best tourism site all over the world.</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="{{ asset('tlandingpage/assets/images/recent-posts/img-3.jpg') }}" alt>
-                                    </div>
-                                    <div class="details">
-                                        <span class="date">12 Apr 2022 </span>
-                                        <h4><a href="blog-single.html">Whats In Trend in Now Woman Fashion.</a></h4>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="{{ asset('tlandingpage/assets/images/recent-posts/img-4.jpg') }}" alt>
-                                    </div>
-                                    <div class="details">
-                                        <span class="date">12 Apr 2022 </span>
-                                        <h4><a href="blog-single.html">Top 10 Healthy Food of Your Menu.</a></h4>
-                                    </div>
-                                </div>
+                                @endforeach
+
                             </div>
                         </div>
                         <div class="wpo-contact-widget widget">
