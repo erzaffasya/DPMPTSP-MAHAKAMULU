@@ -57,7 +57,7 @@ class BeritaController extends Controller
             $txt = "storage/Berita/Gambar/" . $file_name;
             $request->gambar->storeAs('public/Berita/Gambar', $file_name);
         } else {
-            $file_name = null;
+            $txt = null;
         }
 
         if (isset($request->file)) {
@@ -66,7 +66,7 @@ class BeritaController extends Controller
             $txt1 = "storage/Berita/File/" . $file_name1;
             $request->file->storeAs('public/Berita/File', $file_name1);
         } else {
-            $file_name1 = null;
+            $txt1 = null;
         }
 
         $Berita = Berita::create([
@@ -80,14 +80,17 @@ class BeritaController extends Controller
             'kategori_berita_id' => $request->kategori_berita_id,
         ]);
 
-        foreach($request->tag_berita_id as $item){
-            $SP = AksesTag::create([
-                'berita_id' => $Berita->id,
-                'tag_berita_id' => $item
-            ]);
-            // dd($item);
+        if ($request->tag_berita) {
+            foreach ($request->tag_berita_id as $item) {
+                $SP = AksesTag::create([
+                    'berita_id' => $Berita->id,
+                    'tag_berita_id' => $item
+                ]);
+                // dd($item);
+            }
         }
-        
+
+
 
         return redirect()->route('Berita.index')
             ->with('success', 'Berita Berhasil Ditambahkan');

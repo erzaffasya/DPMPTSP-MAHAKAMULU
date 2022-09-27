@@ -8,17 +8,13 @@
                         <section class="wpo-hero-slider mb-3">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
+                                    @foreach ($Banner->where('isActive', True) as $Banners)
                                     <div class="swiper-slide">
                                         <div class="slide-inner slide-bg-image"
-                                            data-background="{{asset('tlandingpage/assets/images/slider/slide-1.jpg')}}">
-                                        </div>
-                                    </div> 
-
-                                    <div class="swiper-slide">
-                                        <div class="slide-inner slide-bg-image"
-                                            data-background="{{asset('tlandingpage/assets/images/slider/slide-2.jpg')}}">
+                                            data-background="{{ asset($Banners->gambar) }}">
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
                                 <!-- end swiper-wrapper -->
 
@@ -29,8 +25,7 @@
                         <div class="wpo-blog-grids gallery-container clearfix">
                             <div class="grid">
                                 <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-1.jpg" alt
-                                        class="img img-responsive">
+                                    <img src="tlandingpage/assets/images/hero/img-1.jpg" alt class="img img-responsive">
                                     <div class="wpo-blog-content">
                                         <h2><a href="blog-single.html">What’s In Trend In Women's Fashion
                                                 Summer?</a></h2>
@@ -47,8 +42,7 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-2.jpg" alt
-                                        class="img img-responsive">
+                                    <img src="tlandingpage/assets/images/hero/img-2.jpg" alt class="img img-responsive">
                                     <div class="wpo-blog-content">
                                         <h2><a href="blog-single.html">Traveling Makes You More Interesting</a>
                                         </h2>
@@ -61,8 +55,7 @@
                             </div>
                             <div class="grid s2">
                                 <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-3.jpg" alt
-                                        class="img img-responsive">
+                                    <img src="tlandingpage/assets/images/hero/img-3.jpg" alt class="img img-responsive">
                                     <div class="wpo-blog-content">
                                         <h2><a href="blog-single.html">Top 10 Healthy Food</a></h2>
                                         <ul>
@@ -72,8 +65,7 @@
                                     </div>
                                 </div>
                                 <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-4.jpg" alt
-                                        class="img img-responsive">
+                                    <img src="tlandingpage/assets/images/hero/img-4.jpg" alt class="img img-responsive">
                                     <div class="wpo-blog-content">
                                         <h2><a href="blog-single.html">What Makes a Leader?</a></h2>
                                         <ul>
@@ -97,7 +89,7 @@
                     <div class="wpo-blog-content">
                         <div class="post format-video">
                             <div class="entry-media video-holder">
-                                <img src="{{asset('tlandingpage/assets/images/lifestyle/img-3.jpg')}}" alt>
+                                <img src="{{ asset('tlandingpage/assets/images/lifestyle/img-3.jpg') }}" alt>
                                 <a href="https://www.youtube.com/embed/JttPYJF6SdI" class="video-btn"
                                     data-type="iframe">
                                     <i class="fi flaticon-play"></i>
@@ -110,10 +102,15 @@
                 <div class="col col-lg-6 col-12">
                     <h5 class="fs-5 text-secondary">Selamat Datang di</h5>
                     <h2 class="fw-bolder">DPMPTSP Mahakam Ulu</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sunt laborum alias atque. Necessitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat distinctio, rem alias temporibus, id consectetur soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sunt laborum alias atque.
+                        Necessitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat
+                        distinctio, rem alias temporibus, id consectetur soluta. Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    </p>
                 </div>
             </div>
-        </div> 
+        </div>
     </section>
 
     <div class="wpo-breacking-news section-padding">
@@ -188,7 +185,7 @@
 
     <section class="wpo-blog-highlights-section section-padding">
         <div class="container">
-            
+
             <div class="row">
                 <div class="col col-lg-9 col-12">
                     <div class="mb-5">
@@ -199,88 +196,31 @@
                         <div class="wpo-blog-highlights-wrap">
                             <div class="wpo-blog-items">
                                 <div class="row">
-                                    <div class="col col-lg-6 col-md-6 col-12">
-                                        <div class="wpo-blog-item">
-                                            <div class="wpo-blog-img">
-                                                <img src="tlandingpage/assets/images/blog/img-1.jpg" alt="">
-                                            </div>
-                                            <div class="wpo-blog-content">
-                                                <h2><a href="blog-single.html">Traveling Makes You More Inteligent
-                                                        and More Energetic</a></h2>
-                                                <ul>
-                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                            alt="">
-                                                    </li>
-                                                    <li>By <a href="blog-single.html">Admin</a></li>
-                                                    <li>25 Sep 2022</li>
-                                                </ul>
-                                                <p>You can customize the view Blog post with author simple mouse click
-                                                    and immediately see the result of your changes. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col col-lg-6 col-md-6 col-12">
-                                        <div class="wpo-blog-item">
-                                            <div class="wpo-blog-img">
-                                                <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="">
-                                            </div>
-                                            <div class="wpo-blog-content">
-                                                <h2><a href="blog-single.html">12 Things to See and Find Out in Bergen,
-                                                        Norway</a></h2>
-                                                <ul>
-                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-2.jpg "
-                                                            alt="">
-                                                    </li>
-                                                    <li>By <a href="blog-single.html">Admin</a></li>
-                                                    <li>25 Sep 2022</li>
-                                                </ul>
-                                                <p>You can customize the view Blog post with author simple mouse click
-                                                    and immediately see the result of your changes. </p>
+                                    @foreach ($Berita as $Beritas)
+                                        <div class="col col-lg-6 col-md-6 col-12">
+                                            <div class="wpo-blog-item">
+                                                <div class="wpo-blog-img">
+                                                    <img src="{{ asset($Beritas->gambar) }}" alt="">
+                                                </div>
+                                                <div class="wpo-blog-content">
+                                                    <h2><a href="blog-single.html">{{ $Beritas->judul }}</a></h2>
+                                                    <ul>
+                                                        <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
+                                                                alt="">
+                                                        </li>
+                                                        <li>By <a
+                                                                href="blog-single.html">{{ $Beritas->User->name }}</a>
+                                                        </li>
+                                                        <li>{{ $Beritas->created_at->Format('D, M Y') }}</li>
+                                                    </ul>
+                                                    <p>{!! $Beritas->deskripsi_singkat !!} </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col col-lg-6 col-md-6 col-12">
-                                        <div class="wpo-blog-item">
-                                            <div class="wpo-blog-img">
-                                                <img src="tlandingpage/assets/images/blog/img-1.jpg" alt="">
-                                            </div>
-                                            <div class="wpo-blog-content">
-                                                <h2><a href="blog-single.html">Traveling Makes You More Inteligent
-                                                        and More Energetic</a></h2>
-                                                <ul>
-                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                            alt="">
-                                                    </li>
-                                                    <li>By <a href="blog-single.html">Admin</a></li>
-                                                    <li>25 Sep 2022</li>
-                                                </ul>
-                                                <p>You can customize the view Blog post with author simple mouse click
-                                                    and immediately see the result of your changes. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col col-lg-6 col-md-6 col-12">
-                                        <div class="wpo-blog-item">
-                                            <div class="wpo-blog-img">
-                                                <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="">
-                                            </div>
-                                            <div class="wpo-blog-content">
-                                                <h2><a href="blog-single.html">12 Things to See and Find Out in Bergen,
-                                                        Norway</a></h2>
-                                                <ul>
-                                                    <li><img src="{{asset('tlandingpage/assets/images/blog/blog-avater/img-2.jpg')}} "
-                                                            alt="">
-                                                    </li>
-                                                    <li>By <a href="blog-single.html">Admin</a></li>
-                                                    <li>25 Sep 2022</li>
-                                                </ul>
-                                                <p>You can customize the view Blog post with author simple mouse click
-                                                    and immediately see the result of your changes. </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                     <div class="text-center">
-                                        <a href="{{route('landingpage-berita')}}" class="theme-btn">Berita Lainnya</a>
+                                        <a href="{{ route('landingpage-berita') }}" class="theme-btn">Berita
+                                            Lainnya</a>
                                     </div>
                                 </div>
                             </div>
@@ -298,7 +238,8 @@
                                 {{-- <h5 class="fs-5 text-secondary">DPMPTSP Mahakam Ulu</h5>
                                 <h2 class="fw-bolder">DPMPTSP Mahakam Ulu</h2> --}}
                                 <h3 class="fw-bolder mb-3">Mudah, Cepat, dan Ramah</h3>
-                                <p>DPMPTSP Kabupaten Mahakam Ulu siap dalam memberi pelayanan terbaik kepada masyarakat pada jadwal dan waktu kerja sebagai berikut.</p>
+                                <p>DPMPTSP Kabupaten Mahakam Ulu siap dalam memberi pelayanan terbaik kepada masyarakat
+                                    pada jadwal dan waktu kerja sebagai berikut.</p>
                                 <ul class="jadwal-pelayanan">
                                     <li>
                                         <h5 class="fw-bolder text-secondary">Senin - Kamis</h5>
@@ -318,7 +259,7 @@
                     <div class="blog-sidebar">
                         <div class="widget about-widget">
                             <div class="img-holder">
-                                <img src="{{asset('tlandingpage/assets/images/blog/about-widget.jpg')}}" alt>
+                                <img src="{{ asset('tlandingpage/assets/images/blog/about-widget.jpg') }}" alt>
                             </div>
                             <h4>Jenny Watson</h4>
                             <p>Kepala Dinas DPMPTSP Mahakam Ulu</p>

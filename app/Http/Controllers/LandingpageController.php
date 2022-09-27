@@ -14,7 +14,7 @@ class LandingpageController extends Controller
     public function Home()
     {
         $Banner = Banner::all();
-        $Berita = Berita::all();
+        $Berita = Berita::latest()->paginate(4);
         $Pengumuman = Pengumuman::all();
         $FastLink = FastLink::all();
         return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink'));

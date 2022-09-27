@@ -51,7 +51,7 @@ class BannerController extends Controller
             $txt = "storage/Banner/" . $file_name;
             $request->gambar->storeAs('public/Banner/', $file_name);
         } else {
-            $file_name = null;
+            $txt = null;
         }
 
 
