@@ -15,10 +15,13 @@ class LandingpageController extends Controller
     {
         $Banner = Banner::all();
         $Berita = Berita::latest()->paginate(4);
+        $BeritaAtas = Berita::latest()->paginate(4);
+        // DD($BeritaAtas);
         $Pengumuman = Pengumuman::all();
         $FastLink = FastLink::all();
         $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
-        return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink', 'RelatedPost'));
+
+        return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink', 'RelatedPost', 'BeritaAtas'));
     }
     public function HalamanMenu($id)
     {

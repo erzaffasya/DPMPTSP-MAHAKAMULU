@@ -23,67 +23,55 @@
                             </div>
                         </section>
                         <div class="wpo-blog-grids gallery-container clearfix">
-
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-1.jpg" alt class="img img-responsive">
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">What’s In Trend In Women's Fashion
-                                                Summer?</a></h2>
-                                        <p>You can customize the view Blog posts with a simple mouse click and
-                                            immediately see the result of your changes. </p>
-                                        <ul>
-                                            <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
-                                                    alt=""></li>
-                                            <li>By <a href="blog-single.html">Robert</a></li>
-                                            <li>20 Nov 2022</li>
-                                        </ul>
+                            @foreach ($BeritaAtas as $item)
+                                {{-- 1-2, kedua beda bentuk  --}}
+                                @if ($loop->index + 1 < 3)
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="{{ asset($item->gambar) }}"
+                                                @if ($loop->index + 1 == 2) height="275" @endif alt
+                                                class="img img-responsive">
+                                            <div class="wpo-blog-content">
+                                                <h2><a href="{{ route('detail-berita', $item->id) }}">{{ \Illuminate\Support\Str::limit($item->judul, $limit = 21, $end = '...') }}
+                                                    </a></h2>
+                                                {{-- {{ $item->isi }} --}}
+                                                <ul>
+                                                    <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
+                                                            alt=""></li>
+                                                    <li>By <a href="blog-single.html">{{ $item->User->name }}</a></li>
+                                                    <li>{{ $item->created_at->Format('d M Y') }}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="grid">
-                                <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-2.jpg" alt class="img img-responsive">
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">Traveling Makes You More Interesting</a>
-                                        </h2>
-                                        <ul>
-                                            <li>By <a href="blog-single.html">Robert</a></li>
-                                            <li>20 Nov 2022</li>
-                                        </ul>
+                                @endif
+                                {{-- ketiga keempat  --}}
+                                @if ($loop->index + 1 == 3)
+                                    <div class="grid s2">
+                                @endif
+                                @if ($loop->index + 1 > 2 && $loop->index + 1 < 5)
+                                    {{-- @foreach ($collection as $item) --}}
+                                    <div class="img-holder">
+                                        <img src="{{ asset($item->gambar) }}" alt class="img img-responsive">
+                                        <div class="wpo-blog-content">
+                                            <h2><a href="{{ route('detail-berita', $item->id) }}">{{ \Illuminate\Support\Str::limit($item->judul, $limit = 13, $end = '...') }}
+                                                </a></h2>
+                                            <ul>
+                                                <li>By <a href="blog-single.html">{{ $item->User->name }}</a>
+                                                </li>
+                                                <li>{{ $item->created_at->Format('d M Y') }}</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="grid s2">
-                                <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-3.jpg" alt class="img img-responsive">
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">Top 10 Healthy Food</a></h2>
-                                        <ul>
-                                            <li>By <a href="blog-single.html">Robert</a></li>
-                                            <li>20 Nov 2022</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="img-holder">
-                                    <img src="tlandingpage/assets/images/hero/img-4.jpg" alt class="img img-responsive">
-                                    <div class="wpo-blog-content">
-                                        <h2><a href="blog-single.html">What Makes a Leader?</a></h2>
-                                        <ul>
-                                            <li>By <a href="blog-single.html">Robert</a></li>
-                                            <li>20 Nov 2022</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
+                                    {{-- @endforeach --}}
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <section class="wpo-blog-pg-section section-padding">
@@ -210,7 +198,7 @@
                                                 <div class="wpo-blog-content">
                                                     <h2>
                                                         <a
-                                                            href="{{ route('detail-berita', $Beritas->id) }}">{{ \Illuminate\Support\Str::limit($Beritas->judul, $limit = 30, $end = '...')  }}</a>
+                                                            href="{{ route('detail-berita', $Beritas->id) }}">{{ \Illuminate\Support\Str::limit($Beritas->judul, $limit = 28, $end = '...') }}</a>
                                                     </h2>
                                                     <ul>
                                                         <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "

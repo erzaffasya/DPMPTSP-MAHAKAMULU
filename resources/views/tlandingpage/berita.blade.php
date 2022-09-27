@@ -39,7 +39,7 @@
                                     </ul>
                                 </div>
                                 <div class="entry-details">
-                                    <h3><a href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a></h3>
+                                    <h3><a href="{{ route('detail-berita', $item->id) }}">{{  \Illuminate\Support\Str::limit($item->judul, $limit = 37, $end = '...') }}</a></h3>
                                     {!! \Illuminate\Support\Str::limit($item->isi, $limit = 150, $end = '...') !!}
                                     <a href="#" class="read-more">READ MORE</a>
                                 </div>
