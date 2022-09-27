@@ -8,12 +8,12 @@
                         <section class="wpo-hero-slider mb-3">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    @foreach ($Banner->where('isActive', True) as $Banners)
-                                    <div class="swiper-slide">
-                                        <div class="slide-inner slide-bg-image"
-                                            data-background="{{ asset($Banners->gambar) }}">
+                                    @foreach ($Banner->where('isActive', true) as $Banners)
+                                        <div class="swiper-slide">
+                                            <div class="slide-inner slide-bg-image"
+                                                data-background="{{ asset($Banners->gambar) }}">
+                                            </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                 </div>
                                 <!-- end swiper-wrapper -->
@@ -23,6 +23,7 @@
                             </div>
                         </section>
                         <div class="wpo-blog-grids gallery-container clearfix">
+
                             <div class="grid">
                                 <div class="img-holder">
                                     <img src="tlandingpage/assets/images/hero/img-1.jpg" alt class="img img-responsive">
@@ -40,6 +41,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="grid">
                                 <div class="img-holder">
                                     <img src="tlandingpage/assets/images/hero/img-2.jpg" alt class="img img-responsive">
@@ -53,6 +55,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="grid s2">
                                 <div class="img-holder">
                                     <img src="tlandingpage/assets/images/hero/img-3.jpg" alt class="img img-responsive">
@@ -75,6 +78,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -89,7 +93,8 @@
                     <div class="wpo-blog-content">
                         <div class="post format-video">
                             <div class="entry-media video-holder">
-                                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fkorankaltim.com%2Fread%2Fpemkab-mahulu%2F47391%2Fpemkab-sampaikan-jawaban-atas-pandangan-umum-fraksi-raperda-susunan-opd&psig=AOvVaw1VimKsz8mqnzp2IIPd9uPE&ust=1664326401310000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjx7bfhs_oCFQAAAAAdAAAAABAW" alt>
+                                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fkorankaltim.com%2Fread%2Fpemkab-mahulu%2F47391%2Fpemkab-sampaikan-jawaban-atas-pandangan-umum-fraksi-raperda-susunan-opd&psig=AOvVaw1VimKsz8mqnzp2IIPd9uPE&ust=1664326401310000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjx7bfhs_oCFQAAAAAdAAAAABAW"
+                                    alt>
                                 <a href="https://www.youtube.com/watch?v=SUAOOlDQUd4" class="video-btn"
                                     data-type="iframe">
                                     <i class="fi flaticon-play"></i>
@@ -203,17 +208,19 @@
                                                     <img src="{{ asset($Beritas->gambar) }}" alt="">
                                                 </div>
                                                 <div class="wpo-blog-content">
-                                                    <h2><a href="{{route('detail-berita',$Beritas->id)}}">{{ $Beritas->judul }}</a></h2>
+                                                    <h2>
+                                                        <a
+                                                            href="{{ route('detail-berita', $Beritas->id) }}">{{ \Illuminate\Support\Str::limit($Beritas->judul, $limit = 30, $end = '...')  }}</a>
+                                                    </h2>
                                                     <ul>
                                                         <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
                                                                 alt="">
                                                         </li>
-                                                        <li>By <a
-                                                                href="#">{{ $Beritas->User->name }}</a>
+                                                        <li>By <a href="#">{{ $Beritas->User->name }}</a>
                                                         </li>
-                                                        <li>{{ $Beritas->created_at->Format('D, M Y') }}</li>
+                                                        <li>{{ $Beritas->created_at->Format('D, d M Y') }}</li>
                                                     </ul>
-                                                    <p>{!! $Beritas->isi !!} </p>
+                                                    <p>{!! \Illuminate\Support\Str::limit($Beritas->isi, $limit = 150, $end = '...') !!} </p>
                                                 </div>
                                             </div>
                                         </div>

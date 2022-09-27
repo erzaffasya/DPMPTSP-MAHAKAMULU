@@ -17,7 +17,8 @@ class LandingpageController extends Controller
         $Berita = Berita::latest()->paginate(4);
         $Pengumuman = Pengumuman::all();
         $FastLink = FastLink::all();
-        return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink'));
+        $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
+        return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink', 'RelatedPost'));
     }
     public function HalamanMenu($id)
     {
@@ -35,13 +36,17 @@ class LandingpageController extends Controller
         $Berita = Berita::latest()->paginate(5);
         $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
 
-        return view('tlandingpage.berita', compact('Berita','RelatedPost'));
+        return view('tlandingpage.berita', compact('Berita', 'RelatedPost'));
     }
 
     public function DetailBerita($id)
     {
         $Berita = Berita::find($id);
-        $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
-        return view('tlandingpage.detailBerita', compact('Berita','RelatedPost'));
+        if ($Berita != NULL) {
+            $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
+            return view('tlandingpage.detailBerita', compact('Berita', 'RelatedPost'));
+        } else {
+            return back();
+        }
     }
 }

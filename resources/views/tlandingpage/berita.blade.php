@@ -40,8 +40,8 @@
                                 </div>
                                 <div class="entry-details">
                                     <h3><a href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a></h3>
-                                    {!! $item->isi !!}
-                                    <a href="#" class="read-more">READ MORE...</a>
+                                    {!! \Illuminate\Support\Str::limit($item->isi, $limit = 150, $end = '...') !!}
+                                    <a href="#" class="read-more">READ MORE</a>
                                 </div>
                             </div>
                         @endforeach
