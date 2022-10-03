@@ -32,9 +32,9 @@
                                                 @if ($loop->index + 1 == 2) height="275" @endif alt
                                                 class="img img-responsive">
                                             <div class="wpo-blog-content">
-                                                <h2><a href="{{ route('detail-berita', $item->id) }}">{{ \Illuminate\Support\Str::limit($item->judul, $limit = 21, $end = '...') }}
+                                                <h2><a href="{{ route('detail-berita', $item->id) }}">{{ \Illuminate\Support\Str::limit($item->judul, $limit = 55, $end = '...') }}
                                                     </a></h2>
-                                                {{-- {{ $item->isi }} --}}
+                                                <p>{!! \Illuminate\Support\Str::limit($item->isi, $limit = 125, $end = '...') !!} </p>
                                                 <ul>
                                                     <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
                                                             alt=""></li>
@@ -54,7 +54,7 @@
                                     <div class="img-holder">
                                         <img src="{{ asset($item->gambar) }}" alt class="img img-responsive">
                                         <div class="wpo-blog-content">
-                                            <h2><a href="{{ route('detail-berita', $item->id) }}">{{ \Illuminate\Support\Str::limit($item->judul, $limit = 13, $end = '...') }}
+                                            <h2><a href="{{ route('detail-berita', $item->id) }}">{{ \Illuminate\Support\Str::limit($item->judul, $limit = 25, $end = '...') }}
                                                 </a></h2>
                                             <ul>
                                                 <li>By <a href="blog-single.html">{{ $item->User->name }}</a>
@@ -78,13 +78,12 @@
         <div class="container">
             <div class="row">
                 <div class="col col-lg-6 col-12">
-                    <div class="wpo-blog-content">
+                    <div class="wpo-blog-content" style="border-radius: 1rem; overflow: hidden;">
                         <div class="post format-video">
                             <div class="entry-media video-holder">
-                                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fkorankaltim.com%2Fread%2Fpemkab-mahulu%2F47391%2Fpemkab-sampaikan-jawaban-atas-pandangan-umum-fraksi-raperda-susunan-opd&psig=AOvVaw1VimKsz8mqnzp2IIPd9uPE&ust=1664326401310000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjx7bfhs_oCFQAAAAAdAAAAABAW"
+                                <img src="https://prokopim.mahakamulukab.go.id/wp-content/uploads/2022/05/4-8.jpg"
                                     alt>
-                                <a href="https://www.youtube.com/watch?v=SUAOOlDQUd4" class="video-btn"
-                                    data-type="iframe">
+                                <a href="https://youtube.com/embed/SUAOOlDQUd4" class="video-btn" data-type="iframe">
                                     <i class="fi flaticon-play"></i>
                                 </a>
 
@@ -99,7 +98,8 @@
                         Necessitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat
                         distinctio, rem alias temporibus, id consectetur soluta. Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatssitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat
+                        distinctio, rem alias temporibus
                     </p>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                 <div class="wpo-breacking-wrap owl-carousel">
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/006-stamp.png" alt="">
                         </div>
                         <div class="wpo-breacking-text">
                             <h3 class="fw-bolder">IMB</h3>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/010-analytics.png" alt="">
                         </div>
                         <div class="wpo-breacking-text">
                             <h3 class="fw-bolder">Izin Usaha</h3>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/012-construction-worker.png" alt="">
                         </div>
                         <div class="wpo-breacking-text">
                             <h3 class="fw-bolder">Izin Jasa Konstruksi</h3>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/015-billboard-1.png" alt="">
                         </div>
                         <div class="wpo-breacking-text">
                             <h3 class="fw-bolder">Izin Reklame</h3>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/005-medical-team.png" alt="">
                         </div>
                         <div class="wpo-breacking-text">
                             <h3 class="fw-bolder">Praktik Kesehatan</h3>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="wpo-breacking-item s1">
                         <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/img-1.jpg" alt="">
+                            <img src="tlandingpage/assets/images/breaking-news/017-block-1.png" alt="">
                         </div>
                         <div class="wpo-breacking-text">
                             <h3 class="fw-bolder">Izin Gangguan</h3>
@@ -198,7 +198,7 @@
                                                 <div class="wpo-blog-content">
                                                     <h2>
                                                         <a
-                                                            href="{{ route('detail-berita', $Beritas->id) }}">{{ \Illuminate\Support\Str::limit($Beritas->judul, $limit = 28, $end = '...') }}</a>
+                                                            href="{{ route('detail-berita', $Beritas->id) }}">{{ \Illuminate\Support\Str::limit($Beritas->judul, $limit = 60, $end = '...') }}</a>
                                                     </h2>
                                                     <ul>
                                                         <li><img src="tlandingpage/assets/images/blog/blog-avater/img-1.jpg "
@@ -208,7 +208,7 @@
                                                         </li>
                                                         <li>{{ $Beritas->created_at->Format('D, d M Y') }}</li>
                                                     </ul>
-                                                    <p>{!! \Illuminate\Support\Str::limit($Beritas->isi, $limit = 150, $end = '...') !!} </p>
+                                                    <p>{!! \Illuminate\Support\Str::limit($Beritas->isi, $limit = 120, $end = '...') !!} </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -227,7 +227,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-7 col-12">
-                                <img src="tlandingpage/assets/images/blog/img-2.jpg" alt="" width="100%">
+                                <img src="tlandingpage/assets/images/blog/bg-top3.jpg" alt="" width="100%" height="300px" style="object-fit: cover; border-radius: 1rem; overflow: hidden;">
                             </div>
                             <div class="col-lg-5 col-12">
                                 {{-- <h5 class="fs-5 text-secondary">DPMPTSP Mahakam Ulu</h5>
@@ -254,7 +254,7 @@
                     <div class="blog-sidebar">
                         <div class="widget about-widget">
                             <div class="img-holder">
-                                <img src="{{ asset('tlandingpage/assets/images/blog/about-widget.jpg') }}" alt>
+                                <img src="{{ asset('tlandingpage/assets/images/blog/bg-top4.jpg') }}" height="200px" style="object-fit: cover;">
                             </div>
                             <h4>Jenny Watson</h4>
                             <p>Kepala Dinas DPMPTSP Mahakam Ulu</p>
@@ -263,7 +263,6 @@
                                     <li><a href="#"><i class="ti-facebook"></i></a></li>
                                     <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
                                     <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="ti-pinterest"></i></a></li>
                                 </ul>
                             </div>
                             <div class="aw-shape">
@@ -273,40 +272,22 @@
                         <div class="widget recent-post-widget">
                             <h3>Berita Populer</h3>
                             <div class="posts">
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="tlandingpage/assets/images/recent-posts/img-1.jpg" alt>
+                                @foreach ($RelatedPost as $item)
+                                    <div class="post">
+                                        <div class="img-holder">
+                                            <img src="{{ asset($item->gambar) }}"
+                                                alt>
+                                        </div>
+                                        <div class="details">
+                                            <span class="date">{{$item->created_at->Format('D, d M Y')}} </span>
+                                            <h4 class="fs-6"><a href="{{route('detail-berita',$item->id)}}">{{$item->judul}}</a></h4>
+                                        </div>
                                     </div>
-                                    <div class="details">
-                                        <span class="date">19 Jun 2022 </span>
-                                        <h4><a href="blog-single.html">Perfect Photo Clicking Idea You Must
-                                                Know.</a></h4>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="tlandingpage/assets/images/recent-posts/img-2.jpg" alt>
-                                    </div>
-                                    <div class="details">
-                                        <span class="date">22 May 2022 </span>
-                                        <h4><a href="blog-single.html">Best tourism site all over the world.</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="tlandingpage/assets/images/recent-posts/img-3.jpg" alt>
-                                    </div>
-                                    <div class="details">
-                                        <span class="date">12 Apr 2022 </span>
-                                        <h4><a href="blog-single.html">Whats In Trend in Now Woman Fashion.</a>
-                                        </h4>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="wpo-add-widget mb-4">
-                            <a href="#"><img src="tlandingpage/assets/images/add.jpg" alt=""></a>
+                            <a href="#"><img src="https://kaltimkece.id/upload/artikel/2021-09/10/pasar-tradisional-baru-mahulu.jpg" alt="" width="100%" height="100%"></a>
                         </div>
                         <div class="wpo-contact-widget widget">
                             <h2>Survey Kepuasan Masyarakat</h2>

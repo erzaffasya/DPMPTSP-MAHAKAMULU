@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('tlandingpage.partials.head')l
+@include('tlandingpage.partials.head')
 
 <body>
 
@@ -15,8 +15,7 @@
                             <div class="contact-intro">
                                 <ul>
                                     <li class="update"><span>Pengumuman</span></li>
-                                    <li width="900">
-
+                                    <li style="width: 80%;">
                                         <marquee>
                                             @foreach ($Pengumuman as $item)
                                                 {{-- <a href="{{ $item->link }}"> </a>  --}}

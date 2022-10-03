@@ -39,33 +39,14 @@
                                     </ul>
                                 </div>
                                 <div class="entry-details">
-                                    <h3><a href="{{ route('detail-berita', $item->id) }}">{{  \Illuminate\Support\Str::limit($item->judul, $limit = 37, $end = '...') }}</a></h3>
-                                    {!! \Illuminate\Support\Str::limit($item->isi, $limit = 150, $end = '...') !!}
-                                    <a href="#" class="read-more">READ MORE</a>
+                                    <h3><a href="{{ route('detail-berita', $item->id) }}">{{  \Illuminate\Support\Str::limit($item->judul, $limit = 90, $end = '...') }}</a></h3>
+                                    {!! \Illuminate\Support\Str::limit($item->isi, $limit = 200, $end = '...') !!}
+                                    <br>
+                                    <br><a href="#" class="read-more">READ MORE</a>
                                 </div>
                             </div>
                         @endforeach
 
-
-                        {{-- <div class="post format-standard-image mb-5">
-                                <div class="entry-media">
-                                    <img src="{{asset('tlandingpage/assets/images/blog/img-10.jpg')}}" alt>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="fi flaticon-user"></i> By <a href="#">Jenny Watson</a> </li>
-                                        <li><i class="fi flaticon-calendar"></i> 24 Jun 2022</li>
-                                    </ul>
-                                </div>
-                                <div class="entry-details">
-                                    <h3><a href="blog-single.html">Visiting Bethany Beyond the Jordan: Where Jesus was
-                                            Baptized</a></h3>
-                                    <p>Consulting is a great career path if you want to build a broad skill set that
-                                        includes everything from critical thinking and strategic planning to
-                                        communications. If you love rising to a challenge.</p>
-                                    <a href="#" class="read-more">READ MORE...</a>
-                                </div>
-                            </div> --}}
                         <div class="pagination-wrapper pagination-wrapper-left">
                             <ul class="pg-pagination">
                                 <li>
@@ -90,13 +71,13 @@
                         <div class="widget search-widget">
                             <form>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Search Post..">
+                                    <input type="text" class="form-control" placeholder="Cari Berita">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </div>
                             </form>
                         </div>
                         <div class="widget recent-post-widget">
-                            <h3>Related Posts</h3>
+                            <h3>Berita Populer</h3>
                             <div class="posts">
                                 @foreach ($RelatedPost as $item)
                                     <div class="post">
@@ -106,17 +87,16 @@
                                         </div>
                                         <div class="details">
                                             <span class="date">{{$item->created_at->Format('D, d M Y')}} </span>
-                                            <h4><a href="{{route('detail-berita',$item->id)}}">{{$item->judul}}</a></h4>
+                                            <h4 class="fs-6"><a href="{{route('detail-berita',$item->id)}}">{{$item->judul}}</a></h4>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
                         <div class="wpo-contact-widget widget">
-                            <h2>How We Can <br> Help You!</h2>
-                            <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                                viverra maecenas accumsan lacus vel facilisis. </p>
-                            <a href="contact.html">Contact Us</a>
+                            <h2>Survey Kepuasan Masyarakat</h2>
+                            <p>Yuk bantu kami dalam meningkatkan kualitas pelayanan</p>
+                            <a href="contact.html">Survey</a>
                         </div>
                     </div>
                 </div>

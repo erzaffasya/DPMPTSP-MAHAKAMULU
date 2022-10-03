@@ -26,7 +26,7 @@
                     <div class="wpo-blog-content">
                         <div class="post format-standard-image">
                             <div class="entry-media">
-                                <img src="{{ asset($Berita->gambar) }}" alt>
+                                <img src="{{ asset($Berita->gambar) }}" alt style="max-height: 500px; object-fit: cover;">
                             </div>
                             <div class="entry-meta">
                                 <ul>
@@ -41,24 +41,24 @@
                             <br>
                             <div class="gallery">
                                 <div>
-                                    <img src="{{ asset('tlandingpage/assets/images/blog/img-3.jpg') }}" alt="">
+                                    <img src="{{ asset('tlandingpage/assets/images/blog/img-3.jpg') }}" alt="" style="height: 250px; object-fit: cover;">
                                 </div>
                                 <div>
-                                    <img src="{{ asset('tlandingpage/assets/images/blog/img-2.jpg') }}" alt="">
+                                    <img src="{{ asset('tlandingpage/assets/images/blog/img-2.jpg') }}" alt="" style="height: 250px; object-fit: cover;">
                                 </div>
                             </div>
                         </div>
                         <div class="more-posts">
                             <div class="previous-post">
                                 <a href="#">
-                                    <span class="post-control-link">Previous Post</span>
+                                    <span class="post-control-link">Berita Sebelumnya</span>
                                     <span class="post-name">At vero eos et accusamus et iusto odio dignissimos
                                         ducimus qui blanditiis praesentium.</span>
                                 </a>
                             </div>
                             <div class="next-post">
                                 <a href="0">
-                                    <span class="post-control-link">Next Post</span>
+                                    <span class="post-control-link">Berita Selanjutnya</span>
                                     <span class="post-name">Dignissimos ducimus qui blanditiis praesentiu deleniti
                                         atque corrupti quos dolores</span>
                                 </a>
@@ -77,7 +77,7 @@
                             </form>
                         </div>
                         <div class="widget recent-post-widget">
-                            <h3>Related Posts</h3>
+                            <h3>Berita Terbaru</h3>
                             <div class="posts">
 
                                 @foreach ($RelatedPost as $item)

@@ -13,7 +13,7 @@
                 <div class="col col-lg-4 col-12">
                     <div class="blog-sidebar">
                         <div class="widget recent-post-widget">
-                            <h3>Related Posts</h3>
+                            <h3>Berita Terbaru</h3>
                             <div class="posts">
                                 <div class="post">
                                     <div class="img-holder">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="widget recent-post-widget">
-                            <h3>Popular Posts</h3>
+                            <h3>Berita Populer</h3>
                             <div class="posts">
                                 <div class="post">
                                     <div class="img-holder">
