@@ -1,56 +1,52 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+    <div class="wpo-login-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form class="wpo-accountWrapper" action="{{route('login')}}" method="POST">
+                        @csrf
+                        <div class="wpo-accountInfo">
+                            {{-- <div class="wpo-accountInfoHeader">
+                                <a href="#"><img src="{{asset('tlandingpage/assets/images/logo2.png')}}" alt="" height="50px"></a>
+                            </div>
+                            <div class="image">
+                                <img src="{{asset('tlandingpage/assets/images/login.svg')}}" alt="">
+                            </div> --}}
+                        </div>
+                        <div class="wpo-accountForm form-style">
+                            <div class="text-center">
+                                <img src="{{asset("tlandingpage/assets/images/logo2.png")}}" alt="" width="250px">
+                                <br>
+                                <br>
+                                <div class="fromTitle">
+                                    <h2>Login</h2>
+                                    <p>Sign into your pages account</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <label>Email</label>
+                                    <input type="text" id="email" name="email" placeholder="">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input class="pwd6" type="password" placeholder="" value=""
+                                            name="password">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default reveal6" type="button"><i
+                                                    class="ti-eye"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <button type="submit" class="wpo-accountBtn">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
+        </div>
+    </div>
 </x-guest-layout>

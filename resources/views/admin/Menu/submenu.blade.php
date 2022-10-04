@@ -1,6 +1,9 @@
 <x-app-layout>
     <div class="card">
         <h5 class="card-header">Responsive Table</h5>
+        <button class="btn btn-primary">
+            <a href="{{ route('Menu.show', request()->id) }}">Tambah Menu</a>
+        </button>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>
@@ -19,28 +22,34 @@
                             <td> {{ $loop->iteration }} </td>
                             <td> {{ $item->nama_menu }} </td>
                             <td> {{ $item->isActive }} </td>
-                            <td> {{ $item->subMenu->count()??0 }} </td>
+                            <td> {{ $item->subMenu->count() ?? 0 }} </td>
                             <td>
                                 @if ($item->HalamanMenu)
                                     Tersedia
                                 @else
                                     Tidak Tersedia
-                                @endif 
+                                @endif
                             </td>
                             <td> {{ $item->urutan }} </td>
                             <td>
                                 <div class="dropdown">
-                                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow " data-bs-toggle="dropdown" aria-expanded="true">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                  </button>
-                                  <div class="dropdown-menu " data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
-                                    <a class="dropdown-item" href="{{route('HalamanMenu.show',$item->id)}}"><i class="bx bx-edit-alt me-1"></i> Halaman Menu</a>
-                                    <a class="dropdown-item" href="{{route('sub-menu',$item->id)}}"><i class="bx bx-edit-alt me-1"></i> Sub Menu</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                  </div>
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow "
+                                        data-bs-toggle="dropdown" aria-expanded="true">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu " data-popper-placement="bottom-start"
+                                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
+                                        <a class="dropdown-item" href="{{ route('HalamanMenu.show', $item->id) }}"><i
+                                                class="bx bx-edit-alt me-1"></i> Halaman Menu</a>
+                                        <a class="dropdown-item" href="{{ route('sub-menu', $item->id) }}"><i
+                                                class="bx bx-edit-alt me-1"></i> Sub Menu</a>
+                                        <a class="dropdown-item" href="javascript:void(0);"><i
+                                                class="bx bx-edit-alt me-1"></i> Edit</a>
+                                        <a class="dropdown-item" href="javascript:void(0);"><i
+                                                class="bx bx-trash me-1"></i> Delete</a>
+                                    </div>
                                 </div>
-                              </td>
+                            </td>
                         </tr>
                     @endforeach
 

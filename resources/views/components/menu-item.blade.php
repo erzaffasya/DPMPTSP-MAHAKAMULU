@@ -1,4 +1,4 @@
-<li class="menu-item-has-children">
+<li @if ($menu->children->count() > 0) class="menu-item-has-children" @endif>
     <a class=""
         @if ($menu->HalamanMenu != null) href="{{ route('HalamanMenu', $menu->HalamanMenu->id) }}" @endif>{{ $menu->nama_menu }}
     </a>

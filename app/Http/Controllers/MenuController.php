@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-/**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -26,8 +26,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        $Menu = Menu::all();
-        return view('admin.Menu.tambah',compact('Menu'));
+        $Menu = null;
+        return view('admin.Menu.tambah', compact('Menu'));
     }
 
     /**
@@ -53,9 +53,14 @@ class MenuController extends Controller
             'urutan' => $request->urutan,
         ]);
 
-        return back();
-        // return redirect()->route('Menu.index')
-            // ->with('success', 'Menu Berhasil Ditambahkan');
+        // return back();
+        if ($request->parent_id != null) {
+            return redirect()->route('sub-menu', $request->parent_id)
+                ->with('success', 'Menu Berhasil Ditambahkan');
+        } else {
+            return redirect()->route('Menu.index')
+                ->with('success', 'Menu Berhasil Ditambahkan');
+        }
     }
 
     /**
@@ -64,9 +69,10 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $Menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $Menu)
+    public function show($id)
     {
-        //
+        $Menu = Menu::find($id);
+        return view('admin.Menu.tambah', compact('Menu'));
     }
 
     /**
@@ -99,7 +105,7 @@ class MenuController extends Controller
         $Menu->save();
 
         return redirect()->route('Menu.index')
-        ->with('edit', 'Menu Berhasil Diedit');
+            ->with('edit', 'Menu Berhasil Diedit');
     }
 
     /**
@@ -116,8 +122,9 @@ class MenuController extends Controller
             ->with('delete', 'Menu Berhasil Dihapus');
     }
 
-    public function subMenu($id){
-        $Menu = Menu::where('parent_id',$id)->get();
-        return view('admin.Menu.submenu',compact('Menu'));
+    public function subMenu($id)
+    {
+        $Menu = Menu::where('parent_id', $id)->get();
+        return view('admin.Menu.submenu', compact('Menu'));
     }
 }

@@ -17,8 +17,13 @@
                 </div> --}}
                 <div class="mb-3">
                     <label for="exampleFormControlSelect1" class="form-label">Parent</label>
-                    <select class="form-select" id="exampleFormControlSelect1" name="parent_id" aria-label="Default select example">
-                        <option value="">Kepala</option>
+                    <select class="form-select" id="exampleFormControlSelect1" name="parent_id"
+                        aria-label="Default select example">
+                        @if ($Menu != null)
+                            <option value="{{$Menu->id}}">{{$Menu->nama_menu}}</option>
+                        @else
+                            <option value="">Kepala</option>
+                        @endif
                         {{-- @foreach ($Menu as $item)
                             <option value="{{ $item->id }}">{{ $item->nama_menu }}</option>
                         @endforeach --}}
