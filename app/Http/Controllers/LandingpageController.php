@@ -47,7 +47,10 @@ class LandingpageController extends Controller
         $Berita = Berita::find($id);
         if ($Berita != NULL) {
             $RelatedPost = Berita::inRandomOrder()->limit(4)->get();
-            return view('tlandingpage.detailBerita', compact('Berita', 'RelatedPost'));
+            $next = Berita::where('id', '>', $Berita->id)->orderBy('id','desc')->first();
+            $previous = Berita::where('id', '<', $Berita->id)->orderBy('id','desc')->first();
+            // dd($previous);
+            return view('tlandingpage.detailBerita', compact('Berita', 'RelatedPost','next','previous'));
         } else {
             return back();
         }

@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="wpo-breadcumb-wrap">
-                        <h2>Underestimating the challenge of raising Series A funding</h2>
+                        <h2>{{ $Berita->judul }}</h2>
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><span>Berita</span></li>
-                            <li><span>Underestimating the challenge of raising Series A funding</span></li>
+                            <li><span>{{ $Berita->judul }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -26,7 +26,8 @@
                     <div class="wpo-blog-content">
                         <div class="post format-standard-image">
                             <div class="entry-media">
-                                <img src="{{ asset($Berita->gambar) }}" alt style="max-height: 500px; object-fit: cover;">
+                                <img src="{{ asset($Berita->gambar) }}" alt
+                                    style="max-height: 500px; object-fit: cover;">
                             </div>
                             <div class="entry-meta">
                                 <ul>
@@ -40,29 +41,39 @@
                             {!! $Berita->isi !!}
                             <br>
                             <div class="gallery">
-                                <div>
-                                    <img src="{{ asset('tlandingpage/assets/images/blog/img-3.jpg') }}" alt="" style="height: 250px; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <img src="{{ asset('tlandingpage/assets/images/blog/img-2.jpg') }}" alt="" style="height: 250px; object-fit: cover;">
-                                </div>
+                                @if ($previous != null)
+                                    <div>
+                                        <img src="{{ asset($previous->gambar) }}" alt=""
+                                            style="height: 250px; object-fit: cover;">
+                                    </div>
+                                @endif
+
+                                @if ($next != null)
+                                    <div>
+                                        <img src="{{ asset($next->gambar) }}" alt=""
+                                            style="height: 250px; object-fit: cover;">
+                                    </div>
+                                @endif
+
                             </div>
                         </div>
                         <div class="more-posts">
-                            <div class="previous-post">
-                                <a href="#">
-                                    <span class="post-control-link">Berita Sebelumnya</span>
-                                    <span class="post-name">At vero eos et accusamus et iusto odio dignissimos
-                                        ducimus qui blanditiis praesentium.</span>
-                                </a>
-                            </div>
-                            <div class="next-post">
-                                <a href="0">
-                                    <span class="post-control-link">Berita Selanjutnya</span>
-                                    <span class="post-name">Dignissimos ducimus qui blanditiis praesentiu deleniti
-                                        atque corrupti quos dolores</span>
-                                </a>
-                            </div>
+                            @if ($previous != null)
+                                <div class="previous-post">
+                                    <a href="{{ route('detail-berita', $previous->id) }}">
+                                        <span class="post-control-link">Berita Sebelumnya</span>
+                                        <span class="post-name">{{ $previous->judul ?? null }}</span>
+                                    </a>
+                                </div>
+                            @endif
+                            @if ($next != null)
+                                <div class="next-post">
+                                    <a href="{{ route('detail-berita', $next->id) }}">
+                                        <span class="post-control-link">Berita Selanjutnya</span>
+                                        <span class="post-name">{{ $next->judul ?? null }}</span>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -87,7 +98,8 @@
                                         </div>
                                         <div class="details">
                                             <span class="date">{{ $item->created_at->Format('D, d M Y') }} </span>
-                                            <h4><a href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a>
+                                            <h4><a
+                                                    href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a>
                                             </h4>
                                         </div>
                                     </div>

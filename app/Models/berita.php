@@ -20,4 +20,13 @@ class Berita extends Model
     {
         return $this->belongsTo(kategoriBerita::class, 'kategori_berita_id', 'id');
     }
+    public function previous()
+    {
+        return $this->find(--$this->id);
+    }
+
+    public function next()
+    {
+        return $this->find(++$this->id);
+    }
 }
