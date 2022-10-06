@@ -3,10 +3,21 @@
         <div class="container">
             <div class="row">
                 <div class="col col-lg-8 col-12">
-                    <h2 class="fw-bolder mb-3">{{$HalamanMenu->judul??null}}</h2>
+                    <h2 class="fw-bolder mb-3">{{ $HalamanMenu->judul ?? null }}</h2>
                     <p>
+                        @if ($HalamanMenu->gambar ?? null)
+                            <img src="{{ asset($HalamanMenu->gambar) }}" height="800">
+                        @endif
+                        @if ($HalamanMenu->isi ?? null)
+                            {!! $HalamanMenu->isi !!}
+                        @endif
                         @if ($HalamanMenu->file ?? null)
                             <iframe height="800" src="{{ asset($HalamanMenu->file) }}" width="100%"></iframe>
+                        @endif
+                        @if ($HalamanMenu->link ?? null)
+                        <br>
+                        {{-- <h3>Link</h3> --}}
+                        Link : <a href="{{$HalamanMenu->link}}">Klik Disini!!</a>
                         @endif
                     </p>
                 </div>
@@ -34,17 +45,19 @@
                             <h3>Berita Populer</h3>
                             <div class="posts">
                                 @foreach ($Populer as $item)
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="{{ asset($item->Berita->gambar) }}"
-                                            alt>
+                                    <div class="post">
+                                        <div class="img-holder">
+                                            <img src="{{ asset($item->Berita->gambar) }}" alt>
+                                        </div>
+                                        <div class="details">
+                                            <span class="date">{{ $item->Berita->created_at->Format('D, d M Y') }}
+                                            </span>
+                                            <h4 class="fs-6"><a
+                                                    href="{{ route('detail-berita', $item->Berita->id) }}">{{ $item->Berita->judul }}</a>
+                                            </h4>
+                                        </div>
                                     </div>
-                                    <div class="details">
-                                        <span class="date">{{$item->Berita->created_at->Format('D, d M Y')}} </span>
-                                        <h4 class="fs-6"><a href="{{route('detail-berita',$item->Berita->id)}}">{{$item->Berita->judul}}</a></h4>
-                                    </div>
-                                </div>
-                            @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
