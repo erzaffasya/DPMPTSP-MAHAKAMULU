@@ -30,8 +30,11 @@ class LandingpageController extends Controller
     {
 
         $HalamanMenu = HalamanMenu::with('Menu')->find($id);
+        $BeritaBaru = Berita::with(['User','kategoriBerita'])->latest()->paginate(4);
+        $Populer = Visit::select('visitable_id', DB::raw('count(*) as total'))->groupBy('visitable_id')
+            ->orderBy('total', 'DESC')->with('Berita')->limit(4)->get();
         if ($HalamanMenu != NULL) {
-            return view('tlandingpage.regular', compact('HalamanMenu'));
+            return view('tlandingpage.regular', compact('HalamanMenu','BeritaBaru','Populer'));
         } else {
             return back();
         }
@@ -41,8 +44,10 @@ class LandingpageController extends Controller
     {
         $Berita = Berita::with(['User','kategoriBerita'])->latest()->paginate(4);
         $RelatedPost = Berita::with(['User','kategoriBerita'])->inRandomOrder()->limit(4)->get();
-
-        return view('tlandingpage.berita', compact('Berita', 'RelatedPost'));
+        $Populer = Visit::select('visitable_id', DB::raw('count(*) as total'))->groupBy('visitable_id')
+        ->orderBy('total', 'DESC')->with('Berita')->limit(4)->get();
+        // dd($Populer);
+        return view('tlandingpage.berita', compact('Berita', 'RelatedPost','Populer'));
     }
 
     public function DetailBerita($id)
