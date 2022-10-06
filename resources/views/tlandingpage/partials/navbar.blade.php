@@ -30,9 +30,11 @@
                                 <div class="cart-search-contact">
                                     <button class="search-toggle-btn"><i class="fi flaticon-magnifiying-glass"></i></button>
                                     <div class="header-search-form">
-                                        <form>
+                                        <form action="{{route('cari-berita')}}" method="post">
+                                            @csrf
+                                            @method("POST")
                                             <div>
-                                                <input type="text" class="form-control" placeholder="Search here...">
+                                                <input type="text" name="berita" class="form-control" placeholder="Search here...">
                                                 <button type="submit"><i class="fi flaticon-magnifiying-glass"></i></button>
                                             </div>
                                         </form>

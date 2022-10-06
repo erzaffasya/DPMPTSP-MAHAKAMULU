@@ -47,7 +47,7 @@
                             </div>
                         @endforeach
 
-                        <div class="pagination-wrapper pagination-wrapper-left">
+                        {{-- <div class="pagination-wrapper pagination-wrapper-left">
                             <ul class="pg-pagination">
                                 <li>
                                     <a href="#" aria-label="Previous">
@@ -63,15 +63,19 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
+
+                        {!! $Berita->links() !!}
                     </div>
                 </div>
                 <div class="col col-lg-4 order-lg-1 col-12">
                     <div class="blog-sidebar">
                         <div class="widget search-widget">
-                            <form>
+                            <form action="{{route('cari-berita')}}" method="post">
+                                @csrf
+                                @method("POST")
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Cari Berita">
+                                    <input type="text" name="berita" class="form-control" placeholder="Cari Berita">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </div>
                             </form>

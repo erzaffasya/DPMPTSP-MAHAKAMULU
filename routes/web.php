@@ -54,6 +54,7 @@ Route::get('detail/{id}', [LandingpageController::class, 'HalamanMenu'])->name('
 Route::get('sub-menu/{id}', [MenuController::class, 'subMenu'])->name('sub-menu');
 Route::get('berita', [LandingpageController::class, 'Berita'])->name('landingpage-berita');
 Route::get('detail-berita/{id}', [LandingpageController::class, 'DetailBerita'])->name('detail-berita');
+Route::post('cari-berita', [LandingpageController::class, 'cariBerita'])->name('cari-berita');
 Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
 

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Shetabit\Visitor\Traits\Visitable;
 class Berita extends Model
 {
-    use HasFactory;
+    use HasFactory,Visitable;
     protected $table = 'berita';
     protected $guarded = [];
 
