@@ -21,8 +21,8 @@ class LandingpageController extends Controller
         $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
             ->groupBy('visitable_id')
             ->orderBy('total', 'DESC')
-            ->limit(4)->get();       
-        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
+            ->limit(4)->get();
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
         // dd($Populer);
         $Pengumuman = Pengumuman::with('User')->get();
         $FastLink = FastLink::all();
@@ -38,8 +38,8 @@ class LandingpageController extends Controller
         $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
             ->groupBy('visitable_id')
             ->orderBy('total', 'DESC')
-            ->limit(4)->get();       
-        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
+            ->limit(4)->get();
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
         if ($HalamanMenu != NULL) {
             return view('tlandingpage.regular', compact('HalamanMenu', 'BeritaBaru', 'Populer'));
         } else {
@@ -54,8 +54,8 @@ class LandingpageController extends Controller
         $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
             ->groupBy('visitable_id')
             ->orderBy('total', 'DESC')
-            ->limit(4)->get();       
-        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
+            ->limit(4)->get();
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
         // dd($Populer);
         return view('tlandingpage.berita', compact('Berita', 'RelatedPost', 'Populer'));
     }
@@ -79,9 +79,14 @@ class LandingpageController extends Controller
 
     public function cariBerita(Request $request)
     {
-        $Berita = Berita::with(['User', 'kategoriBerita'])->query()
+        $Berita = Berita::with(['User', 'kategoriBerita'])
             ->where('judul', 'LIKE', "%{$request->berita}%")->paginate(4);
         $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
-        return view('tlandingpage.Berita', compact('Berita', 'RelatedPost'));
+        $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
+            ->groupBy('visitable_id')
+            ->orderBy('total', 'DESC')
+            ->limit(4)->get();
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
+        return view('tlandingpage.Berita', compact('Berita', 'RelatedPost', 'Populer'));
     }
 }
