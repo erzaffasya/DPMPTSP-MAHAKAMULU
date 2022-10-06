@@ -16,13 +16,17 @@ class LandingpageController extends Controller
     public function Home()
     {
         $Banner = Banner::all();
-        $Berita = Berita::with(['User','kategoriBerita'])->latest()->paginate(4);
-        $BeritaAtas = Berita::with(['User','kategoriBerita'])->latest()->paginate(4);
-        $Populer = Visit::select('visitable_id', DB::raw('count(*) as total'))->groupBy('visitable_id')
-            ->orderBy('total', 'DESC')->with('Berita')->limit(4)->get();
+        $Berita = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
+        $BeritaAtas = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
+        $dataPopuler = Visit::select('shetabit_visits.visitable_id', DB::raw('count(shetabit_visits.id) as total'))
+            ->groupBy('shetabit_visits.visitable_id')
+            ->orderBy('total', 'DESC')
+            ->limit(4)->get();       
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
+        // dd($Populer);
         $Pengumuman = Pengumuman::with('User')->get();
         $FastLink = FastLink::all();
-        $RelatedPost = Berita::with(['User','kategoriBerita'])->inRandomOrder()->limit(4)->get();
+        $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
 
         return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink', 'RelatedPost', 'BeritaAtas', 'Populer'));
     }
@@ -30,11 +34,14 @@ class LandingpageController extends Controller
     {
 
         $HalamanMenu = HalamanMenu::with('Menu')->find($id);
-        $BeritaBaru = Berita::with(['User','kategoriBerita'])->latest()->paginate(4);
-        $Populer = Visit::select('visitable_id', DB::raw('count(*) as total'))->groupBy('visitable_id')
-            ->orderBy('total', 'DESC')->with('Berita')->limit(4)->get();
+        $BeritaBaru = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
+        $dataPopuler = Visit::select('shetabit_visits.visitable_id', DB::raw('count(shetabit_visits.id) as total'))
+            ->groupBy('shetabit_visits.visitable_id')
+            ->orderBy('total', 'DESC')
+            ->limit(4)->get();       
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
         if ($HalamanMenu != NULL) {
-            return view('tlandingpage.regular', compact('HalamanMenu','BeritaBaru','Populer'));
+            return view('tlandingpage.regular', compact('HalamanMenu', 'BeritaBaru', 'Populer'));
         } else {
             return back();
         }
@@ -42,21 +49,24 @@ class LandingpageController extends Controller
 
     public function Berita()
     {
-        $Berita = Berita::with(['User','kategoriBerita'])->latest()->paginate(4);
-        $RelatedPost = Berita::with(['User','kategoriBerita'])->inRandomOrder()->limit(4)->get();
-        $Populer = Visit::select('visitable_id', DB::raw('count(*) as total'))->groupBy('visitable_id')
-        ->orderBy('total', 'DESC')->with('Berita')->limit(4)->get();
+        $Berita = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
+        $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
+        $dataPopuler = Visit::select('shetabit_visits.visitable_id', DB::raw('count(shetabit_visits.id) as total'))
+            ->groupBy('shetabit_visits.visitable_id')
+            ->orderBy('total', 'DESC')
+            ->limit(4)->get();       
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
         // dd($Populer);
-        return view('tlandingpage.berita', compact('Berita', 'RelatedPost','Populer'));
+        return view('tlandingpage.berita', compact('Berita', 'RelatedPost', 'Populer'));
     }
 
     public function DetailBerita($id)
     {
         $Berita = Berita::find($id);
         if ($Berita != NULL) {
-            $RelatedPost = Berita::with(['User','kategoriBerita'])->inRandomOrder()->limit(4)->get();
-            $next = Berita::with(['User','kategoriBerita'])->where('id', '>', $Berita->id)->orderBy('id', 'desc')->first();
-            $previous = Berita::with(['User','kategoriBerita'])->where('id', '<', $Berita->id)->orderBy('id', 'desc')->first();
+            $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
+            $next = Berita::with(['User', 'kategoriBerita'])->where('id', '>', $Berita->id)->orderBy('id', 'desc')->first();
+            $previous = Berita::with(['User', 'kategoriBerita'])->where('id', '<', $Berita->id)->orderBy('id', 'desc')->first();
 
             // dd(she)
             visitor()->visit($Berita);
@@ -69,9 +79,9 @@ class LandingpageController extends Controller
 
     public function cariBerita(Request $request)
     {
-        $Berita = Berita::with(['User','kategoriBerita'])->query()
+        $Berita = Berita::with(['User', 'kategoriBerita'])->query()
             ->where('judul', 'LIKE', "%{$request->berita}%")->paginate(4);
-        $RelatedPost = Berita::with(['User','kategoriBerita'])->inRandomOrder()->limit(4)->get();
+        $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
         return view('tlandingpage.Berita', compact('Berita', 'RelatedPost'));
     }
 }

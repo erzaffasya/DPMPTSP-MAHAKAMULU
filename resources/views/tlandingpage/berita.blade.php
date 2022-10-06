@@ -86,12 +86,12 @@
                                 @foreach ($Populer as $item)
                                     <div class="post">
                                         <div class="img-holder">
-                                            <img src="{{ asset($item->Berita->gambar) }}"
+                                            <img src="{{ asset($item->gambar) }}"
                                                 alt>
                                         </div>
                                         <div class="details">
-                                            <span class="date">{{$item->Berita->created_at->Format('D, d M Y')}} </span>
-                                            <h4 class="fs-6"><a href="{{route('detail-berita',$item->Berita->id)}}">{{$item->Berita->judul}}</a></h4>
+                                            <span class="date">{{$item->created_at->Format('D, d M Y')}} </span>
+                                            <h4 class="fs-6"><a href="{{route('detail-berita',$item->id)}}">{{$item->judul}}</a></h4>
                                         </div>
                                     </div>
                                 @endforeach
