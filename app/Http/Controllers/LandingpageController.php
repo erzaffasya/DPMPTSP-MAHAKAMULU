@@ -18,8 +18,8 @@ class LandingpageController extends Controller
         $Banner = Banner::all();
         $Berita = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
         $BeritaAtas = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
-        $dataPopuler = Visit::select('shetabit_visits.visitable_id', DB::raw('count(shetabit_visits.id) as total'))
-            ->groupBy('shetabit_visits.visitable_id')
+        $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
+            ->groupBy('visitable_id')
             ->orderBy('total', 'DESC')
             ->limit(4)->get();       
         $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
@@ -35,8 +35,8 @@ class LandingpageController extends Controller
 
         $HalamanMenu = HalamanMenu::with('Menu')->find($id);
         $BeritaBaru = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
-        $dataPopuler = Visit::select('shetabit_visits.visitable_id', DB::raw('count(shetabit_visits.id) as total'))
-            ->groupBy('shetabit_visits.visitable_id')
+        $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
+            ->groupBy('visitable_id')
             ->orderBy('total', 'DESC')
             ->limit(4)->get();       
         $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
@@ -51,8 +51,8 @@ class LandingpageController extends Controller
     {
         $Berita = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
         $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
-        $dataPopuler = Visit::select('shetabit_visits.visitable_id', DB::raw('count(shetabit_visits.id) as total'))
-            ->groupBy('shetabit_visits.visitable_id')
+        $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
+            ->groupBy('visitable_id')
             ->orderBy('total', 'DESC')
             ->limit(4)->get();       
         $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get(); 
