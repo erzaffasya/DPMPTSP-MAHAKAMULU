@@ -88,7 +88,7 @@ class HalamanMenuController extends Controller
      */
     public function show($id)
     {
-        $Menu = HalamanMenu::where('menu_id',$id)->first();
+        $Menu = HalamanMenu::where('menu_id', $id)->first();
         return view('admin.Menu.HalamanMenu.tambah', compact('Menu', 'id'));
     }
 
@@ -114,7 +114,7 @@ class HalamanMenuController extends Controller
     public function update(Request $request, $id)
     {
 
-        $HalamanMenu = HalamanMenu::where('menu_id',$id)->first();
+        $HalamanMenu = HalamanMenu::where('menu_id', $id)->first();
         if ($HalamanMenu != null) {
             if (isset($request->gambar)) {
                 $extention = $request->gambar->extension();
@@ -173,9 +173,13 @@ class HalamanMenuController extends Controller
             ]);
         }
 
-
-        return back()
-            ->with('edit', 'HalamanMenu Berhasil Diedit');
+        if ($HalamanMenu->Menu->parent_id != null) {
+            return redirect()->route('sub-menu', $HalamanMenu->Menu->parent_id)
+                ->with('edit', 'HalamanMenu Berhasil Diedit');
+        } else {
+            return redirect()->route('Menu.index')
+                ->with('edit', 'HalamanMenu Berhasil Diedit');
+        }
     }
 
     /**

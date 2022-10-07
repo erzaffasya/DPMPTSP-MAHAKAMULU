@@ -44,7 +44,7 @@
                                             class="bx bx-edit-alt me-1"></i> Halaman Menu</a>
                                     <a class="dropdown-item" href="{{ route('sub-menu', $item->id) }}"><i
                                             class="bx bx-edit-alt me-1"></i> Sub Menu</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i
+                                    <a class="dropdown-item" href="{{route('Menu.edit',$item->id)}}"><i
                                             class="bx bx-edit-alt me-1"></i> Edit</a>
                                             <form action="{{ route('Menu.destroy', $item->id) }}" method="post">
                                                 @method('DELETE')

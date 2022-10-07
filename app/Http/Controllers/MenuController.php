@@ -84,6 +84,7 @@ class MenuController extends Controller
     public function edit($id)
     {
         $Menu = Menu::find($id);
+        // dd($Menu);
         return view('admin.Menu.edit', compact('Menu'));
     }
 
@@ -100,7 +101,7 @@ class MenuController extends Controller
         $Menu->nama_menu = $request->nama_menu;
         // $Menu->link = $request->link;
         $Menu->isActive = $request->isActive;
-        $Menu->parent_id = $request->parent_id;
+        // $Menu->parent_id = $request->parent_id;
         $Menu->urutan = $request->urutan;
         $Menu->save();
 

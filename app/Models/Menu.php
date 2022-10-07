@@ -17,6 +17,10 @@ class Menu extends Model
     {
         return $this->belongsTo(HalamanMenu::class, 'id', 'menu_id');
     }
+    public function Menu()
+    {
+        return $this->belongsTo(Menu::class, 'id', 'parent_id');
+    }
     public function subMenu()
     {
         return $this->hasMany(Menu::class, 'parent_id');
