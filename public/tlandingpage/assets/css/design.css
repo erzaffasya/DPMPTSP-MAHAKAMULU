@@ -124,6 +124,13 @@ body{
 	overflow: hidden;
 	height: 300px!important;
 }
+.wpo-site-header #navbar > ul > li > a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.wpo-site-header #navbar > ul > li .sub-menu a {
+    text-transform: uppercase;
+}
 @media (max-width: 1500px){
 	.wpo-site-header #navbar > ul > li > a {
 	  padding: 16px 14px;
@@ -131,11 +138,15 @@ body{
 }
 @media screen and (min-width: 992px){
 	.wpo-site-header #navbar > ul > li > a {
-	  font-size: 16px;
+	  font-size: 13px;
 	}
 @media screen and (min-width: 992px){
 	.wpo-site-header #navbar > ul > li > a {
-	  padding: 20px 16px;
+	  padding: 12px 10px;
+	}
+	.wpo-site-header #navbar > ul > li .sub-menu a {
+	    font-size: 13px;
+	    padding: 8px 16px;
 	}
 }
 .post-control-link {

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="wpo-breadcumb-wrap">
-                        <h2>{{ $Berita->judul }}</h2>
+                        <h2 class="fs-1">{{ $Berita->judul }}</h2>
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><span>Berita</span></li>
@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="details">
                                             <span class="date">{{ $item->created_at->Format('D, d M Y') }} </span>
-                                            <h4><a
+                                            <h4 class="fs-6"><a
                                                     href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a>
                                             </h4>
                                         </div>
