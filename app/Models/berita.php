@@ -18,7 +18,7 @@ class Berita extends Model
     }
     public function kategoriBerita()
     {
-        return $this->belongsTo(kategoriBerita::class, 'kategori_berita_id', 'id');
+        return $this->belongsTo(KategoriBerita::class, 'kategori_berita_id', 'id');
     }
     public function previous()
     {
