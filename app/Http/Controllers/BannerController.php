@@ -58,7 +58,7 @@ class BannerController extends Controller
         $Banner = Banner::create([
             'judul' => $request->judul,
             'gambar' => $txt,
-            'link' => $request->link,
+            // 'link' => $request->link,
             'deskripsi' => $request->deskripsi,
             'isActive' => $request->isActive,
         ]);
@@ -114,7 +114,7 @@ class BannerController extends Controller
 
         $Banner->judul = $request->judul;
         $Banner->gambar = $txt;
-        $Banner->link = $request->link;
+        // $Banner->link = $request->link;
         $Banner->deskripsi = $request->deskripsi;
         $Banner->isActive = $request->isActive;
         $Banner->save();

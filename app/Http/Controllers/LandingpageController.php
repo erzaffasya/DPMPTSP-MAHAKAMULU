@@ -89,4 +89,20 @@ class LandingpageController extends Controller
         $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
         return view('tlandingpage.Berita', compact('Berita', 'RelatedPost', 'Populer'));
     }
+
+    public function detailPengumuman(Request $request, $id)
+    {
+        $Pengumuman = Pengumuman::find($id);
+        $BeritaBaru = Berita::with(['User', 'kategoriBerita'])->latest()->paginate(4);
+        $dataPopuler = Visit::select('visitable_id', DB::raw('count(id) as total'))
+            ->groupBy('visitable_id')
+            ->orderBy('total', 'DESC')
+            ->limit(4)->get();
+        $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
+        if ($Pengumuman != NULL) {
+            return view('tlandingpage.detailPengumuman', compact('Pengumuman', 'BeritaBaru', 'Populer'));
+        } else {
+            return back();
+        }
+    }
 }

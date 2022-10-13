@@ -3,6 +3,7 @@
 use App\Helpers\Helper;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FastLinkController;
 use App\Http\Controllers\HalamanMenuController;
 use App\Http\Controllers\KategoriBeritaController;
@@ -54,14 +55,17 @@ Route::get('detail/{id}', [LandingpageController::class, 'HalamanMenu'])->name('
 Route::get('sub-menu/{id}', [MenuController::class, 'subMenu'])->name('sub-menu');
 Route::get('berita', [LandingpageController::class, 'Berita'])->name('landingpage-berita');
 Route::get('detail-berita/{id}', [LandingpageController::class, 'DetailBerita'])->name('detail-berita');
+Route::get('detail-pengumuman/{id}', [LandingpageController::class, 'detailPengumuman'])->name('detail-pengumuman');
 Route::post('cari-berita', [LandingpageController::class, 'cariBerita'])->name('cari-berita');
 Route::get('/', [LandingpageController::class, 'home'])->name('home');
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::group(['middleware' => 'auth'], function () {
     // Route::get('/dashboard', function () {

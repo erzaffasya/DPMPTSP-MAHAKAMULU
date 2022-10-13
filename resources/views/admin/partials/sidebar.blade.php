@@ -44,7 +44,7 @@
                 </g>
             </svg>
         </span>
-        <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+        <span class="app-brand-text demo menu-text fw-bolder ms-2"><strong>Dashboard</strong></span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -57,7 +57,8 @@
 <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item">
-        <a href="{{route("dashboard")}}" class="menu-link {{  request()->routeIs('dashboard.*') ? 'active open' : '' }}">
+        <a href="{{ route('dashboard') }}"
+            class="menu-link {{ request()->routeIs('dashboard.*') ? 'active open' : '' }}">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Dashboard</div>
         </a>
@@ -68,7 +69,7 @@
         <span class="menu-header-text">Setting Berita</span>
     </li>
     {{-- Tag Berita --}}
-    <li class="menu-item {{ request()->routeIs('TagBerita.*') ? 'active' : '' }}">
+    {{-- <li class="menu-item {{ request()->routeIs('TagBerita.*') ? 'active' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-dock-top"></i>
             <div data-i18n="Account Settings">Tag Berita</div>
@@ -85,9 +86,9 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> --}}
     {{-- Kategori Berita --}}
-    <li class="menu-item {{ request()->routeIs('KategoriBerita.*') ? 'active open' : '' }}">
+    {{-- <li class="menu-item {{ request()->routeIs('KategoriBerita.*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
             <div data-i18n="Authentications">Kategori Berita</div>
@@ -104,7 +105,7 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> --}}
     {{-- Berita --}}
     <li class="menu-item {{ request()->routeIs('Berita.*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -130,18 +131,18 @@
         <span class="menu-header-text">Setting Menu</span>
     </li>
     {{-- Menu --}}
-    <li class="menu-item {{  request()->routeIs('Menu.*') ? 'active open' : '' }}">
+    <li class="menu-item {{ request()->routeIs('Menu.*') ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-dock-top"></i>
             <div data-i18n="Account Settings">Menu</div>
         </a>
         <ul class="menu-sub">
-            <li class="menu-item {{  request()->routeIs('Menu.create') ? 'active' : '' }}">
+            <li class="menu-item {{ request()->routeIs('Menu.create') ? 'active' : '' }}">
                 <a href="{{ route('Menu.create') }}" class="menu-link">
                     <div data-i18n="Account">Tambah Data</div>
                 </a>
             </li>
-            <li class="menu-item {{  request()->routeIs('Menu.index') ? 'active' : '' }}">
+            <li class="menu-item {{ request()->routeIs('Menu.index') ? 'active' : '' }}">
                 <a href="{{ route('Menu.index') }}" class="menu-link">
                     <div data-i18n="Notifications">Lihat Data</div>
                 </a>
@@ -151,23 +152,25 @@
 </li>
 
 {{-- Survey Kepuasan --}}
-<li class="menu-header small text-uppercase">
+{{-- <li class="menu-header small text-uppercase">
     <span class="menu-header-text">Setting Survey</span>
-</li>
+</li> --}}
 {{-- Tambah Survey --}}
-<li class="menu-item {{  request()->routeIs('SurveyKepuasan.*') ? 'active open' : '' }}">
+{{-- <li class="menu-item {{ request()->routeIs('SurveyKepuasan.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Survey</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="{{ route('SurveyKepuasan.create') }}" class="menu-link {{  request()->routeIs('SurveyKepuasan.create') ? 'active' : '' }}">
+            <a href="{{ route('SurveyKepuasan.create') }}"
+                class="menu-link {{ request()->routeIs('SurveyKepuasan.create') ? 'active' : '' }}">
                 <div data-i18n="Account">Tambah Pertanyaan</div>
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ route('SurveyKepuasan.index') }}" class="menu-link {{  request()->routeIs('SurveyKepuasan.index') ? 'active' : '' }}">
+            <a href="{{ route('SurveyKepuasan.index') }}"
+                class="menu-link {{ request()->routeIs('SurveyKepuasan.index') ? 'active' : '' }}">
                 <div data-i18n="Notifications">Lihat Pertanyaan</div>
             </a>
         </li>
@@ -177,69 +180,74 @@
         <i class="menu-icon tf-icons bx bx-file"></i>
         <div data-i18n="Support">Hasil Survey</div>
     </a>
-</li>
-</li>
+</li> --}}
 
 <!-- Misc -->
 <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
 {{-- Pengumuman --}}
-<li class="menu-item {{  request()->routeIs('Pengumuman.*') ? 'active open' : '' }}">
+<li class="menu-item {{ request()->routeIs('Pengumuman.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Pengumuman</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="{{route('Pengumuman.create')}}" class="menu-link {{  request()->routeIs('Pengumuman.create') ? 'active' : '' }}">
+            <a href="{{ route('Pengumuman.create') }}"
+                class="menu-link {{ request()->routeIs('Pengumuman.create') ? 'active' : '' }}">
                 <div data-i18n="Account">Tambah Data</div>
             </a>
-            <a href="{{route('Pengumuman.index')}}" class="menu-link {{  request()->routeIs('Pengumuman.index') ? 'active' : '' }}">
+            <a href="{{ route('Pengumuman.index') }}"
+                class="menu-link {{ request()->routeIs('Pengumuman.index') ? 'active' : '' }}">
                 <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
 </li>
 {{-- Fast Link --}}
-<li class="menu-item {{  request()->routeIs('FastLink.*') ? 'active open' : '' }}">
+{{-- <li class="menu-item {{ request()->routeIs('FastLink.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Fast Link</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="{{route('FastLink.create')}}" class="menu-link {{  request()->routeIs('FastLink.create') ? 'active' : '' }}">
+            <a href="{{ route('FastLink.create') }}"
+                class="menu-link {{ request()->routeIs('FastLink.create') ? 'active' : '' }}">
                 <div data-i18n="Account">Tambah Data</div>
             </a>
-            <a href="{{route('FastLink.index')}}" class="menu-link {{  request()->routeIs('FastLink.index') ? 'active' : '' }}">
+            <a href="{{ route('FastLink.index') }}"
+                class="menu-link {{ request()->routeIs('FastLink.index') ? 'active' : '' }}">
                 <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
-</li>
+</li> --}}
 {{-- Banner Website --}}
-<li class="menu-item {{  request()->routeIs('Banner.*') ? 'active open' : '' }}">
+<li class="menu-item {{ request()->routeIs('Banner.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Banner Website</div>
     </a>
     <ul class="menu-sub">
         <li class="menu-item">
-            <a href="{{route('Banner.create')}}" class="menu-link {{  request()->routeIs('Banner.create') ? 'active' : '' }}">
+            <a href="{{ route('Banner.create') }}"
+                class="menu-link {{ request()->routeIs('Banner.create') ? 'active' : '' }}">
                 <div data-i18n="Account">Tambah Data</div>
             </a>
-            <a href="{{route('Banner.index')}}" class="menu-link {{  request()->routeIs('Banner.index') ? 'active' : '' }}">
+            <a href="{{ route('Banner.index') }}"
+                class="menu-link {{ request()->routeIs('Banner.index') ? 'active' : '' }}">
                 <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
     </ul>
 </li>
 {{-- Profile Website --}}
-<li class="menu-item {{  request()->routeIs('ProfileWebsite.*') ? 'active open' : '' }}">
-    <a href="{{route('ProfileWebsite.index')}}" class="menu-link">
+{{-- <li class="menu-item {{ request()->routeIs('ProfileWebsite.*') ? 'active open' : '' }}">
+    <a href="{{ route('ProfileWebsite.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Analytics">Profile Website</div>
     </a>
-</li>
+</li> --}}
 {{-- <li class="menu-item">
         <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
             <i class="menu-icon tf-icons bx bx-support"></i>

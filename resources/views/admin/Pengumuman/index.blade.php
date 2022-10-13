@@ -20,9 +20,9 @@
                         <tr>
                             <td> {{ $loop->iteration }} </td>
                             <td> {{ $item->judul }} </td>
-                            <td> {{ $item->gambar }} </td>
-                            <td> {{ $item->isi }} </td>
-                            <td> {{ $item->file }} </td>
+                            <td> <a href="{{ asset($item->file) }}" target="_blank"> Lihat File </a> </td>
+                            <td> {!! $item->isi !!} </td>
+                            <td> <a href="{{ asset($item->gambar) }}" target="_blank"> Lihat Gambar </a> </td>
                             <td> {{ $item->link }} </td>
                             <td> {{ $item->users_id }} </td>
 
@@ -34,7 +34,7 @@
                                     </button>
                                     <div class="dropdown-menu " data-popper-placement="bottom-start"
                                         style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
+                                        <a class="dropdown-item" href="{{ route('Pengumuman.edit', $item->id) }}"><i
                                                 class="bx bx-edit-alt me-1"></i> Edit</a>
                                         <form action="{{ route('Pengumuman.destroy', $item->id) }}" method="post">
                                             @method('DELETE')

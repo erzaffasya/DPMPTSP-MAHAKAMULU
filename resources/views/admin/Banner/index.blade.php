@@ -32,7 +32,7 @@
                                     </button>
                                     <div class="dropdown-menu " data-popper-placement="bottom-start"
                                         style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
+                                        <a class="dropdown-item" href="{{route('Banner.edit',$item->id)}}"><i
                                                 class="bx bx-edit-alt me-1"></i> Edit</a>
                                         <form action="{{ route('Banner.destroy', $item->id) }}" method="post">
                                             @method('DELETE')
