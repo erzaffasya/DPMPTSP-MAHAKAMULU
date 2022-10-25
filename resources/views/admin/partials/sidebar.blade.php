@@ -191,13 +191,15 @@
         <div data-i18n="Account Settings">Pengumuman</div>
     </a>
     <ul class="menu-sub">
-        <li class="menu-item">
+        <li class="menu-item {{ request()->routeIs('Pengumuman.create') ? 'active' : '' }}">
             <a href="{{ route('Pengumuman.create') }}"
-                class="menu-link {{ request()->routeIs('Pengumuman.create') ? 'active' : '' }}">
+                class="menu-link ">
                 <div data-i18n="Account">Tambah Data</div>
             </a>
+        </li>
+        <li class="menu-item {{ request()->routeIs('Pengumuman.index') ? 'active' : '' }}">
             <a href="{{ route('Pengumuman.index') }}"
-                class="menu-link {{ request()->routeIs('Pengumuman.index') ? 'active' : '' }}">
+                class="menu-link ">
                 <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
@@ -229,13 +231,15 @@
         <div data-i18n="Account Settings">Banner Website</div>
     </a>
     <ul class="menu-sub">
-        <li class="menu-item">
+        <li class="menu-item  {{ request()->routeIs('Banner.create') ? 'active' : '' }}">
             <a href="{{ route('Banner.create') }}"
-                class="menu-link {{ request()->routeIs('Banner.create') ? 'active' : '' }}">
+                class="menu-link">
                 <div data-i18n="Account">Tambah Data</div>
             </a>
+        </li>
+        <li class="menu-item {{ request()->routeIs('Banner.index') ? 'active' : '' }}">
             <a href="{{ route('Banner.index') }}"
-                class="menu-link {{ request()->routeIs('Banner.index') ? 'active' : '' }}">
+                class="menu-link ">
                 <div data-i18n="Account">Lihat Data</div>
             </a>
         </li>
