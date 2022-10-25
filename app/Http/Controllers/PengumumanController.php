@@ -43,7 +43,6 @@ class PengumumanController extends Controller
         $request->validate([
             'judul' => 'required',
             'isi' => 'required',
-            'gambar' => 'required',
         ]);
 
         if (isset($request->gambar)) {
@@ -52,7 +51,7 @@ class PengumumanController extends Controller
             $txt = "storage/Pengumuman/Gambar/" . $file_name;
             $request->gambar->storeAs('public/Pengumuman/Gambar', $file_name);
         } else {
-            $file_name = null;
+            $txt = null;
         }
 
         if (isset($request->file)) {
@@ -61,7 +60,7 @@ class PengumumanController extends Controller
             $txt1 = "storage/Pengumuman/File/" . $file_name1;
             $request->file->storeAs('public/Pengumuman/File', $file_name1);
         } else {
-            $file_name1 = null;
+            $txt1 = null;
         }
 
         $Pengumuman = Pengumuman::create([

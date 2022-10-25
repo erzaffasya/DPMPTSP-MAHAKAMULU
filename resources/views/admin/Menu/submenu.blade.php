@@ -1,9 +1,7 @@
 <x-app-layout>
     <div class="card">
         <h5 class="card-header">Responsive Table</h5>
-        <button class="btn btn-primary">
-            <a href="{{ route('Menu.show', request()->id) }}">Tambah Menu</a>
-        </button>
+        <a class="btn btn-primary btn-block" href="https://mahakam.lookacastiron.com/Menu/8">Tambah Menu</a>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>

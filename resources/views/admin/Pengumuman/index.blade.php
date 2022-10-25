@@ -11,7 +11,7 @@
                         <th>Deskripsi</th>
                         <th>File</th>
                         <th>Link</th>
-                        <th>User</th>
+                        {{-- <th>User</th> --}}
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -24,7 +24,7 @@
                             <td> {!! $item->isi !!} </td>
                             <td> <a href="{{ asset($item->gambar) }}" target="_blank"> Lihat Gambar </a> </td>
                             <td> {{ $item->link }} </td>
-                            <td> {{ $item->users_id }} </td>
+                            {{-- <td> {{ $item->users_id }} </td> --}}
 
                             <td>
                                 <div class="dropdown">
