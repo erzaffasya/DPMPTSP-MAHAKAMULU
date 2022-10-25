@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                             <span class="d-block mb-1">Menu</span>
-                            <h3 class="card-title text-nowrap mb-2">{{ $Menu->count() }}</h3>
+                            <h3 class="card-title text-nowrap mb-2">{{ $Menu->where('parent_id',null)->count() }}</h3>
                             {{-- <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i>
                               -14.82%</small> --}}
                         </div>
@@ -70,8 +70,8 @@
                                     </div>
                                 </div> --}}
                             </div>
-                            <span class="d-block mb-1">Halaman Menu</span>
-                            <h3 class="card-title text-nowrap mb-2">{{ $HalamanMenu->count() }}</h3>
+                            <span class="d-block mb-1">Sub Menu</span>
+                            <h3 class="card-title text-nowrap mb-2">{{ $Menu->where('parent_id','!=',null)->count() }}</h3>
                             {{-- <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i>
                               -14.82%</small> --}}
                         </div>
