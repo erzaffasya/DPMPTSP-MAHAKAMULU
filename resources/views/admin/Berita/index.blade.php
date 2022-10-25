@@ -46,7 +46,7 @@
                                             @method('DELETE')
                                             @csrf
 
-                                            <button class="dropdown-item" type="SUBMIT"><i
+                                            <button class="dropdown-item" onclick="ConfirmDelete()" type="SUBMIT"><i
                                                     class="bx bx-trash me-1"></i> Delete</button>
                                         </form>
                                     </div>

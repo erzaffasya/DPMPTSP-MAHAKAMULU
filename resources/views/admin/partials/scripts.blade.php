@@ -30,5 +30,10 @@
      $(document).ready(function() {
          $('#myTable').DataTable();
      });
+
+     function ConfirmDelete() {
+         return confirm("Apakah anda yakin untuk menghapus data tersebut?");
+     }
  </script>
+
  @stack('scripts')
