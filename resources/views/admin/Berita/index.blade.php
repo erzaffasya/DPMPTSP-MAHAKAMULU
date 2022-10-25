@@ -2,7 +2,7 @@
     <div class="card">
         <h5 class="card-header">Responsive Table</h5>
         <div class="table-responsive text-nowrap" style="height: 80vh;">
-            <table class="table">
+            <table class="table" id="myTable">
                 <thead>
                     <tr class="text-nowrap">
                         <th>#</th>
@@ -21,12 +21,12 @@
                         <tr>
                             <td> {{ $loop->iteration }} </td>
                             <td> {{ $item->judul }} </td>
-                            <td> 
-                            <img src="{{ $item->gambar }}" height="70">    
+                            <td>
+                                <img src="{{ $item->gambar }}" height="70">
                             </td>
                             <td> {!! \Illuminate\Support\Str::limit($item->isi, $limit = 150, $end = '...') !!} </td>
-                            <td> 
-                            <a href="{{ $item->file }}" target="_blank"> Lihat File</a>    
+                            <td>
+                                <a href="{{ $item->file }}" target="_blank"> Lihat File</a>
                             </td>
                             <td> {{ $item->link }} </td>
                             <td> {{ $item->User->name }} </td>
@@ -40,7 +40,7 @@
                                     </button>
                                     <div class="dropdown-menu " data-popper-placement="bottom-start"
                                         style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
-                                        <a class="dropdown-item" href="{{route('Berita.edit',$item->id)}}"><i
+                                        <a class="dropdown-item" href="{{ route('Berita.edit', $item->id) }}"><i
                                                 class="bx bx-edit-alt me-1"></i> Edit</a>
                                         <form action="{{ route('Berita.destroy', $item->id) }}" method="post">
                                             @method('DELETE')
@@ -59,4 +59,5 @@
             </table>
         </div>
     </div>
+
 </x-app-layout>
