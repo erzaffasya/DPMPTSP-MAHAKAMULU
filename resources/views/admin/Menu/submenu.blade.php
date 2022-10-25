@@ -2,7 +2,7 @@
     <div class="card">
         <h5 class="card-header">Responsive Table</h5>
         <a class="btn btn-primary btn-block" href="https://mahakam.lookacastiron.com/Menu/8">Tambah Menu</a>
-        <div class="table-responsive text-nowrap">
+        <div class="table-responsive text-nowrap" style="height: 80vh;">
             <table class="table">
                 <thead>
                     <tr class="text-nowrap">
