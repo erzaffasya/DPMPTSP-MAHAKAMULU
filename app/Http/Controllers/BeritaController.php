@@ -77,18 +77,18 @@ class BeritaController extends Controller
             'file' => $txt1,
             'link' => $request->link,
             'users_id' => Auth::user()->id,
-            'kategori_berita_id' => $request->kategori_berita_id,
+            // 'kategori_berita_id' => $request->kategori_berita_id,
         ]);
 
-        if ($request->tag_berita) {
-            foreach ($request->tag_berita_id as $item) {
-                $SP = AksesTag::create([
-                    'berita_id' => $Berita->id,
-                    'tag_berita_id' => $item
-                ]);
-                // dd($item);
-            }
-        }
+        // if ($request->tag_berita) {
+        //     foreach ($request->tag_berita_id as $item) {
+        //         $SP = AksesTag::create([
+        //             'berita_id' => $Berita->id,
+        //             'tag_berita_id' => $item
+        //         ]);
+        //         // dd($item);
+        //     }
+        // }
 
 
 
@@ -158,7 +158,7 @@ class BeritaController extends Controller
         $Berita->file = $txt1;
         $Berita->link = $request->link;
         $Berita->users_id = Auth::user()->id;
-        $Berita->kategori_berita_id = $request->kategori_berita_id;
+        // $Berita->kategori_berita_id = $request->kategori_berita_id;
         $Berita->save();
 
         return redirect()->route('Berita.index')

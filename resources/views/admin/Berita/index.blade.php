@@ -12,7 +12,7 @@
                         <th>File</th>
                         <th>Link</th>
                         <th>Penulis</th>
-                        <th>Kategori Berita</th>
+                        {{-- <th>Kategori Berita</th> --}}
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -25,10 +25,12 @@
                             <img src="{{ $item->gambar }}" height="70">    
                             </td>
                             <td> {!! \Illuminate\Support\Str::limit($item->isi, $limit = 150, $end = '...') !!} </td>
-                            <td> {{ $item->file }} </td>
+                            <td> 
+                            <a href="{{ $item->file }}" target="_blank"> Lihat File</a>    
+                            </td>
                             <td> {{ $item->link }} </td>
                             <td> {{ $item->User->name }} </td>
-                            <td> {{ $item->KategoriBerita->nama_kategori }} </td>
+                            {{-- <td> {{ $item->KategoriBerita->nama_kategori }} </td> --}}
 
                             <td>
                                 <div class="dropdown">
@@ -38,7 +40,7 @@
                                     </button>
                                     <div class="dropdown-menu " data-popper-placement="bottom-start"
                                         style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
+                                        <a class="dropdown-item" href="{{route('Berita.edit',$item->id)}}"><i
                                                 class="bx bx-edit-alt me-1"></i> Edit</a>
                                         <form action="{{ route('Berita.destroy', $item->id) }}" method="post">
                                             @method('DELETE')
