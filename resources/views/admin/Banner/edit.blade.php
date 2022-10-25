@@ -19,10 +19,10 @@
                     <a href="{{ asset($Banner->gambar) }}" target="_blank"> Lihat Gambar </a>
                     <input class="form-control" type="file" name="gambar" id="formFile">
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">deskripsi</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="deskripsi" rows="3">{!! $Banner->judul !!}</textarea>
-                </div>
+                </div> --}}
                 <div class="mb-3">
                     <label for="exampleFormControlSelect1" class="form-label">Aktif</label>
                     <select class="form-select" id="exampleFormControlSelect1" name="isActive"

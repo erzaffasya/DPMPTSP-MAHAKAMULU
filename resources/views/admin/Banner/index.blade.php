@@ -8,7 +8,7 @@
                         <th>#</th>
                         <th>Judul</th>
                         <th>Gambar</th>
-                        <th>Deskripsi</th>
+                        {{-- <th>Deskripsi</th> --}}
                         <th>isActive</th>
                         <th>Aksi</th>
                     </tr>
@@ -21,7 +21,7 @@
                             <td> 
                             <img src="{{ $item->gambar }}" height="70">    
                             </td>
-                            <td> {!! $item->deskripsi !!} </td>
+                            {{-- <td> {!! $item->deskripsi !!} </td> --}}
                             <td> {{ $item->isActive }} </td>
 
                             <td>

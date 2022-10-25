@@ -41,7 +41,7 @@ class BannerController extends Controller
         // dd($request->all());
         $request->validate([
             'judul' => 'required',
-            'deskripsi' => 'required',
+            // 'deskripsi' => 'required',
             'gambar' => 'required',
         ]);
 
@@ -59,7 +59,7 @@ class BannerController extends Controller
             'judul' => $request->judul,
             'gambar' => $txt,
             // 'link' => $request->link,
-            'deskripsi' => $request->deskripsi,
+            // 'deskripsi' => $request->deskripsi,
             'isActive' => $request->isActive,
         ]);
         
@@ -115,7 +115,7 @@ class BannerController extends Controller
         $Banner->judul = $request->judul;
         $Banner->gambar = $txt;
         // $Banner->link = $request->link;
-        $Banner->deskripsi = $request->deskripsi;
+        // $Banner->deskripsi = $request->deskripsi;
         $Banner->isActive = $request->isActive;
         $Banner->save();
 
