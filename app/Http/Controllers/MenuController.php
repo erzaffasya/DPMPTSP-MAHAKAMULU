@@ -126,6 +126,8 @@ class MenuController extends Controller
     public function subMenu($id)
     {
         $Menu = Menu::where('parent_id', $id)->get();
-        return view('admin.Menu.submenu', compact('Menu'));
+
+        // dd($Menu);
+        return view('admin.Menu.submenu', compact('Menu','id'));
     }
 }
