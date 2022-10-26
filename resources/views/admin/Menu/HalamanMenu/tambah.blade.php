@@ -3,11 +3,19 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Form Tambah Data</h5>
             <small class="text-muted float-end">Default label</small>
+            @if ($Menu)
+                <form action="{{ route('Menu.destroy', $id) }}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" onclick="ConfirmDelete()" class="btn btn-danger">Hapus Halaman</button>
+                </form>
+            @endif
+
         </div>
         <div class="card-body">
             <form action="{{ route('HalamanMenu.update', $id) }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method("PUT")
+                @method('PUT')
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">judul</label>
                     <input type="text" class="form-control" id="basic-default-fullname"

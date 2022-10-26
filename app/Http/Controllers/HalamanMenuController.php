@@ -198,7 +198,12 @@ class HalamanMenuController extends Controller
             Storage::delete("public/HalamanMenu/File/$HalamanMenu->file");
         }
         $HalamanMenu->delete();
-        return redirect()->route('HalamanMenu.index')
-            ->with('delete', 'Halaman Menu Berhasil Dihapus');
+        if ($HalamanMenu->Menu->parent_id != null) {
+            return redirect()->route('sub-menu', $HalamanMenu->Menu->parent_id)
+                ->with('edit', 'HalamanMenu Berhasil Diedit');
+        } else {
+            return redirect()->route('Menu.index')
+                ->with('edit', 'Halaman Menu Berhasil Diedit');
+        }
     }
 }
