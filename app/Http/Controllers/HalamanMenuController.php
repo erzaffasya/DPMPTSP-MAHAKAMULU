@@ -89,6 +89,7 @@ class HalamanMenuController extends Controller
     public function show($id)
     {
         $Menu = HalamanMenu::where('menu_id', $id)->first();
+        // dd($id);
         return view('admin.Menu.HalamanMenu.tambah', compact('Menu', 'id'));
     }
 
@@ -190,7 +191,9 @@ class HalamanMenuController extends Controller
      */
     public function destroy($id)
     {
-        $HalamanMenu = HalamanMenu::findOrFail($id);
+        // dd($id);
+        $HalamanMenu = HalamanMenu::where('menu_id', $id)->first();
+        // DD($HalamanMenu);
         if ($HalamanMenu->gambar) {
             Storage::delete("public/HalamanMenu/Gambar/$HalamanMenu->gambar");
         }
@@ -198,6 +201,7 @@ class HalamanMenuController extends Controller
             Storage::delete("public/HalamanMenu/File/$HalamanMenu->file");
         }
         $HalamanMenu->delete();
+
         if ($HalamanMenu->Menu->parent_id != null) {
             return redirect()->route('sub-menu', $HalamanMenu->Menu->parent_id)
                 ->with('edit', 'HalamanMenu Berhasil Diedit');
