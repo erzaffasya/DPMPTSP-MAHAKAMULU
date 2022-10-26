@@ -77,7 +77,7 @@ class HalamanMenuController extends Controller
 
 
         return redirect()->route('HalamanMenu.index')
-            ->with('success', 'HalamanMenu Berhasil Ditambahkan');
+            ->with('success', 'Halaman Menu Berhasil Ditambahkan');
     }
 
     /**
@@ -178,7 +178,7 @@ class HalamanMenuController extends Controller
                 ->with('edit', 'HalamanMenu Berhasil Diedit');
         } else {
             return redirect()->route('Menu.index')
-                ->with('edit', 'HalamanMenu Berhasil Diedit');
+                ->with('edit', 'Halaman Menu Berhasil Diedit');
         }
     }
 
@@ -199,6 +199,6 @@ class HalamanMenuController extends Controller
         }
         $HalamanMenu->delete();
         return redirect()->route('HalamanMenu.index')
-            ->with('delete', 'HalamanMenu Berhasil Dihapus');
+            ->with('delete', 'Halaman Menu Berhasil Dihapus');
     }
 }

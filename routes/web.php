@@ -66,12 +66,13 @@ Route::get('/', [LandingpageController::class, 'home'])->name('home');
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::group(['middleware' => 'auth'], function () {
     // Route::get('/dashboard', function () {
     //     return view('admin.index');
     // });
+
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('setting-profile', [ProfileController::class, 'index'])->name('setting-profile');
     Route::put('ubah-password', [ProfileController::class, 'ubahPassword'])->name('ubah-password');
     Route::resource('KategoriBerita', KategoriBeritaController::class);
@@ -79,7 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('Berita', BeritaController::class);
     Route::resource('SurveyKepuasan', SurveyKepuasanController::class);
     Route::resource('Menu', MenuController::class);
-    
+
     //Blom
     Route::resource('Pengumuman', PengumumanController::class);
     Route::resource('FastLink', FastLinkController::class);
@@ -89,4 +90,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 // Route::get('admin/cara-pemesanan', [GeneralController::class, 'pemesanan'])->name('pemesanan');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
