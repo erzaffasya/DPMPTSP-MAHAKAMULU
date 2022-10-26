@@ -30,22 +30,21 @@
                     </div> --}}
                     <hr class="my-0" />
                     <div class="card-body">
-                        <form action="{{ route('ubah-password') }}" method="POST"
-                           >
+                        <form action="{{ route('ubah-password') }}" method="POST">
                             @method('PUT')
                             @csrf
                             <div class="row">
                                 <div class="mb-3 col-md-6">
                                     <label for="firstName" class="form-label">Password Baru</label>
                                     <input class="form-control" type="password" id="password" name="password"
-                                        value="John" autofocus />
+                                        autofocus />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-6">
                                     <label for="firstName" class="form-label">Konfirmasi Password Baru</label>
                                     <input class="form-control" type="password" id="confirm_password"
-                                        name="password_confirmation" value="John" autofocus />
+                                        name="password_confirmation" autofocus />
                                     <span id='message'></span>
                                 </div>
                             </div>
