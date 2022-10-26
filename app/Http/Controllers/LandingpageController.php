@@ -87,7 +87,7 @@ class LandingpageController extends Controller
             ->orderBy('total', 'DESC')
             ->limit(4)->get();
         $Populer = Berita::whereIn('id', $dataPopuler->pluck('visitable_id')->toArray())->get();
-        return view('tlandingpage.Berita', compact('Berita', 'RelatedPost', 'Populer'));
+        return view('tlandingpage.berita', compact('Berita', 'RelatedPost', 'Populer'));
     }
 
     public function detailPengumuman(Request $request, $id)
