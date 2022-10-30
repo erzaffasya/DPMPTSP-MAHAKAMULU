@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="card">
         <h5 class="card-header">Responsive Table</h5>
-        <div class="table-responsive text-nowrap" style="height: 80vh;">
+        <div class="table-responsive p-3 text-nowrap" style="height: 80vh;">
             <table class="table" id="myTable">
                 <thead>
                     <tr class="text-nowrap">
