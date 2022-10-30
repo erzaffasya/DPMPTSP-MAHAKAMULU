@@ -16,37 +16,42 @@ class ProfileWebsiteController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        if (isset($request->favicon)) {
-            $extention = $request->favicon->extension();
-            $file_name = time() . '.' . $extention;
-            $txt = "storage/ProfileWebsite/favicon/" . $file_name;
-            $request->favicon->storeAs('public/ProfileWebsite/favicon', $file_name);
-        } else {
-            $file_name = null;
-        }
-
-        if (isset($request->background_website)) {
-            $extention = $request->background_website->extension();
-            $file_name1 = time() . '.' . $extention;
-            $txt1 = "storage/ProfileWebsite/background_website/" . $file_name1;
-            $request->background_website->storeAs('public/ProfileWebsite/background_website', $file_name1);
-        } else {
-            $file_name1 = null;
-        }
-
         $ProfileWebsite = ProfileWebsite::find(1);
-        // dd($ProfileWebsite);
-        $ProfileWebsite->nama_website = $request->nama_website;
+        if ($request->logo) {
+            $extention = $request->logo->extension();
+            $file_name = time() . '.' . $extention;
+            $txt = "storage/ProfileWebsite/logo/" . $file_name;
+            $request->logo->storeAs('public/ProfileWebsite/logo', $file_name);
+
+            $ProfileWebsite->logo = $txt;
+        }
+
+        if ($request->foto_kadis) {
+            $extention = $request->foto_kadis->extension();
+            $file_name1 = time() . '.' . $extention;
+            $txt1 = "storage/ProfileWebsite/foto_kadis/" . $file_name1;
+            $request->foto_kadis->storeAs('public/ProfileWebsite/foto_kadis', $file_name1);
+
+            $ProfileWebsite->foto_kadis = $txt1;
+        }
+
+
+        $ProfileWebsite->slogan = $request->slogan;
+        $ProfileWebsite->visi = $request->visi;
+        $ProfileWebsite->misi = $request->misi;
+        $ProfileWebsite->deskripsi = $request->deskripsi;
+        $ProfileWebsite->video = $request->video;
+        $ProfileWebsite->nama_kadis = $request->nama_kadis;
+
+
+        $ProfileWebsite->alamat = $request->alamat;
         $ProfileWebsite->email = $request->email;
-        $ProfileWebsite->domain = $request->domain;
-        $ProfileWebsite->no_rekening = $request->no_rekening;
         $ProfileWebsite->no_telp = $request->no_telp;
-        $ProfileWebsite->meta_deskripsi = $request->meta_deskripsi;
-        $ProfileWebsite->meta_keyword = $request->meta_keyword;
+        $ProfileWebsite->instagram = $request->instagram;
+        $ProfileWebsite->youtube = $request->youtube;
+        $ProfileWebsite->facebook = $request->facebook;
         $ProfileWebsite->google_maps = $request->google_maps;
 
-        $ProfileWebsite->favicon = $txt;
-        $ProfileWebsite->background_website = $txt1;
         $ProfileWebsite->save();
 
         return back()->with('success', 'Data Berhasil Diubah!');

@@ -206,7 +206,7 @@
     </ul>
 </li>
 {{-- Fast Link --}}
-{{-- <li class="menu-item {{ request()->routeIs('FastLink.*') ? 'active open' : '' }}">
+<li class="menu-item {{ request()->routeIs('FastLink.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Fast Link</div>
@@ -223,7 +223,7 @@
             </a>
         </li>
     </ul>
-</li> --}}
+</li>
 {{-- Banner Website --}}
 <li class="menu-item {{ request()->routeIs('Banner.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -246,12 +246,12 @@
     </ul>
 </li>
 {{-- Profile Website --}}
-{{-- <li class="menu-item {{ request()->routeIs('ProfileWebsite.*') ? 'active open' : '' }}">
+<li class="menu-item {{ request()->routeIs('ProfileWebsite.*') ? 'active open' : '' }}">
     <a href="{{ route('ProfileWebsite.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Analytics">Profile Website</div>
     </a>
-</li> --}}
+</li>
 {{-- <li class="menu-item">
         <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" class="menu-link">
             <i class="menu-icon tf-icons bx bx-support"></i>

@@ -15,16 +15,26 @@ return new class extends Migration
     {
         Schema::create('profil_website', function (Blueprint $table) {
             $table->id();
-            $table->string("nama_website")->nullable();
-            $table->text("email")->nullable();
-            $table->text("domain")->nullable();
-            $table->string("no_rekening")->nullable();
+            $table->string("logo")->nullable();
+            $table->text("slogan")->nullable();
+            $table->text("visi")->nullable();
+            $table->text("misi")->nullable();
+            $table->text("deskripsi")->nullable();
+            $table->text("video")->nullable();
+
+            $table->string("nama_kadis")->nullable();
+            $table->string("foto_kadis")->nullable();
+
+            $table->text("alamat")->nullable();
+            $table->string("email")->nullable();
             $table->string("no_telp")->nullable();
-            $table->string("meta_deskripsi")->nullable();
-            $table->text("meta_keyword")->nullable();
             $table->text("google_maps")->nullable();
-            $table->string("favicon")->nullable();
-            $table->string("background_website")->nullable();
+
+
+            $table->string("instagram")->nullable();
+            $table->string("youtube")->nullable();
+            $table->string("facebook")->nullable();
+            
             $table->timestamps();
         });
     }

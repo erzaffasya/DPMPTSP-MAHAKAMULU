@@ -9,7 +9,7 @@
                         <th>Nama Menu</th>
                         <th>isActive</th>
                         <th>Jumlah Sub Menu</th>
-                        <th>Halaman Menu</th>
+                        <th>Isi Halaman</th>
                         <th>Urutan</th>
                         <th>Aksi</th>
                     </tr>
@@ -38,7 +38,7 @@
                                     <div class="dropdown-menu " data-popper-placement="bottom-start"
                                         style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
                                         <a class="dropdown-item" href="{{ route('HalamanMenu.show', $item->id) }}"><i
-                                                class="bx bx-edit-alt me-1"></i> Halaman Menu</a>
+                                                class="bx bx-edit-alt me-1"></i> Isi Halaman </a>
                                         <a class="dropdown-item" href="{{ route('sub-menu', $item->id) }}"><i
                                                 class="bx bx-edit-alt me-1"></i> Sub Menu</a>
                                         <a class="dropdown-item" href="{{route('Menu.edit',$item->id)}}"><i

@@ -1,8 +1,8 @@
 <x-app-layout>
     <div class="card">
-        <h5 class="card-header">Responsive Table</h5>
+        <h5 class="card-header">{{$Judul->nama_menu}}</h5>
         <a class="btn btn-primary btn-block" href="{{url('Menu',$id)}}">Tambah Menu</a>
-        <div class="table-responsive text-nowrap" style="height: 80vh;">
+        <div class="table-responsive text-nowrap p-4" style="height: 80vh;">
             <table class="table" id="myTable">
                 <thead>
                     <tr class="text-nowrap">
@@ -10,7 +10,7 @@
                         <th>Nama Menu</th>
                         <th>isActive</th>
                         <th>Jumlah Sub Menu</th>
-                        <th>Halaman Menu</th>
+                        <th>Isi Halaman</th>
                         <th>Urutan</th>
                         <th>Aksi</th>
                     </tr>
@@ -39,7 +39,7 @@
                                 <div class="dropdown-menu " data-popper-placement="bottom-start"
                                     style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 27px);">
                                     <a class="dropdown-item" href="{{ route('HalamanMenu.show', $item->id) }}"><i
-                                            class="bx bx-edit-alt me-1"></i> Halaman Menu</a>
+                                            class="bx bx-edit-alt me-1"></i> Isi Halaman</a>
                                     <a class="dropdown-item" href="{{ route('sub-menu', $item->id) }}"><i
                                             class="bx bx-edit-alt me-1"></i> Sub Menu</a>
                                     <a class="dropdown-item" href="{{route('Menu.edit',$item->id)}}"><i
