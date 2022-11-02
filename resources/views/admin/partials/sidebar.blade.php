@@ -224,6 +224,44 @@
         </li>
     </ul>
 </li>
+{{-- Link Terkait --}}
+<li class="menu-item {{ request()->routeIs('LinkTerkait.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Link Terkait</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="{{ route('LinkTerkait.create') }}"
+                class="menu-link {{ request()->routeIs('LinkTerkait.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Data</div>
+            </a>
+            <a href="{{ route('LinkTerkait.index') }}"
+                class="menu-link {{ request()->routeIs('LinkTerkait.index') ? 'active' : '' }}">
+                <div data-i18n="Account">Lihat Data</div>
+            </a>
+        </li>
+    </ul>
+</li>
+{{-- Pelayanan --}}
+<li class="menu-item {{ request()->routeIs('Pelayanan.*') ? 'active open' : '' }}">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Pelayanan</div>
+    </a>
+    <ul class="menu-sub">
+        <li class="menu-item">
+            <a href="{{ route('Pelayanan.create') }}"
+                class="menu-link {{ request()->routeIs('Pelayanan.create') ? 'active' : '' }}">
+                <div data-i18n="Account">Tambah Data</div>
+            </a>
+            <a href="{{ route('Pelayanan.index') }}"
+                class="menu-link {{ request()->routeIs('Pelayanan.index') ? 'active' : '' }}">
+                <div data-i18n="Account">Lihat Data</div>
+            </a>
+        </li>
+    </ul>
+</li>
 {{-- Banner Website --}}
 <li class="menu-item {{ request()->routeIs('Banner.*') ? 'active open' : '' }}">
     <a href="javascript:void(0);" class="menu-link menu-toggle">

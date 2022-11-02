@@ -8,7 +8,9 @@ use App\Http\Controllers\FastLinkController;
 use App\Http\Controllers\HalamanMenuController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\LinkTerkaitController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileWebsiteController;
@@ -77,6 +79,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('ubah-password', [ProfileController::class, 'ubahPassword'])->name('ubah-password');
     Route::resource('KategoriBerita', KategoriBeritaController::class);
     Route::resource('TagBerita', TagBeritaController::class);
+    Route::resource('LinkTerkait', LinkTerkaitController::class);
+    Route::resource('Pelayanan', PelayananController::class);
     Route::resource('Berita', BeritaController::class);
     Route::resource('SurveyKepuasan', SurveyKepuasanController::class);
     Route::resource('Menu', MenuController::class);

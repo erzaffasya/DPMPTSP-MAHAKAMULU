@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class FastLinkController extends Controller
 {
- /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -61,7 +61,7 @@ class FastLinkController extends Controller
             'logo' => $txt,
             'link' => $request->link,
         ]);
-        
+
 
         return redirect()->route('FastLink.index')
             ->with('success', 'FastLink Berhasil Ditambahkan');
