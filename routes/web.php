@@ -89,7 +89,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('Pengumuman', PengumumanController::class);
     Route::resource('FastLink', FastLinkController::class);
     Route::resource('Banner', BannerController::class);
-    Route::resource('ProfileWebsite', ProfileWebsiteController::class);
+    Route::resource('ProfileWebsites', ProfileWebsiteController::class);
+
+    Route::prefix('ProfileWebsite')->group(function () {
+        Route::get('kepala-dinas', [ProfileWebsiteController::class, 'kepalaDinas'])->name('kepalaDinas');
+        Route::get('profil-website', [ProfileWebsiteController::class, 'profilWebsite'])->name('profilWebsite');
+        Route::get('kontak', [ProfileWebsiteController::class, 'kontak'])->name('kontaks');
+        Route::get('sosial-media', [ProfileWebsiteController::class, 'sosialMedia'])->name('sosialMedia');
+    });
+
     Route::resource('HalamanMenu', HalamanMenuController::class);
 });
 // Route::get('admin/cara-pemesanan', [GeneralController::class, 'pemesanan'])->name('pemesanan');

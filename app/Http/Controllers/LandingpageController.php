@@ -6,7 +6,9 @@ use App\Models\Banner;
 use App\Models\Berita;
 use App\Models\FastLink;
 use App\Models\HalamanMenu;
+use App\Models\Pelayanan;
 use App\Models\Pengumuman;
+use App\Models\ProfileWebsite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Shetabit\Visitor\Models\Visit;
@@ -27,8 +29,9 @@ class LandingpageController extends Controller
         $Pengumuman = Pengumuman::with('User')->get();
         $FastLink = FastLink::all();
         $RelatedPost = Berita::with(['User', 'kategoriBerita'])->inRandomOrder()->limit(4)->get();
-
-        return view('tlandingpage.index', compact('Banner', 'Berita', 'Pengumuman', 'FastLink', 'RelatedPost', 'BeritaAtas', 'Populer'));
+        $ProfileWebsite = ProfileWebsite::find(1);
+        $Pelayanan = Pelayanan::all();
+        return view('tlandingpage.index', compact('Banner','ProfileWebsite','Pelayanan', 'Berita', 'Pengumuman', 'FastLink', 'RelatedPost', 'BeritaAtas', 'Populer'));
     }
     public function HalamanMenu($id)
     {

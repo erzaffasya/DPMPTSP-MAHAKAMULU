@@ -27,7 +27,7 @@
                                 <div class="col-7">
                                     <div class="wpo-contact-map-section">
                                         <div class="wpo-contact-map">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2042649.5963066346!2d113.70719138351487!3d0.6645017702616871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3206f99441fe973f%3A0x46e846ba6aabd51c!2sMahakam%20Ulu%20Regency%2C%20East%20Kalimantan!5e0!3m2!1sen!2sid!4v1664780942353!5m2!1sen!2sid"\></iframe>
+                                            <iframe src="{{$getProfileWebsite->google_maps}}"\></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                         <div class="office-info-item">
                                             <div class="text-left">
                                                 <h3 class="mb-1">Alamat</h3>
-                                                <p class="mb-0">Jl. Poros Kampung Ujoh Bilang - Long Melaham, Kecamatan Long Bagun, Ujoh Bilang</p>
+                                                <p class="mb-0">{{$getProfileWebsite->alamat}}</p>
                                             </div>
                                         </div>
                                     </div> 
@@ -44,7 +44,7 @@
                                         <div class="office-info-item">
                                             <div class="office-info-text">
                                                 <h3 class="mb-1">Email Pelayanan</h3>
-                                                <p class="mb-0">dpmptsp.mahakamulukab@gmail.com</p>
+                                                <p class="mb-0">{{$getProfileWebsite->email}}</p>
                                             </div>
                                         </div>
                                     </div> 
@@ -52,7 +52,7 @@
                                         <div class="office-info-item">
                                             <div class="office-info-text">
                                                 <h3 class="mb-1">Telepon / Whatsapp</h3>
-                                                <p class="mb-0">0812 5654 0950</p>
+                                                <p class="mb-0">{{$getProfileWebsite->no_telp}}</p>
                                             </div>
                                         </div>
                                     </div> 

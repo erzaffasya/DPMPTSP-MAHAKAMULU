@@ -81,9 +81,8 @@
                     <div class="wpo-blog-content" style="border-radius: 1rem; overflow: hidden;">
                         <div class="post format-video">
                             <div class="entry-media video-holder">
-                                <img src="https://prokopim.mahakamulukab.go.id/wp-content/uploads/2022/05/4-8.jpg"
-                                    alt>
-                                <a href="https://youtube.com/embed/SUAOOlDQUd4" class="video-btn" data-type="iframe">
+                                <img src="https://prokopim.mahakamulukab.go.id/wp-content/uploads/2022/05/4-8.jpg" alt>
+                                <a href="{{ $getProfileWebsite->vidio }}" class="video-btn" data-type="iframe">
                                     <i class="fi flaticon-play"></i>
                                 </a>
 
@@ -94,12 +93,7 @@
                 <div class="col col-lg-6 col-12">
                     <h5 class="fs-5 text-secondary">Selamat Datang di</h5>
                     <h2 class="fw-bolder">DPMPTSP Mahakam Ulu</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sunt laborum alias atque.
-                        Necessitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat
-                        distinctio, rem alias temporibus, id consectetur soluta. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatssitatibus culpa cumque, quisquam quo laboriosam, excepturi fugit voluptas placeat
-                        distinctio, rem alias temporibus
+                    <p>{{ $getProfileWebsite->deskripsi }}
                     </p>
                 </div>
             </div>
@@ -111,66 +105,18 @@
             <div class="row">
                 <div class="b-title"><span>Pelayanan Kami</span></div>
                 <div class="wpo-breacking-wrap owl-carousel">
-                    <div class="wpo-breacking-item s1">
-                        <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/006-stamp.png" alt="">
+                    @foreach ($Pelayanan as $item)
+                        <div class="wpo-breacking-item s1">
+                            <div class="wpo-breacking-img">
+                                <img src="{{ asset($item->gambar) }}" alt="">
+                            </div>
+                            <div class="wpo-breacking-text">
+                                <h3 class="fw-bolder">{{ $item->judul }}</h3>
+                                <p>{!! $item->deskripsi !!}</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="wpo-breacking-text">
-                            <h3 class="fw-bolder">IMB</h3>
-                            <p>Pelayanan dalam Izin Membuat Usaha (IMB)</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wpo-breacking-item s1">
-                        <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/010-analytics.png" alt="">
-                        </div>
-                        <div class="wpo-breacking-text">
-                            <h3 class="fw-bolder">Izin Usaha</h3>
-                            <p>Pelayanan dalam pembuatan Izin Usaha</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wpo-breacking-item s1">
-                        <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/012-construction-worker.png" alt="">
-                        </div>
-                        <div class="wpo-breacking-text">
-                            <h3 class="fw-bolder">Izin Jasa Konstruksi</h3>
-                            <p>Pelayanan dalam pembuatan Izin Jasa Konstruksi</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wpo-breacking-item s1">
-                        <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/015-billboard-1.png" alt="">
-                        </div>
-                        <div class="wpo-breacking-text">
-                            <h3 class="fw-bolder">Izin Reklame</h3>
-                            <p>Pelayanan dalam pembuatan Izin Reklame</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wpo-breacking-item s1">
-                        <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/005-medical-team.png" alt="">
-                        </div>
-                        <div class="wpo-breacking-text">
-                            <h3 class="fw-bolder">Praktik Kesehatan</h3>
-                            <p>Pelayanan dalam pembuatan Izin Praktik Kesehatan</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wpo-breacking-item s1">
-                        <div class="wpo-breacking-img">
-                            <img src="tlandingpage/assets/images/breaking-news/017-block-1.png" alt="">
-                        </div>
-                        <div class="wpo-breacking-text">
-                            <h3 class="fw-bolder">Izin Gangguan</h3>
-                            <p>Pelayanan dalam pembuatan Izin Gangguan</a>
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -227,7 +173,8 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-7 col-12">
-                                <img src="tlandingpage/assets/images/blog/bg-top3.jpg" alt="" width="100%" height="300px" style="object-fit: cover; border-radius: 1rem; overflow: hidden;">
+                                <img src="tlandingpage/assets/images/blog/bg-top3.jpg" alt="" width="100%"
+                                    height="300px" style="object-fit: cover; border-radius: 1rem; overflow: hidden;">
                             </div>
                             <div class="col-lg-5 col-12">
                                 {{-- <h5 class="fs-5 text-secondary">DPMPTSP Mahakam Ulu</h5>
@@ -254,15 +201,16 @@
                     <div class="blog-sidebar">
                         <div class="widget about-widget">
                             <div class="img-holder">
-                                <img src="{{ asset('tlandingpage/assets/images/blog/bg-top4.jpg') }}" height="200px" style="object-fit: cover;">
+                                <img src="{{ asset($getProfileWebsite->foto_kadis) }}" height="200px"
+                                    style="object-fit: cover;">
                             </div>
-                            <h4>Jenny Watson</h4>
+                            <h4>{{ $getProfileWebsite->nama_kadis }}</h4>
                             <p>Kepala Dinas DPMPTSP Mahakam Ulu</p>
                             <div class="social">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    {{-- <li><a href="#"><i class="ti-facebook"></i></a></li>
                                     <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="ti-linkedin"></i></a></li> --}}
                                 </ul>
                             </div>
                             <div class="aw-shape">
@@ -275,20 +223,25 @@
                                 @foreach ($Populer as $item)
                                     <div class="post">
                                         <div class="img-holder">
-                                            <img src="{{ asset($item->gambar) }}"
-                                                alt>
+                                            <img src="{{ asset($item->gambar) }}" alt>
                                         </div>
                                         <div class="details">
-                                            <span class="date">{{$item->created_at->Format('D, d M Y')}} </span>
-                                            <h4 class="fs-6"><a href="{{route('detail-berita',$item->id)}}">{{$item->judul}}</a></h4>
+                                            <span class="date">{{ $item->created_at->Format('D, d M Y') }} </span>
+                                            <h4 class="fs-6"><a
+                                                    href="{{ route('detail-berita', $item->id) }}">{{ $item->judul }}</a>
+                                            </h4>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
-                        <div class="wpo-add-widget mb-4">
-                            <a href="#"><img src="https://kaltimkece.id/upload/artikel/2021-09/10/pasar-tradisional-baru-mahulu.jpg" alt="" width="100%" height="100%"></a>
-                        </div>
+                        @foreach ($FastLink as $item)
+                            <div class="wpo-add-widget mb-4">
+                                <a href="{{$item->link}}"><img
+                                        src="{{asset($item->logo)}}"
+                                        alt="" width="100%" height="100%"></a>
+                            </div>
+                        @endforeach
                         <div class="wpo-contact-widget widget">
                             <h2>Survey Kepuasan Masyarakat</h2>
                             <p>Yuk bantu kami dalam meningkatkan kualitas pelayanan</p>

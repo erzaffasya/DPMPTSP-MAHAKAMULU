@@ -30,10 +30,9 @@
                         <div class="col  col-lg-2 col-md-3 col-sm-12 col-12">
                             <div class="contact-info">
                                 <ul>
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ti-google"></i></a></li>
+                                    <li><a target="_blank" href="{{$getProfileWebsite->facebook}}"><i class="ti-facebook"></i></a></li>
+                                    <li><a target="_blank" href="{{$getProfileWebsite->twitter}}"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a target="_blank" href="{{$getProfileWebsite->instagram}}"><i class="ti-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>

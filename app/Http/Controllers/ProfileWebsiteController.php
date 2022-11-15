@@ -13,6 +13,31 @@ class ProfileWebsiteController extends Controller
         return view('admin.ProfileWebsite.index', compact('ProfileWebsite'));
     }
 
+    public function kepalaDinas()
+    {
+        // dd('erza');
+        $ProfileWebsite = ProfileWebsite::find(1);
+        return view('admin.ProfileWebsite.kepalaDinas', compact('ProfileWebsite'));
+    }
+
+    public function profilWebsite()
+    {
+        $ProfileWebsite = ProfileWebsite::find(1);
+        return view('admin.ProfileWebsite.profilWebsite', compact('ProfileWebsite'));
+    }
+
+    public function kontak()
+    {
+        $ProfileWebsite = ProfileWebsite::find(1);
+        return view('admin.ProfileWebsite.kontak', compact('ProfileWebsite'));
+    }
+
+    public function sosialMedia()
+    {
+        $ProfileWebsite = ProfileWebsite::find(1);
+        return view('admin.ProfileWebsite.sosialMedia', compact('ProfileWebsite'));
+    }
+
     public function store(Request $request)
     {
         // dd($request->all());

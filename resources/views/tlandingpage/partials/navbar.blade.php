@@ -13,15 +13,14 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-6 my-4">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset("tlandingpage/assets/images/logo2.png")}}" alt="" width="100%"></a>
+                            <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset($getProfileWebsite->logo)}}" alt="" width="100%"></a>
                                     {{-- {{asset("tlandingpage/assets/css/owl.carousel.css")}} --}}
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6 col-6">
                         <p class="fs-6">
                             Visi: <br>
-                            <span class="fw-bold">TERWUJUDNYA KOTA TUJUAN INVESTASI DENGAN PELAYANAN PRIMA MENUJU
-                                KOTA BALIKPAPAN YANG NYAMAN DIHUNI DAN BERKELANJUTAN MENUJU MADINATUL IMAN</span>
+                            <span class="fw-bold">{{$getProfileWebsite->visi}}</span>
                         </p>
                     </div>
                     <div class="col-lg-1 col-md-1 col-1">

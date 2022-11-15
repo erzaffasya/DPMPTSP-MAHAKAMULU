@@ -17,7 +17,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">deskripsi</label>
-                    <input type="text" class="form-control" id="basic-default-fullname" placeholder="https://example.com" name="deskripsi">
+                    <input type="text" class="form-control" id="basic-default-fullname" placeholder="" name="deskripsi">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

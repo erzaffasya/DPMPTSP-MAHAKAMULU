@@ -5,9 +5,9 @@
                 <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="widget about-widget">
                         <div class="logo widget-title">
-                            <img src="{{asset("tlandingpage/assets/images/logo2.png")}}" alt="blog" height="85">
+                            <img src="{{asset($getProfileWebsite->logo)}}" alt="blog" height="85">
                         </div>
-                        <h3 class="text-white fw-bold">Terpercaya, Optimal dan Profesional</h3 class="text-white fw-bold">
+                        <h3 class="text-white fw-bold">{{$getProfileWebsite->slogan}}</h3 class="text-white fw-bold">
 
                     </div>
                 </div>
@@ -17,10 +17,9 @@
                             <h3>Link Terkait</h3>
                         </div>
                         <ul>
-                            <li><a href="blog.html">BKPM</a></li>
-                            <li><a href="blog.html">BPS</a></li>
-                            <li><a href="blog.html">LAPOR</a></li>
-                            <li><a href="blog.html">OSS RBA</a></li>
+                            @foreach ($getLinkTerkait as $item)
+                            <li><a target="_blank" href="{{$item->link}}">{{$item->judul}}</a></li>                                
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -30,13 +29,13 @@
                             <h3>Media Sosial</h3>
                         </div>
                         <ul>
-                            <li><a href="#"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/1.png')}}"
+                            <li><a target="_blank" href="{{$getProfileWebsite->facebook}}"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/1.png')}}"
                                             alt=""></i> Facebook</a>
                             </li>
-                            <li><a href="#"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/3.png')}}"
+                            <li><a target="_blank" href="{{$getProfileWebsite->instagram}}"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/3.png')}}"
                                             alt=""></i> Instagram</a>
                             </li>
-                            <li><a href="#"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/4.png')}}"
+                            <li><a target="_blank"href="{{$getProfileWebsite->youtube}}"><i><img src="{{asset('tlandingpage/assets/images//ft-icon/4.png')}}"
                                             alt=""></i> Youtube</a>
                             </li>
                         </ul>
@@ -50,7 +49,7 @@
                         <ul>
                             <li>
                                 <a href="/kontak">
-                                    <p>Jl. Poros Kampung Ujoh Bilang - Long Melaham, Kecamatan Long Bagun, Ujoh Bilang</p>
+                                    <p>{{$getProfileWebsite->alamat}}</p>
                                     <span class="post-control-link">Kontak Kami</span>
                                 </a>
                             </li>
