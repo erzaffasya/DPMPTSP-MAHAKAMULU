@@ -17,7 +17,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">deskripsi pelayanan</label>
                     <input type="text" class="form-control" id="basic-default-fullname"
-                        value="{{ $ProfileWebsite->facebook ?? null }}" name="facebook">
+                        value="{{ $ProfileWebsite->deskripsi_pelayanan ?? null }}" name="deskripsi_pelayanan">
                 </div>
 
                 <div class="mb-3">
@@ -28,19 +28,21 @@
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">Senin - Kamis</label>
                     <input type="text" class="form-control" id="basic-default-fullname"
-                        value="{{ $ProfileWebsite->senin_kamis ?? null }}" name="youtube">
+                        value="{{ $ProfileWebsite->senin_kamis ?? null }}" name="senin_kamis">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">Jumat</label>
                     <input type="text" class="form-control" id="basic-default-fullname"
-                        value="{{ $ProfileWebsite->jumat ?? null }}" name="youtube">
+                        value="{{ $ProfileWebsite->jumat ?? null }}" name="jumat">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">Apakah Hari ini libur?</label>
-                    <input type="text" class="form-control" id="basic-default-fullname"
-                        value="{{ $ProfileWebsite->isLibur ?? null }}" name="youtube">
+                    <select id="defaultSelect" name="isLibur" class="form-select">
+                        <option value="0">Tidak Libur</option>
+                        <option value="1">Libur</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

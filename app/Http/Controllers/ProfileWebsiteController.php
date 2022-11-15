@@ -83,6 +83,24 @@ class ProfileWebsiteController extends Controller
         $ProfileWebsite->facebook = $request->facebook;
         $ProfileWebsite->google_maps = $request->google_maps;
 
+        // dd($request->all());
+        
+        $ProfileWebsite->slogan_pelayanan = $request->slogan_pelayanan;
+        $ProfileWebsite->deskripsi_pelayanan = $request->deskripsi_pelayanan;
+
+        if ($request->gambar_pelayanan) {
+            $extention = $request->gambar_pelayanan->extension();
+            $file_name12 = time() . '.' . $extention;
+            $txt12 = "storage/ProfileWebsite/gambar_pelayanan/" . $file_name12;
+            $request->gambar_pelayanan->storeAs('public/ProfileWebsite/gambar_pelayanan', $file_name12);
+
+            $ProfileWebsite->gambar_pelayanan = $txt12;
+        }
+        
+        $ProfileWebsite->senin_kamis = $request->senin_kamis;
+        $ProfileWebsite->jumat = $request->jumat;
+        $ProfileWebsite->isLibur = $request->isLibur;
+
         $ProfileWebsite->save();
 
         return back()->with('success', 'Data Berhasil Diubah!');

@@ -173,23 +173,22 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-7 col-12">
-                                <img src="tlandingpage/assets/images/blog/bg-top3.jpg" alt="" width="100%"
+                                <img src="{{$getProfileWebsite->gambar_pelayanan}}" alt="" width="100%"
                                     height="300px" style="object-fit: cover; border-radius: 1rem; overflow: hidden;">
                             </div>
                             <div class="col-lg-5 col-12">
                                 {{-- <h5 class="fs-5 text-secondary">DPMPTSP Mahakam Ulu</h5>
                                 <h2 class="fw-bolder">DPMPTSP Mahakam Ulu</h2> --}}
-                                <h3 class="fw-bolder mb-3">Mudah, Cepat, dan Ramah</h3>
-                                <p>DPMPTSP Kabupaten Mahakam Ulu siap dalam memberi pelayanan terbaik kepada masyarakat
-                                    pada jadwal dan waktu kerja sebagai berikut.</p>
+                                <h3 class="fw-bolder mb-3">{{$getProfileWebsite->slogan_pelayanan}}</h3>
+                                <p>{{$getProfileWebsite->deskripsi_pelayanan}}</p>
                                 <ul class="jadwal-pelayanan">
                                     <li>
                                         <h5 class="fw-bolder text-secondary">Senin - Kamis</h5>
-                                        <p>07.30 - 16.00 WITA</p>
+                                        <p>{{$getProfileWebsite->senin_kamis}}</p>
                                     </li>
                                     <li>
                                         <h5 class="fw-bolder text-secondary">Jum'at</h5>
-                                        <p>07.30 - 11.30 WITA</p>
+                                        <p>{{$getProfileWebsite->jumat}}</p>
                                     </li>
                                 </ul>
                             </div>
