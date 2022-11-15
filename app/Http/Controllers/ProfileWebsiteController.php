@@ -37,6 +37,12 @@ class ProfileWebsiteController extends Controller
         $ProfileWebsite = ProfileWebsite::find(1);
         return view('admin.ProfileWebsite.sosialMedia', compact('ProfileWebsite'));
     }
+    
+    public function jadwalPelayanan()
+    {
+        $ProfileWebsite = ProfileWebsite::find(1);
+        return view('admin.ProfileWebsite.jadwalPelayanan', compact('ProfileWebsite'));
+    }
 
     public function store(Request $request)
     {

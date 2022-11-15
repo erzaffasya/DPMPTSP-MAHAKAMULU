@@ -35,6 +35,13 @@ return new class extends Migration
             $table->string("youtube")->nullable();
             $table->string("facebook")->nullable();
             
+            $table->string('slogan_pelayanan')->nullable();
+            $table->text('deskripsi_pelayanan')->nullable();
+            $table->string('gambar_pelayanan')->nullable();
+            $table->string('senin_kamis')->nullable();
+            $table->string('jumat')->nullable();
+            $table->boolean('isLibur')->default(0);
+
             $table->timestamps();
         });
     }

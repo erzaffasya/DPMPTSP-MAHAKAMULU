@@ -96,6 +96,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('profil-website', [ProfileWebsiteController::class, 'profilWebsite'])->name('profilWebsite');
         Route::get('kontak', [ProfileWebsiteController::class, 'kontak'])->name('kontaks');
         Route::get('sosial-media', [ProfileWebsiteController::class, 'sosialMedia'])->name('sosialMedia');
+        Route::get('jadwal-pelayanan', [ProfileWebsiteController::class, 'jadwalPelayanan'])->name('jadwalPelayanan');
     });
 
     Route::resource('HalamanMenu', HalamanMenuController::class);

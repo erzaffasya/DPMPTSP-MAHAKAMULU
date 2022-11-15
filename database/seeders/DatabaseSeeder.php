@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             TagBeritaSeeder::class,
-            KategoriBeritaSeeder::class
+            KategoriBeritaSeeder::class,
+            ProfileWebsiteSeeder::class
         ]);
     }
 }

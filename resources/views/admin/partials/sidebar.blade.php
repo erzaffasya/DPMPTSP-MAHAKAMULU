@@ -321,6 +321,12 @@
                 <div data-i18n="Account">Sosial Media</div>
             </a>
         </li>
+        <li class="menu-item {{ request()->routeIs('jadwalPelayanan') ? 'active' : '' }}">
+            <a href="{{ route('jadwalPelayanan') }}"
+                class="menu-link ">
+                <div data-i18n="Account">Jadwal Pelayanan</div>
+            </a>
+        </li>
     </ul>
 </li>
 {{-- <li class="menu-item">
