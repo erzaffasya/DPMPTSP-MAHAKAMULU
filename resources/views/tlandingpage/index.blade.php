@@ -173,7 +173,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-7 col-12">
-                                <img src="{{$getProfileWebsite->gambar_pelayanan}}" alt="" width="100%"
+                                <img src="{{asset($getProfileWebsite->gambar_pelayanan)}}" alt="" width="100%"
                                     height="300px" style="object-fit: cover; border-radius: 1rem; overflow: hidden;">
                             </div>
                             <div class="col-lg-5 col-12">
