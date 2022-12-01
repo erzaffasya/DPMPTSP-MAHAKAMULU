@@ -99,7 +99,7 @@ class ProfileWebsiteController extends Controller
         
         $ProfileWebsite->senin_kamis = $request->senin_kamis;
         $ProfileWebsite->jumat = $request->jumat;
-        $ProfileWebsite->isLibur = $request->isLibur;
+        // $ProfileWebsite->isLibur = $request->isLibur;
 
         $ProfileWebsite->save();
 
