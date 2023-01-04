@@ -37,7 +37,7 @@ class ProfileWebsiteController extends Controller
         $ProfileWebsite = ProfileWebsite::find(1);
         return view('admin.ProfileWebsite.sosialMedia', compact('ProfileWebsite'));
     }
-    
+
     public function jadwalPelayanan()
     {
         $ProfileWebsite = ProfileWebsite::find(1);
@@ -66,27 +66,39 @@ class ProfileWebsiteController extends Controller
             $ProfileWebsite->foto_kadis = $txt1;
         }
 
+        if ($request->nama_kadis != null) {
+            $ProfileWebsite->nama_kadis = $request->nama_kadis;
+        }
 
-        $ProfileWebsite->slogan = $request->slogan;
-        $ProfileWebsite->visi = $request->visi;
-        $ProfileWebsite->misi = $request->misi;
-        $ProfileWebsite->deskripsi = $request->deskripsi;
-        $ProfileWebsite->video = $request->video;
-        $ProfileWebsite->nama_kadis = $request->nama_kadis;
+        if ($request->visi != null || $request->misi != null) {
+            $ProfileWebsite->visi = $request->visi;
+            $ProfileWebsite->slogan = $request->slogan;
+            $ProfileWebsite->misi = $request->misi;
+            $ProfileWebsite->deskripsi = $request->deskripsi;
+            $ProfileWebsite->video = $request->video;
+        }
 
+        if ($request->alamat != null || $request->email != null) {
+            $ProfileWebsite->alamat = $request->alamat;
+            $ProfileWebsite->email = $request->email;
+            $ProfileWebsite->no_telp = $request->no_telp;
+            $ProfileWebsite->google_maps = $request->google_maps;
+        }
 
-        $ProfileWebsite->alamat = $request->alamat;
-        $ProfileWebsite->email = $request->email;
-        $ProfileWebsite->no_telp = $request->no_telp;
-        $ProfileWebsite->instagram = $request->instagram;
-        $ProfileWebsite->youtube = $request->youtube;
-        $ProfileWebsite->facebook = $request->facebook;
-        $ProfileWebsite->google_maps = $request->google_maps;
+        if ($request->facebook != null || $request->youtube != null) {
+            $ProfileWebsite->instagram = $request->instagram;
+            $ProfileWebsite->youtube = $request->youtube;
+            $ProfileWebsite->facebook = $request->facebook;
+        }
 
-        // dd($request->all());
-        
-        $ProfileWebsite->slogan_pelayanan = $request->slogan_pelayanan;
-        $ProfileWebsite->deskripsi_pelayanan = $request->deskripsi_pelayanan;
+        if ($request->slogan_pelayanan != null || $request->deskripsi_pelayanan != null) {
+            $ProfileWebsite->senin_kamis = $request->senin_kamis;
+            $ProfileWebsite->jumat = $request->jumat;
+            $ProfileWebsite->slogan_pelayanan = $request->slogan_pelayanan;
+            $ProfileWebsite->deskripsi_pelayanan = $request->deskripsi_pelayanan;
+            // $ProfileWebsite->isLibur = $request->isLibur;
+        }
+
 
         if ($request->gambar_pelayanan) {
             $extention = $request->gambar_pelayanan->extension();
@@ -96,10 +108,7 @@ class ProfileWebsiteController extends Controller
 
             $ProfileWebsite->gambar_pelayanan = $txt12;
         }
-        
-        $ProfileWebsite->senin_kamis = $request->senin_kamis;
-        $ProfileWebsite->jumat = $request->jumat;
-        // $ProfileWebsite->isLibur = $request->isLibur;
+
 
         $ProfileWebsite->save();
 

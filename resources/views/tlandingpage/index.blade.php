@@ -82,7 +82,7 @@
                         <div class="post format-video">
                             <div class="entry-media video-holder">
                                 <img src="https://prokopim.mahakamulukab.go.id/wp-content/uploads/2022/05/4-8.jpg" alt>
-                                <a href="{{ $getProfileWebsite->vidio }}" class="video-btn" data-type="iframe">
+                                <a href="{{ $getProfileWebsite->video }}" class="video-btn" data-type="iframe">
                                     <i class="fi flaticon-play"></i>
                                 </a>
 
