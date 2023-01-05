@@ -17,7 +17,7 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label class="form-label" for="basic-default-fullname">judul {{$id}} </label>
+                    <label class="form-label" for="basic-default-fullname">judul {{ $id }} </label>
                     <input type="text" class="form-control" id="basic-default-fullname"
                         value="{{ $Menu->judul ?? null }}" name="judul">
                 </div>
@@ -27,10 +27,19 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">gambar</label>
+                    @if ($item->gambar != null)
+                        <br>
+                        <a href="{{ asset($item->gambar) }}" target="_blank"> Lihat Gambar </a>
+                    @endif
+
                     <input class="form-control" type="file" name="gambar" id="formFile">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">file</label>
+                    @if ($item->file != null)
+                        <br>
+                        <a href="{{ asset($item->file) }}" target="_blank"> Lihat File </a>
+                    @endif
                     <input class="form-control" type="file" name="file" id="formFile">
                 </div>
                 <div class="mb-3">
