@@ -27,18 +27,18 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">gambar</label>
-                    @if ($item->gambar != null)
+                    @if ($Menu->gambar != null)
                         <br>
-                        <a href="{{ asset($item->gambar) }}" target="_blank"> Lihat Gambar </a>
+                        <a href="{{ asset($Menu->gambar) }}" target="_blank"> Lihat Gambar </a>
                     @endif
 
                     <input class="form-control" type="file" name="gambar" id="formFile">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="basic-default-fullname">file</label>
-                    @if ($item->file != null)
+                    @if ($Menu->file != null)
                         <br>
-                        <a href="{{ asset($item->file) }}" target="_blank"> Lihat File </a>
+                        <a href="{{ asset($Menu->file) }}" target="_blank"> Lihat File </a>
                     @endif
                     <input class="form-control" type="file" name="file" id="formFile">
                 </div>
